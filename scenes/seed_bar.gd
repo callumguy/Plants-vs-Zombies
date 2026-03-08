@@ -18,3 +18,11 @@ func fill(plant_names: Array) -> void:
         add_child(packet)
     
     #emit_signal("ready_pressed")
+
+func _ready() -> void:
+    var empty_slot: TextureRect = get_parent().get_parent().get_parent().get_parent().find_child("EmptySlot")
+    for i in range(LevelData.get_level_info(LevelManager.level_number, 'seed_slots')):
+        print("yuh")
+        var empty_slot_copy = empty_slot.duplicate()
+        add_child(empty_slot_copy)
+        empty_slot_copy.visible = true

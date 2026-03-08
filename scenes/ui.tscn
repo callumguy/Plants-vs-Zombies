@@ -85,46 +85,6 @@ script = ExtResource("1_ew4jn")
 layout_mode = 2
 script = ExtResource("2_gic0g")
 
-[node name="EmptySlot" type="TextureRect" parent="MarginContainer/HBoxContainer/LeftBar/SeedBar"]
-self_modulate = Color(1, 1, 1, 0.33)
-custom_minimum_size = Vector2(111, 72)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_nr28y")
-expand_mode = 2
-
-[node name="EmptySlot2" type="TextureRect" parent="MarginContainer/HBoxContainer/LeftBar/SeedBar"]
-self_modulate = Color(1, 1, 1, 0.33)
-custom_minimum_size = Vector2(111, 72)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_nr28y")
-expand_mode = 2
-
-[node name="EmptySlot3" type="TextureRect" parent="MarginContainer/HBoxContainer/LeftBar/SeedBar"]
-self_modulate = Color(1, 1, 1, 0.33)
-custom_minimum_size = Vector2(111, 72)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_nr28y")
-expand_mode = 2
-
-[node name="EmptySlot4" type="TextureRect" parent="MarginContainer/HBoxContainer/LeftBar/SeedBar"]
-self_modulate = Color(1, 1, 1, 0.33)
-custom_minimum_size = Vector2(111, 72)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_nr28y")
-expand_mode = 2
-
-[node name="EmptySlot5" type="TextureRect" parent="MarginContainer/HBoxContainer/LeftBar/SeedBar"]
-self_modulate = Color(1, 1, 1, 0.33)
-custom_minimum_size = Vector2(111, 72)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_nr28y")
-expand_mode = 2
-
 [node name="TopBar" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -221,3 +181,16 @@ patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 6
+
+[node name="EmptySlot" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.33)
+custom_minimum_size = Vector2(111, 72)
+layout_mode = 2
+offset_left = 20.0
+offset_top = 59.0
+offset_right = 131.0
+offset_bottom = 131.0
+mouse_filter = 2
+texture = ExtResource("2_nr28y")
+expand_mode = 2
