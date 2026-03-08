@@ -3,6 +3,8 @@ extends Node
 const ICON_ATLAS_TEXTURE := preload("res://assets/pvzseedpackets.png")
 const ICON_ATLAS_WIDTH := 8
 
+const RECHARGE_FAST := 7.5
+
 # Returns a rectangle that can be used to get a plant's icon texture from the atlas.
 func id_to_rect(id: int) -> Rect2:
     var row = floor(id / ICON_ATLAS_WIDTH)
@@ -18,13 +20,13 @@ var plants := {
         "scene" = preload("res://plant_peashooter.tscn"),
         "icon_region" = id_to_rect(0), 
         "cost" = 100,
-        "recharge" = 5.0,
+        "recharge" = RECHARGE_FAST,
     },
     "sunflower": {
         "scene" = preload("res://plant_sunflower.tscn"),
         "icon_region" = id_to_rect(1),
         "cost" = 50,
-        "recharge" = 5.0,
+        "recharge" = RECHARGE_FAST,
     },
     "wallnut": {
         "scene" = preload("res://plant_wallnut.tscn"),
@@ -36,21 +38,21 @@ var plants := {
         "scene" = preload("res://plant_cactus.tscn"),
         "icon_region" = id_to_rect(26),
         "cost" = 150,
-        "recharge" = 5.0,
+        "recharge" = RECHARGE_FAST,
         "description" = "Shoots piercing spikes through zombies."
     },
     "starfruit": {
         "scene" = preload("res://plant_starfruit.tscn"),
         "icon_region" = id_to_rect(29),
         "cost" = 125,
-        "recharge" = 5.0,
+        "recharge" = RECHARGE_FAST,
         "description" = "Shoots stars in 5 directions."
     },
     "spikeweed": {
     "scene" = preload("res://plant_spikeweed.tscn"),
     "icon_region" = id_to_rect(21),
     "cost" = 125,
-    "recharge" = 5.0,
+    "recharge" = RECHARGE_FAST,
     "description" = "Damages zombies that walk over it."
     },
 }
