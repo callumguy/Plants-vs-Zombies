@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://x0wwc03pe8ue"]
+
+[ext_resource type="PackedScene" uid="uid://d0mx5uu5uniiw" path="res://scenes/zombie_base.tscn" id="1_dpo18"]
+
+[node name="ZombieBasic" instance=ExtResource("1_dpo18")]
+
+[node name="Head" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="0"]
+position = Vector2(-18, -20)
+
+[node name="Jaw" parent="Visuals/Skeleton3/Skeleton2D/Torso/Head" index="0"]
+scale = Vector2(0.999996, 0.999996)
+
+[node name="LeftThigh" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="1"]
+scale = Vector2(0.99997, 0.99997)
+
+[node name="LeftShin" parent="Visuals/Skeleton3/Skeleton2D/Torso/LeftThigh" index="0"]
+position = Vector2(3.00021, 25.0005)
+
+[node name="RightThigh" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="2"]
+rotation = 0.431305
+scale = Vector2(0.999989, 0.999989)
+
+[node name="RightShin" parent="Visuals/Skeleton3/Skeleton2D/Torso/RightThigh" index="0"]
+position = Vector2(5.38826e-05, 18.0002)
+rotation = -0.744523
+scale = Vector2(1, 1)
+
+[node name="LeftShoulder" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="3"]
+position = Vector2(-2, -21)
+scale = Vector2(0.999986, 0.999986)
+
+[node name="LeftForearm" parent="Visuals/Skeleton3/Skeleton2D/Torso/LeftShoulder" index="0"]
+position = Vector2(-1, 26.0008)
+
+[node name="RightShoulder" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="4"]
+position = Vector2(-22, -16)
+scale = Vector2(0.999991, 0.999991)
+
+[node name="RightForearm" parent="Visuals/Skeleton3/Skeleton2D/Torso/RightShoulder" index="0"]
+position = Vector2(0.998827, 19.0005)
+
+[node name="MovementComponent" parent="." index="7"]
+base_speed = 15
+
+[editable path="Visuals/Skeleton3"]

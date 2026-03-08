@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ieajchmkykiw"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_miai3"]
+[ext_resource type="PackedScene" uid="uid://drruemiqakt1y" path="res://defender.tscn" id="2_b6nsr"]
+[ext_resource type="PackedScene" uid="uid://ca8gp7opgsqwa" path="res://enemy_spawner.tscn" id="2_c4wn2"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_miai3")
+DefenderScene = ExtResource("2_b6nsr")
+grid_size = null
+
+[node name="EnemySpawner" parent="." instance=ExtResource("2_c4wn2")]
+position = Vector2(1026, 309)
+
+[node name="Defender" parent="." instance=ExtResource("2_b6nsr")]
+position = Vector2(307, 300)
+
+[node name="Defender3" parent="." instance=ExtResource("2_b6nsr")]
+position = Vector2(307, 400)
+
+[node name="Defender4" parent="." instance=ExtResource("2_b6nsr")]
+position = Vector2(250, 400)
+
+[node name="Defender5" parent="." instance=ExtResource("2_b6nsr")]
+position = Vector2(307, 200)
+
+[node name="Defender6" parent="." instance=ExtResource("2_b6nsr")]
+position = Vector2(250, 200)
+
+[node name="Defender2" parent="." instance=ExtResource("2_b6nsr")]
+position = Vector2(250, 300)

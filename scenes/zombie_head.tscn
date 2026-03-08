@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://bt55scs36x2gn"]
+
+[ext_resource type="Script" path="res://scenes/zombie_arm.gd" id="1_1yuso"]
+[ext_resource type="Texture2D" uid="uid://3d8dyxulleov" path="res://assets/basic_zombie_assets.png" id="2_pxvig"]
+[ext_resource type="PackedScene" uid="uid://dt7weuds10ykf" path="res://detachable_component.tscn" id="3_2pwnc"]
+[ext_resource type="Shape2D" uid="uid://dcm0agyxc85vo" path="res://tres/zombie_head_bounce_material.tres" id="3_j51t7"]
+[ext_resource type="PackedScene" uid="uid://d03sgk3p8fup1" path="res://scenes/despawn_component.tscn" id="4_2pguh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l2q3f"]
+bounce = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgtcy"]
+atlas = ExtResource("2_pxvig")
+region = Rect2(1, 9, 53, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08fum"]
+atlas = ExtResource("2_pxvig")
+region = Rect2(1, 86, 32, 15)
+
+[node name="ZombieHead" type="RigidBody2D"]
+position = Vector2(-5, -49)
+physics_material_override = SubResource("PhysicsMaterial_l2q3f")
+freeze = true
+script = ExtResource("1_1yuso")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+texture = SubResource("AtlasTexture_mgtcy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Visuals"]
+position = Vector2(-1, 25)
+texture = SubResource("AtlasTexture_08fum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+rotation = 0.195857
+shape = ExtResource("3_j51t7")
+
+[node name="DetachableComponent" parent="." node_paths=PackedStringArray("body") instance=ExtResource("3_2pwnc")]
+body = NodePath("..")
+
+[node name="DespawnComponent" parent="." instance=ExtResource("4_2pguh")]

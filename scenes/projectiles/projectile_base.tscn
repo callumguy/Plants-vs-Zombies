@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmmqxdhqx5h77"]
+
+[ext_resource type="Script" path="res://scripts/projectile_base.gd" id="1_or2ha"]
+[ext_resource type="AudioStream" uid="uid://pihak421xd0p" path="res://audio/PvZsoundsMegaPack/splat.ogg" id="2_e3q2m"]
+[ext_resource type="Texture2D" uid="uid://d24hn11eemxve" path="res://assets/pvz_projectiles.png" id="2_f4yd1"]
+[ext_resource type="AudioStream" uid="uid://s0ey3qve2bks" path="res://audio/PvZsoundsMegaPack/splat2.ogg" id="3_2v6b1"]
+[ext_resource type="AudioStream" uid="uid://comd6fpke5ou6" path="res://audio/PvZsoundsMegaPack/splat3.ogg" id="4_slqta"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1osm"]
+atlas = ExtResource("2_f4yd1")
+region = Rect2(5, 24, 28, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqxdv"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_guwrv"]
+streams_count = 3
+stream_0/stream = ExtResource("2_e3q2m")
+stream_1/stream = ExtResource("3_2v6b1")
+stream_2/stream = ExtResource("4_slqta")
+
+[node name="ProjectileBase" type="Area2D"]
+z_index = 10
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_or2ha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_d1osm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uqxdv")
+
+[node name="SplatSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_guwrv")

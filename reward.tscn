@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm1rhfetcofrj"]
+
+[ext_resource type="Script" path="res://reward.gd" id="1_owopt"]
+[ext_resource type="AudioStream" uid="uid://4rj6o0fl8lgx" path="res://audio/PvZsoundsMegaPack/winmusic.ogg" id="2_7fyma"]
+[ext_resource type="Texture2D" uid="uid://c2wjjm72puqhj" path="res://assets/kirkinator_100x100.png" id="2_srsyv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lq3hi"]
+size = Vector2(105, 105)
+
+[node name="Reward" type="RigidBody2D"]
+z_index = 50
+collision_layer = 128
+collision_mask = 0
+input_pickable = true
+script = ExtResource("1_owopt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_srsyv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_lq3hi")
+
+[node name="WinMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7fyma")

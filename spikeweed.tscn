@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://dcuqdwpix4wr4"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/towers/plant_base.tscn" id="1_wxeyb"]
+[ext_resource type="Texture2D" uid="uid://w3buavuuv88i" path="res://spikeweed.png" id="2_47rh7"]
+[ext_resource type="Script" path="res://plant_peashooter.gd" id="2_w48xw"]
+[ext_resource type="PackedScene" uid="uid://o2nppbr0f522" path="res://projectile_spikeweed.tscn" id="3_xqtsg"]
+[ext_resource type="PackedScene" uid="uid://dvcev23pdfvlf" path="res://animation_component.tscn" id="4_8h5ee"]
+[ext_resource type="PackedScene" uid="uid://chynt50ekbfa" path="res://raycast_component.tscn" id="5_ovy2c"]
+[ext_resource type="PackedScene" uid="uid://ctc4f3b87fv6e" path="res://shoot_component.tscn" id="6_2irxk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6slwc"]
+atlas = ExtResource("2_47rh7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70q30"]
+atlas = SubResource("AtlasTexture_6slwc")
+region = Rect2(113, 16, 100, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6ggd"]
+atlas = ExtResource("2_47rh7")
+region = Rect2(138, 66, 46, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb1a3"]
+atlas = ExtResource("2_47rh7")
+region = Rect2(138, 55, 46, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jyfl4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6ggd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kb1a3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6ggd")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"Blink",
+"speed": 10.0
+}]
+
+[node name="Spikeweed" instance=ExtResource("1_wxeyb")]
+script = ExtResource("2_w48xw")
+projectile = ExtResource("3_xqtsg")
+
+[node name="Parts" type="Node2D" parent="." index="7"]
+scale = Vector2(0.8, 0.8)
+
+[node name="Body" type="Sprite2D" parent="Parts" index="0"]
+texture = SubResource("AtlasTexture_70q30")
+
+[node name="Eyes" type="AnimatedSprite2D" parent="Parts/Body" index="0"]
+position = Vector2(-2, 6)
+sprite_frames = SubResource("SpriteFrames_jyfl4")
+animation = &"Blink"
+frame = 3
+frame_progress = 1.0
+
+[node name="AnimationComponent" parent="." index="8" node_paths=PackedStringArray("parts") instance=ExtResource("4_8h5ee")]
+parts = NodePath("../Parts")
+
+[node name="Raycasts" type="Node2D" parent="." index="9"]
+
+[node name="Up" type="RayCast2D" parent="Raycasts" index="0"]
+rotation = -1.5708
+target_position = Vector2(1160, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RaycastComponent" parent="." index="10" node_paths=PackedStringArray("raycasts") instance=ExtResource("5_ovy2c")]
+raycasts = NodePath("../Raycasts")
+
+[node name="ShootComponent" parent="." index="11" instance=ExtResource("6_2irxk")]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ripq12qyhds"]
+
+[ext_resource type="Script" path="res://scenes/towers/mouse_area.gd" id="1_2h6n3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8l3df"]
+
+[node name="mouse_area" type="Area2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_2h6n3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8l3df")

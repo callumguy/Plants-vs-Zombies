@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://coxsiflqyqnu0"]
+
+[ext_resource type="Script" path="res://seed_select_menu.gd" id="1_7nw5k"]
+[ext_resource type="Texture2D" uid="uid://bfleadnyt3xu1" path="res://assets/PvZ_level_ui.png" id="2_6c8yf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt1tb"]
+atlas = ExtResource("2_6c8yf")
+region = Rect2(0, 1096, 818, 904)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_325rv"]
+texture = SubResource("AtlasTexture_wt1tb")
+texture_margin_left = 30.0
+texture_margin_top = 75.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[node name="SeedSelectMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7nw5k")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.5
+offset_top = -76.5
+offset_right = 170.5
+offset_bottom = 76.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_325rv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="ReadyButton" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "READY"
+
+[node name="NinePatch" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 2
+offset_left = -140.5
+offset_top = -18.0
+offset_right = 140.5
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_wt1tb")
+patch_margin_left = 35
+patch_margin_top = 75
+patch_margin_right = 35
+patch_margin_bottom = 35

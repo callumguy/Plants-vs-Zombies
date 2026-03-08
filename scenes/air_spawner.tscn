@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fgrsgsk54c5c"]
+
+[ext_resource type="Script" path="res://air_spawner.gd" id="1_k20pw"]
+
+[node name="AirSpawner" type="Node2D"]
+script = ExtResource("1_k20pw")

@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c15g5pmqtpd1t"]
+
+[ext_resource type="Shader" path="res://scenes/seed_packet.gdshader" id="1_eevcw"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_eevcw")
+shader_parameter/cooldown = 0.0
+shader_parameter/overlay_color = Color(0, 0, 0, 0.6)
+shader_parameter/uv_start = Vector2(0, 0)
+shader_parameter/uv_size = Vector2(1, 1)
+shader_parameter/too_expensive = false

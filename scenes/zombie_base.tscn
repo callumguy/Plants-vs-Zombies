@@ -1,0 +1,242 @@
+[gd_scene load_steps=24 format=3 uid="uid://d0mx5uu5uniiw"]
+
+[ext_resource type="Script" path="res://scripts/zombie_base.gd" id="1_qyqv7"]
+[ext_resource type="PackedScene" uid="uid://cftmhmjnmlyjh" path="res://scenes/skeleton_3.tscn" id="2_pcyov"]
+[ext_resource type="PackedScene" uid="uid://cunv1u3jpj0f0" path="res://scenes/zombie_arm.tscn" id="3_7g34d"]
+[ext_resource type="PackedScene" uid="uid://bt55scs36x2gn" path="res://scenes/zombie_head.tscn" id="3_8w1qx"]
+[ext_resource type="PackedScene" uid="uid://b4rosjmtbgxc1" path="res://scenes/hurtbox_component.tscn" id="3_476ce"]
+[ext_resource type="PackedScene" uid="uid://87pxnk628lmt" path="res://scenes/health_component.tscn" id="4_8nix2"]
+[ext_resource type="PackedScene" uid="uid://bs13xbyu1hxhh" path="res://scenes/movement_component.tscn" id="5_2gici"]
+[ext_resource type="Script" path="res://scenes/state_machine.gd" id="8_7jn77"]
+[ext_resource type="PackedScene" uid="uid://dedkaswgc8k6v" path="res://flash_component.tscn" id="8_g4ccy"]
+[ext_resource type="Script" path="res://scripts/zombie_walking_state.gd" id="9_tjp0f"]
+[ext_resource type="Script" path="res://scripts/zombie_eating_state.gd" id="10_pu0ma"]
+[ext_resource type="Script" path="res://scripts/zombie_dying_state.gd" id="11_34bcq"]
+[ext_resource type="AudioStream" uid="uid://pihak421xd0p" path="res://audio/PvZsoundsMegaPack/splat.ogg" id="12_f1xw6"]
+[ext_resource type="AudioStream" uid="uid://s0ey3qve2bks" path="res://audio/PvZsoundsMegaPack/splat2.ogg" id="13_aoi7v"]
+[ext_resource type="AudioStream" uid="uid://comd6fpke5ou6" path="res://audio/PvZsoundsMegaPack/splat3.ogg" id="14_btkh1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l54jg"]
+size = Vector2(89.5, 120.833)
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_caghm"]
+target_nodepath = NodePath("../Targets/LeftHandTarget")
+tip_nodepath = NodePath("Torso/LeftShoulder/LeftForearm/LeftHand")
+ccdik_data_chain_length = 2
+joint_data/0/bone_index = 11
+joint_data/0/bone2d_node = NodePath("Torso/LeftShoulder/LeftForearm")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = 0.0
+joint_data/0/constraint_angle_max = 90.0
+joint_data/0/constraint_angle_invert = false
+joint_data/0/constraint_in_localspace = true
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 10
+joint_data/1/bone2d_node = NodePath("Torso/LeftShoulder")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = -90.0
+joint_data/1/constraint_angle_max = 90.0
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
+joint_data/1/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_yd8tp"]
+target_nodepath = NodePath("../Targets/RightHandTarget")
+tip_nodepath = NodePath("Torso/RightShoulder/RightForearm/RightHand")
+ccdik_data_chain_length = 2
+joint_data/0/bone_index = 14
+joint_data/0/bone2d_node = NodePath("Torso/RightShoulder/RightForearm")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = 0.0
+joint_data/0/constraint_angle_max = 90.0
+joint_data/0/constraint_angle_invert = false
+joint_data/0/constraint_in_localspace = true
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 13
+joint_data/1/bone2d_node = NodePath("Torso/RightShoulder")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = -90.0
+joint_data/1/constraint_angle_max = 90.0
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
+joint_data/1/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_grhtj"]
+target_nodepath = NodePath("../Targets/LeftFootTarget")
+tip_nodepath = NodePath("Torso/LeftThigh/LeftShin/LeftFoot")
+ccdik_data_chain_length = 2
+joint_data/0/bone_index = 5
+joint_data/0/bone2d_node = NodePath("Torso/LeftThigh/LeftShin")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = 270.0
+joint_data/0/constraint_angle_max = 360.0
+joint_data/0/constraint_angle_invert = false
+joint_data/0/constraint_in_localspace = true
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 4
+joint_data/1/bone2d_node = NodePath("Torso/LeftThigh")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = -90.0
+joint_data/1/constraint_angle_max = 90.0
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
+joint_data/1/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_ogn5j"]
+target_nodepath = NodePath("../Targets/RightFootTarget")
+tip_nodepath = NodePath("Torso/RightThigh/RightShin/RightFoot")
+ccdik_data_chain_length = 2
+joint_data/0/bone_index = 8
+joint_data/0/bone2d_node = NodePath("Torso/RightThigh/RightShin")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = 270.0
+joint_data/0/constraint_angle_max = 360.0
+joint_data/0/constraint_angle_invert = false
+joint_data/0/constraint_in_localspace = true
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 7
+joint_data/1/bone2d_node = NodePath("Torso/RightThigh")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = -90.0
+joint_data/1/constraint_angle_max = 90.0
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
+joint_data/1/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_l0myi"]
+bone_index = 1
+bone2d_node = NodePath("Torso/Head")
+target_nodepath = NodePath("../Targets/HeadLookat")
+additional_rotation = 180.0
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_7b7qx"]
+enabled = true
+modification_count = 5
+modifications/0 = SubResource("SkeletonModification2DCCDIK_caghm")
+modifications/1 = SubResource("SkeletonModification2DCCDIK_yd8tp")
+modifications/2 = SubResource("SkeletonModification2DCCDIK_grhtj")
+modifications/3 = SubResource("SkeletonModification2DCCDIK_ogn5j")
+modifications/4 = SubResource("SkeletonModification2DLookAt_l0myi")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xknk4"]
+streams_count = 3
+stream_0/stream = ExtResource("12_f1xw6")
+stream_1/stream = ExtResource("13_aoi7v")
+stream_2/stream = ExtResource("14_btkh1")
+
+[node name="ZombieBase" type="CharacterBody2D" groups=["zombies"]]
+z_index = 30
+z_as_relative = false
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_qyqv7")
+damage = 100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -30)
+scale = Vector2(0.01, 0.01)
+shape = SubResource("RectangleShape2D_l54jg")
+
+[node name="Visuals" type="Node2D" parent="."]
+scale = Vector2(0.845, 0.845)
+
+[node name="Skeleton3" parent="Visuals" instance=ExtResource("2_pcyov")]
+position = Vector2(12.3077, -47.6923)
+
+[node name="Skeleton2D" parent="Visuals/Skeleton3" index="0"]
+modification_stack = SubResource("SkeletonModificationStack2D_7b7qx")
+
+[node name="Head" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="0"]
+position = Vector2(-18, -20)
+rotation = 0.0643599
+scale = Vector2(1, 1)
+
+[node name="Jaw" parent="Visuals/Skeleton3/Skeleton2D/Torso/Head" index="0"]
+scale = Vector2(0.999996, 0.999996)
+
+[node name="LeftThigh" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="1"]
+rotation = -2.46207e-05
+
+[node name="RightThigh" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="2"]
+rotation = 0.431393
+scale = Vector2(0.999989, 0.999989)
+
+[node name="RightShin" parent="Visuals/Skeleton3/Skeleton2D/Torso/RightThigh" index="0"]
+position = Vector2(5.45979e-05, 18.0002)
+rotation = -0.744675
+
+[node name="LeftShoulder" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="3"]
+rotation = 1.71661e-05
+
+[node name="LeftForearm" parent="Visuals/Skeleton3/Skeleton2D/Torso/LeftShoulder" index="0"]
+position = Vector2(-1, 26.0008)
+scale = Vector2(1.00001, 1.00001)
+
+[node name="RightShoulder" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="4"]
+rotation = 7.02699e-05
+
+[node name="RightForearm" parent="Visuals/Skeleton3/Skeleton2D/Torso/RightShoulder" index="0"]
+position = Vector2(0.998825, 19.0005)
+
+[node name="Visuals2" type="Node2D" parent="."]
+scale = Vector2(0.845, 0.845)
+
+[node name="ZombieArm" parent="Visuals2" instance=ExtResource("3_7g34d")]
+visible = false
+position = Vector2(8.28402, -40.2367)
+rotation = 0.000268412
+
+[node name="ZombieHead" parent="Visuals2" instance=ExtResource("3_8w1qx")]
+visible = false
+position = Vector2(-15.3846, -87.574)
+rotation = 0.11065
+
+[node name="Hurtbox" type="Area2D" parent="." groups=["zombie_hurtboxes"]]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(8.625, -30)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_l54jg")
+
+[node name="BiteRaycast" type="RayCast2D" parent="."]
+position = Vector2(96.9231, 0)
+target_position = Vector2(-120, 0)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_8nix2")]
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("hurtbox") instance=ExtResource("3_476ce")]
+hurtbox = NodePath("../Hurtbox")
+
+[node name="MovementComponent" parent="." node_paths=PackedStringArray("character") instance=ExtResource("5_2gici")]
+character = NodePath("..")
+
+[node name="FlashComponent" parent="." instance=ExtResource("8_g4ccy")]
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource("8_7jn77")
+
+[node name="Walking" type="Node" parent="StateMachine"]
+script = ExtResource("9_tjp0f")
+
+[node name="Eating" type="Node" parent="StateMachine"]
+script = ExtResource("10_pu0ma")
+
+[node name="Dying" type="Node" parent="StateMachine"]
+script = ExtResource("11_34bcq")
+
+[node name="SplatSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_xknk4")
+
+[editable path="Visuals/Skeleton3"]

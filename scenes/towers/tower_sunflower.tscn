@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm4vplen3acdn"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/towers/plant_base.tscn" id="1_i1dhk"]
+[ext_resource type="SpriteFrames" uid="uid://dgxfjqr5x6qbl" path="res://tres/sunflower.tres" id="2_1jwtk"]
+[ext_resource type="Script" path="res://scripts/generator.gd" id="2_tm80s"]
+[ext_resource type="Texture2D" uid="uid://cq2b7cq2nc3h6" path="res://assets/pvzseedpackets.png" id="4_dxrbc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgr17"]
+atlas = ExtResource("4_dxrbc")
+region = Rect2(113, 2, 109, 70)
+
+[node name="Sunflower" instance=ExtResource("1_i1dhk")]
+position = Vector2(0, 0)
+scale = Vector2(1, 1)
+script = ExtResource("2_tm80s")
+generate_delay = 15.0
+generate_amount = 25
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = ExtResource("2_1jwtk")
+animation = &"idle"
+
+[node name="SeedIcon" parent="." index="2"]
+texture = SubResource("AtlasTexture_wgr17")

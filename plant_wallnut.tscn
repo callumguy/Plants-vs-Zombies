@@ -1,0 +1,97 @@
+[gd_scene load_steps=15 format=3 uid="uid://2ge4ribp1l2j"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/towers/plant_base.tscn" id="1_sbgb7"]
+[ext_resource type="Script" path="res://plant_wallnut.gd" id="2_dmdi6"]
+[ext_resource type="Texture2D" uid="uid://cq2b7cq2nc3h6" path="res://assets/pvzseedpackets.png" id="3_ok2ov"]
+[ext_resource type="Texture2D" uid="uid://fqfi6l23llhb" path="res://assets/wallnut.png" id="4_v66rl"]
+[ext_resource type="PackedScene" uid="uid://bckw4fgbala7t" path="res://scenes/damage_visuals_component.tscn" id="5_3o8vp"]
+[ext_resource type="PackedScene" uid="uid://dvcev23pdfvlf" path="res://animation_component.tscn" id="6_oeqpp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdav0"]
+atlas = ExtResource("3_ok2ov")
+region = Rect2(335, 2, 109, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hetdm"]
+atlas = ExtResource("4_v66rl")
+region = Rect2(1, 1, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptnss"]
+atlas = ExtResource("4_v66rl")
+region = Rect2(103, 1, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7f64"]
+atlas = ExtResource("4_v66rl")
+region = Rect2(205, 1, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4goe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hetdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptnss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7f64")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24sfv"]
+atlas = ExtResource("4_v66rl")
+region = Rect2(307, 1, 56, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kwh5"]
+atlas = ExtResource("4_v66rl")
+region = Rect2(307, 32, 56, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4j2ja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24sfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kwh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24sfv")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"Blink",
+"speed": 30.0
+}]
+
+[node name="Wallnut" instance=ExtResource("1_sbgb7")]
+script = ExtResource("2_dmdi6")
+sun_cost = 50
+
+[node name="SeedIcon" parent="." index="2"]
+texture = SubResource("AtlasTexture_gdav0")
+
+[node name="HealthComponent" parent="." index="3"]
+max_health = 4000
+
+[node name="Parts" type="Node2D" parent="." index="7"]
+scale = Vector2(0.8, 0.8)
+
+[node name="Body" type="AnimatedSprite2D" parent="Parts" index="0"]
+sprite_frames = SubResource("SpriteFrames_n4goe")
+
+[node name="Eyes" type="AnimatedSprite2D" parent="Parts/Body" index="0"]
+position = Vector2(8.75, -12.5)
+sprite_frames = SubResource("SpriteFrames_4j2ja")
+animation = &"Blink"
+frame = 3
+
+[node name="DamageVisualsComponent" parent="." index="8" node_paths=PackedStringArray("sprite") instance=ExtResource("5_3o8vp")]
+sprite = NodePath("../Parts/Body")
+
+[node name="AnimationComponent" parent="." index="9" node_paths=PackedStringArray("parts") instance=ExtResource("6_oeqpp")]
+parts = NodePath("../Parts")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjncgmbdvu0ip"]
+
+[ext_resource type="PackedScene" uid="uid://d0mx5uu5uniiw" path="res://scenes/zombie_base.tscn" id="1_wq12w"]
+[ext_resource type="SpriteFrames" uid="uid://br4xqcuspl6et" path="res://tres/zcorp_zombie.tres" id="2_uejxb"]
+
+[node name="FastZombie" instance=ExtResource("1_wq12w")]
+speed = 20
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(47.5, -17.5)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(1.66667, -30)
+sprite_frames = ExtResource("2_uejxb")
+
+[node name="CollisionShape2D" parent="BiteArea" index="0"]
+position = Vector2(12.5929, -6.11111)

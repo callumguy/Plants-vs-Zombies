@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://ieajchmkykiw"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_xy6cw"]
+[ext_resource type="PackedScene" uid="uid://drruemiqakt1y" path="res://scenes/towers/defender.tscn" id="2_howly"]
+[ext_resource type="PackedScene" uid="uid://bnjeatctcnv5v" path="res://scenes/towers/defender_strong.tscn" id="3_uhnib"]
+[ext_resource type="PackedScene" uid="uid://dcfob2orctpbq" path="res://scenes/towers/generator.tscn" id="4_01lf4"]
+[ext_resource type="PackedScene" uid="uid://0agkvfe0ruav" path="res://scenes/towers/defender_pierce.tscn" id="5_j6dxp"]
+[ext_resource type="PackedScene" uid="uid://b3j624gyglsqe" path="res://scenes/ui.tscn" id="6_4sp8b"]
+[ext_resource type="PackedScene" uid="uid://ca8gp7opgsqwa" path="res://scenes/enemy_spawner.tscn" id="7_4xult"]
+[ext_resource type="Texture2D" uid="uid://uu6utkbbnwpp" path="res://assets/PC _ Computer - Plants vs. Zombies - Backgrounds - Day.png" id="8_fbnnv"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_xy6cw")
+DefenderScene = ExtResource("2_howly")
+DefenderStrongScene = ExtResource("3_uhnib")
+GeneratorScene = ExtResource("4_01lf4")
+DefenderPierceScene = ExtResource("5_j6dxp")
+
+[node name="UI" parent="." instance=ExtResource("6_4sp8b")]
+
+[node name="EnemySpawner" parent="." instance=ExtResource("7_4xult")]
+position = Vector2(1026, 309)
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(516, 316)
+texture = ExtResource("8_fbnnv")
+offset = Vector2(-16, -15)
+region_enabled = true
+region_rect = Rect2(6, 36, 1000, 600)
+
+[node name="Suns" type="Node2D" parent="."]

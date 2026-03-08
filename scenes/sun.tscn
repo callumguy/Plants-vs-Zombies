@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://usj4gw8n3v3v"]
+
+[ext_resource type="Script" path="res://scenes/sun.gd" id="1_8k7tp"]
+[ext_resource type="Texture2D" uid="uid://caajw4s7m27vt" path="res://assets/Sun_PvZ2.webp" id="1_pgqhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj3cq"]
+size = Vector2(30, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmr2c"]
+radius = 78.0
+
+[node name="Sun" type="RigidBody2D" groups=["sun"]]
+z_index = 40
+collision_layer = 128
+collision_mask = 0
+input_pickable = true
+freeze = true
+continuous_cd = 1
+linear_damp = 2.0
+script = ExtResource("1_8k7tp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_nj3cq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_pgqhk")
+
+[node name="ClickDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickDetector"]
+shape = SubResource("CircleShape2D_fmr2c")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="input_event" from="ClickDetector" to="." method="_on_click_detector_input_event"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqin56bkmaubr"]
+
+[ext_resource type="Texture2D" uid="uid://c6md4g0ryqra7" path="res://assets/progress_bar/progress_bar_icons.png" id="1_hswui"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp6ar"]
+atlas = ExtResource("1_hswui")
+region = Rect2(28, 5, 4, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj8vi"]
+atlas = ExtResource("1_hswui")
+region = Rect2(53, 1, 20, 18)
+
+[node name="FlagIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -16.0
+offset_right = 3.0
+offset_bottom = 3.0
+texture = SubResource("AtlasTexture_jp6ar")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -21.0
+offset_right = 19.0
+offset_bottom = -3.0
+texture = SubResource("AtlasTexture_oj8vi")

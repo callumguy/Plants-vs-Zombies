@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://p3vowgi5l16t"]
+
+[ext_resource type="PackedScene" uid="uid://dmmqxdhqx5h77" path="res://scenes/projectiles/projectile_base.tscn" id="1_eghw0"]
+[ext_resource type="PackedScene" uid="uid://d0hbfycjbje82" path="res://scenes/hit_effect.tscn" id="2_rcbfw"]
+[ext_resource type="Texture2D" uid="uid://d24hn11eemxve" path="res://assets/pvz_projectiles.png" id="2_skc8r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2qaf"]
+atlas = ExtResource("2_skc8r")
+region = Rect2(5, 298, 38, 38)
+
+[node name="Star" instance=ExtResource("1_eghw0")]
+collision_mask = 2
+damage = 10
+hit_effect_scene = ExtResource("2_rcbfw")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_t2qaf")

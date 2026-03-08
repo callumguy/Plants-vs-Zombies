@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://cunv1u3jpj0f0"]
+
+[ext_resource type="Texture2D" uid="uid://3d8dyxulleov" path="res://assets/basic_zombie_assets.png" id="1_a8kdc"]
+[ext_resource type="Script" path="res://scenes/zombie_arm.gd" id="1_krw64"]
+[ext_resource type="PackedScene" uid="uid://dt7weuds10ykf" path="res://detachable_component.tscn" id="2_m0568"]
+[ext_resource type="PackedScene" uid="uid://d03sgk3p8fup1" path="res://scenes/despawn_component.tscn" id="4_ms06y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1kerm"]
+bounce = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_merac"]
+size = Vector2(20, 48.333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgtcy"]
+atlas = ExtResource("1_a8kdc")
+region = Rect2(1, 299, 25, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8044e"]
+atlas = ExtResource("1_a8kdc")
+region = Rect2(1, 270, 19, 28)
+
+[node name="ZombieArm" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_1kerm")
+freeze = true
+script = ExtResource("1_krw64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5829, 19.2595)
+rotation = 0.195857
+shape = SubResource("RectangleShape2D_merac")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+position = Vector2(-5, 31)
+texture = SubResource("AtlasTexture_mgtcy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Visuals"]
+position = Vector2(-3, 8)
+texture = SubResource("AtlasTexture_8044e")
+
+[node name="DetachableComponent" parent="." node_paths=PackedStringArray("body") instance=ExtResource("2_m0568")]
+body = NodePath("..")
+
+[node name="DespawnComponent" parent="." instance=ExtResource("4_ms06y")]

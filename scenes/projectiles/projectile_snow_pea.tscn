@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8cj7rqf146cy"]
+
+[ext_resource type="PackedScene" uid="uid://dmmqxdhqx5h77" path="res://scenes/projectiles/projectile_base.tscn" id="1_t3xsk"]
+[ext_resource type="PackedScene" uid="uid://dnmusrkekppsk" path="res://scenes/hit_effect_snow.tscn" id="2_h64uv"]
+[ext_resource type="Texture2D" uid="uid://d24hn11eemxve" path="res://assets/pvz_projectiles.png" id="2_jyyct"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ic2d"]
+atlas = ExtResource("2_jyyct")
+region = Rect2(5, 83, 28, 28)
+
+[node name="SnowPea" instance=ExtResource("1_t3xsk")]
+z_index = -5
+damage = 35
+hit_effect_scene = ExtResource("2_h64uv")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_2ic2d")

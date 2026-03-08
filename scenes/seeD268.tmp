@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://r7wdacbjqb2m"]
+
+[ext_resource type="Script" path="res://scripts/seed_packet.gd" id="1_0ewvm"]
+[ext_resource type="Material" uid="uid://c15g5pmqtpd1t" path="res://scenes/cooldown_shader.tres" id="2_c3mgl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k86m7"]
+
+[node name="SeedPacket" type="Control"]
+custom_minimum_size = Vector2(100, 70)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 109.0
+offset_bottom = 70.0
+script = ExtResource("1_0ewvm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = ExtResource("2_c3mgl")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -35.0
+offset_right = 54.5
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_k86m7")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

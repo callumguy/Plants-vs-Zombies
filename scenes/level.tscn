@@ -1,0 +1,155 @@
+[gd_scene load_steps=21 format=3 uid="uid://ieajchmkykiw"]
+
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_mdk7j"]
+[ext_resource type="PackedScene" uid="uid://b3j624gyglsqe" path="res://scenes/ui.tscn" id="2_tb8wi"]
+[ext_resource type="PackedScene" uid="uid://xj008qauc7kv" path="res://scenes/pause_menu.tscn" id="3_exhb5"]
+[ext_resource type="PackedScene" uid="uid://ca8gp7opgsqwa" path="res://scenes/enemy_manager.tscn" id="4_axvqq"]
+[ext_resource type="PackedScene" uid="uid://coxsiflqyqnu0" path="res://seed_select_menu.tscn" id="5_77u45"]
+[ext_resource type="Script" path="res://scripts/building.gd" id="5_c11ed"]
+[ext_resource type="Texture2D" uid="uid://uu6utkbbnwpp" path="res://assets/PC _ Computer - Plants vs. Zombies - Backgrounds - Day.png" id="6_7em5a"]
+[ext_resource type="PackedScene" uid="uid://ripq12qyhds" path="res://scenes/towers/mouse_area.tscn" id="7_druew"]
+[ext_resource type="PackedScene" uid="uid://fgrsgsk54c5c" path="res://scenes/air_spawner.tscn" id="7_rg4yl"]
+[ext_resource type="PackedScene" uid="uid://usj4gw8n3v3v" path="res://scenes/sun.tscn" id="8_g62mg"]
+[ext_resource type="PackedScene" uid="uid://cv5ffnpuhqel" path="res://scenes/towers/preview_ghost.tscn" id="8_uvvqd"]
+[ext_resource type="AudioStream" uid="uid://bk4ucvbfbqv8a" path="res://audio/PvZsoundsMegaPack/plant.ogg" id="9_d5f3c"]
+[ext_resource type="Texture2D" uid="uid://csrn77n3mbksg" path="res://assets/shovel/111px-Shovel2.png" id="10_6nqi4"]
+[ext_resource type="AudioStream" uid="uid://ch5emd1ovrlnj" path="res://audio/PvZsoundsMegaPack/plant2.ogg" id="10_n1mkd"]
+[ext_resource type="AudioStream" uid="uid://d2j8djf8pp2sl" path="res://audio/music/Plants vs. Zombies - Grasswalk.mp3" id="11_bywjk"]
+[ext_resource type="PackedScene" uid="uid://eawyo78gjtlh" path="res://announcements.tscn" id="15_08qip"]
+[ext_resource type="PackedScene" uid="uid://clmrlvkh8juir" path="res://currency_component.tscn" id="16_ydlly"]
+[ext_resource type="AudioStream" uid="uid://b2kuljn0lwsof" path="res://audio/music/03 - Choose Your Seeds.mp3" id="17_8rgub"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wuy47"]
+streams_count = 2
+stream_0/stream = ExtResource("9_d5f3c")
+stream_1/stream = ExtResource("10_n1mkd")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cawt0"]
+size = Vector2(35.533, 0.25)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_mdk7j")
+
+[node name="CursorLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Shovel" type="Sprite2D" parent="CursorLayer"]
+visible = false
+position = Vector2(-22, -25)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("10_6nqi4")
+
+[node name="Announcements" parent="." instance=ExtResource("15_08qip")]
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 99
+
+[node name="PauseMenu" parent="PauseLayer" instance=ExtResource("3_exhb5")]
+visible = false
+z_index = 3
+
+[node name="SeedSelectLayer" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="SeedSelectMenu" parent="SeedSelectLayer" instance=ExtResource("5_77u45")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="LevelUI" parent="CanvasLayer" instance=ExtResource("2_tb8wi")]
+
+[node name="EnemyManager" parent="." instance=ExtResource("4_axvqq")]
+position = Vector2(1026, 309)
+wave_interval = 18.0
+
+[node name="AirSpawner" parent="." instance=ExtResource("7_rg4yl")]
+sun_scene = ExtResource("8_g62mg")
+sun_amount = 25
+
+[node name="PlacementManager" type="Node2D" parent="."]
+script = ExtResource("5_c11ed")
+
+[node name="TillSound" type="AudioStreamPlayer" parent="PlacementManager"]
+stream = SubResource("AudioStreamRandomizer_wuy47")
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(516, 316)
+texture = ExtResource("6_7em5a")
+offset = Vector2(-16, -15)
+region_enabled = true
+region_rect = Rect2(6, 36, 1000, 600)
+
+[node name="SunFolder" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="mouse_area" parent="." instance=ExtResource("7_druew")]
+
+[node name="PreviewGhost" parent="." instance=ExtResource("8_uvvqd")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("11_bywjk")
+parameters/looping = true
+
+[node name="MusicPlayerSeedSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_8rgub")
+parameters/looping = true
+
+[node name="LaneGrounds" type="Node2D" parent="."]
+
+[node name="1" type="StaticBody2D" parent="LaneGrounds"]
+scale = Vector2(30, 30)
+collision_layer = 256
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaneGrounds/1"]
+position = Vector2(17, 5.5375)
+shape = SubResource("RectangleShape2D_cawt0")
+
+[node name="2" type="StaticBody2D" parent="LaneGrounds"]
+position = Vector2(0, 99)
+scale = Vector2(30, 30)
+collision_layer = 512
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaneGrounds/2"]
+position = Vector2(17, 5.5375)
+shape = SubResource("RectangleShape2D_cawt0")
+
+[node name="3" type="StaticBody2D" parent="LaneGrounds"]
+position = Vector2(0, 204)
+scale = Vector2(30, 30)
+collision_layer = 1024
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaneGrounds/3"]
+position = Vector2(17, 5.5375)
+shape = SubResource("RectangleShape2D_cawt0")
+
+[node name="4" type="StaticBody2D" parent="LaneGrounds"]
+position = Vector2(0, 291)
+scale = Vector2(30, 30)
+collision_layer = 2048
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaneGrounds/4"]
+position = Vector2(17, 5.5375)
+shape = SubResource("RectangleShape2D_cawt0")
+
+[node name="5" type="StaticBody2D" parent="LaneGrounds"]
+position = Vector2(0, 396)
+scale = Vector2(30, 30)
+collision_layer = 4096
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaneGrounds/5"]
+position = Vector2(17, 5.5375)
+shape = SubResource("RectangleShape2D_cawt0")
+
+[node name="CurrencyComponent" parent="." instance=ExtResource("16_ydlly")]
+
+[node name="ProjectileFolder" type="Node2D" parent="."]

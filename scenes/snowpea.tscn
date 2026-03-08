@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddkf8t1jbgna5"]
+
+[ext_resource type="Script" path="res://scripts/projectile_base.gd" id="1_exaxd"]
+[ext_resource type="Texture2D" uid="uid://d24hn11eemxve" path="res://assets/pvz_projectiles.png" id="2_5pgcv"]
+[ext_resource type="PackedScene" uid="uid://dnmusrkekppsk" path="res://scenes/hit_effect_snow.tscn" id="2_v2f4y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jr1u7"]
+size = Vector2(10, 10)
+
+[node name="SnowPea" type="Area2D"]
+script = ExtResource("1_exaxd")
+speed = 300
+damage = 35
+hit_effect_scene = ExtResource("2_v2f4y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
+texture = ExtResource("2_5pgcv")
+region_enabled = true
+region_rect = Rect2(5, 83, 28, 28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jr1u7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

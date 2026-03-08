@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt7weuds10ykf"]
+
+[ext_resource type="Script" path="res://detachable_component.gd" id="1_bihrv"]
+
+[node name="DetachableComponent" type="Node2D"]
+script = ExtResource("1_bihrv")

@@ -1,0 +1,157 @@
+[gd_scene load_steps=19 format=3 uid="uid://b3j624gyglsqe"]
+
+[ext_resource type="Script" path="res://scripts/currency_label.gd" id="1_ew4jn"]
+[ext_resource type="PackedScene" uid="uid://r7wdacbjqb2m" path="res://scenes/seed_packet.tscn" id="4_ed2m3"]
+[ext_resource type="PackedScene" uid="uid://croyotosh53mj" path="res://plant_sunflower.tscn" id="6_wsad2"]
+[ext_resource type="PackedScene" uid="uid://2ge4ribp1l2j" path="res://plant_wallnut.tscn" id="7_2qnj8"]
+[ext_resource type="PackedScene" uid="uid://bbqf336pca6av" path="res://plant_peashooter.tscn" id="8_1ejd1"]
+[ext_resource type="PackedScene" uid="uid://bok167h1b15fu" path="res://plant_cactus.tscn" id="8_01mcj"]
+[ext_resource type="Texture2D" uid="uid://sjqos7rfxl1c" path="res://assets/shovel/shovel_button.jpg" id="8_8l2in"]
+[ext_resource type="Texture2D" uid="uid://bd1odrjti2m54" path="res://assets/progress_bar/ds_progress_bar.png" id="8_qxbg7"]
+[ext_resource type="Script" path="res://scenes/shovel_button.gd" id="9_o6ph0"]
+[ext_resource type="Script" path="res://scenes/progress_bar.gd" id="9_w2n7j"]
+[ext_resource type="PackedScene" uid="uid://dkyo08pkfhd4v" path="res://plant_starfruit.tscn" id="9_yrmia"]
+[ext_resource type="Texture2D" uid="uid://c6md4g0ryqra7" path="res://assets/progress_bar/progress_bar_icons.png" id="10_p6uca"]
+[ext_resource type="Script" path="res://scenes/pause_button.gd" id="13_c7upe"]
+[ext_resource type="Script" path="res://scenes/speed_button.gd" id="13_xjcwd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1ffv"]
+bg_color = Color(0.621842, 0.420881, 0.0476978, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7p6k"]
+atlas = ExtResource("8_qxbg7")
+region = Rect2(4, 5, 260, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ogea"]
+atlas = ExtResource("8_qxbg7")
+region = Rect2(319, 22, 2, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nwr1"]
+atlas = ExtResource("10_p6uca")
+region = Rect2(0, 0, 26, 25)
+
+[node name="LevelUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LeftBar" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="CurrencyLabel" type="Label" parent="MarginContainer/HBoxContainer/LeftBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_e1ffv")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_ew4jn")
+
+[node name="SeedBar" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LeftBar"]
+layout_mode = 2
+
+[node name="SeedPacket" parent="MarginContainer/HBoxContainer/LeftBar/SeedBar" instance=ExtResource("4_ed2m3")]
+layout_mode = 2
+packed_plant_scene = ExtResource("8_1ejd1")
+
+[node name="SeedPacket5" parent="MarginContainer/HBoxContainer/LeftBar/SeedBar" instance=ExtResource("4_ed2m3")]
+layout_mode = 2
+packed_plant_scene = ExtResource("8_01mcj")
+
+[node name="SeedPacket7" parent="MarginContainer/HBoxContainer/LeftBar/SeedBar" instance=ExtResource("4_ed2m3")]
+layout_mode = 2
+packed_plant_scene = ExtResource("9_yrmia")
+
+[node name="SeedPacket2" parent="MarginContainer/HBoxContainer/LeftBar/SeedBar" instance=ExtResource("4_ed2m3")]
+layout_mode = 2
+packed_plant_scene = ExtResource("6_wsad2")
+
+[node name="SeedPacket3" parent="MarginContainer/HBoxContainer/LeftBar/SeedBar" instance=ExtResource("4_ed2m3")]
+layout_mode = 2
+packed_plant_scene = ExtResource("7_2qnj8")
+
+[node name="TopBar" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="ShovelButton" type="TextureButton" parent="MarginContainer/HBoxContainer/TopBar"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("8_8l2in")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("9_o6ph0")
+
+[node name="ProgressBar" type="TextureRect" parent="MarginContainer/HBoxContainer/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_n7p6k")
+script = ExtResource("9_w2n7j")
+
+[node name="ProgressChunk" type="TextureRect" parent="MarginContainer/HBoxContainer/TopBar/ProgressBar"]
+visible = false
+layout_direction = 3
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 17.0
+texture = SubResource("AtlasTexture_0ogea")
+
+[node name="ZombieFace" type="TextureRect" parent="MarginContainer/HBoxContainer/TopBar/ProgressBar"]
+visible = false
+layout_mode = 0
+offset_left = 234.0
+offset_top = -8.0
+offset_right = 274.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_4nwr1")
+
+[node name="SpeedButton" type="TextureButton" parent="MarginContainer/HBoxContainer/TopBar"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+texture_normal = ExtResource("8_8l2in")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("13_xjcwd")
+
+[node name="PauseButton" type="TextureButton" parent="MarginContainer/HBoxContainer/TopBar"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("8_8l2in")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("13_c7upe")

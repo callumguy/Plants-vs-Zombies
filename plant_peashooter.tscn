@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbqf336pca6av"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/towers/plant_base.tscn" id="1_0rlbm"]
+[ext_resource type="Script" path="res://plant_peashooter.gd" id="2_7djh6"]
+[ext_resource type="PackedScene" uid="uid://chynt50ekbfa" path="res://raycast_component.tscn" id="3_5y7i3"]
+[ext_resource type="SpriteFrames" uid="uid://d1kctbw8mxvtl" path="res://tres/peashooter.tres" id="3_57uff"]
+[ext_resource type="PackedScene" uid="uid://ctc4f3b87fv6e" path="res://shoot_component.tscn" id="4_5f23n"]
+
+[node name="Peashooter" instance=ExtResource("1_0rlbm")]
+script = ExtResource("2_7djh6")
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = ExtResource("3_57uff")
+animation = &"idle"
+
+[node name="RaycastComponent" parent="." index="7" node_paths=PackedStringArray("raycasts") instance=ExtResource("3_5y7i3")]
+raycasts = NodePath("../Raycasts")
+
+[node name="Raycasts" type="Node2D" parent="." index="8"]
+
+[node name="Forward" type="RayCast2D" parent="Raycasts" index="0"]
+target_position = Vector2(1160, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="ShootComponent" parent="." index="9" instance=ExtResource("4_5f23n")]

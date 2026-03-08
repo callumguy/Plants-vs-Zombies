@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://eawyo78gjtlh"]
+
+[ext_resource type="Script" path="res://announcements.gd" id="1_dmerh"]
+[ext_resource type="Texture2D" uid="uid://c7s3v7ohruqbq" path="res://assets/announcements/FinalWave.png" id="2_3ggrx"]
+[ext_resource type="AudioStream" uid="uid://h3x0gwv4fgd5" path="res://audio/PvZsoundsMegaPack/readysetplant.ogg" id="2_ivlnt"]
+[ext_resource type="AudioStream" uid="uid://v24yqv8pbb4d" path="res://audio/PvZsoundsMegaPack/finalwave.ogg" id="3_1s82b"]
+[ext_resource type="AudioStream" uid="uid://dl4bv8mdi8jwm" path="res://audio/PvZsoundsMegaPack/hugewave.ogg" id="4_r8n0a"]
+
+[node name="Announcements" type="CanvasLayer"]
+script = ExtResource("1_dmerh")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -300.0
+offset_right = 500.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(500, 300)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TectureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -66.5
+offset_right = 150.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 66.5)
+mouse_filter = 2
+texture = ExtResource("2_3ggrx")
+stretch_mode = 5
+
+[node name="ThumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ivlnt")
+
+[node name="FinalWaveSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1s82b")
+
+[node name="HugeWaveSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_r8n0a")

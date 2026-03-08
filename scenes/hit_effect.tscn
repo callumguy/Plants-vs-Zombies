@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0hbfycjbje82"]
+
+[ext_resource type="Script" path="res://scripts/hit_effect.gd" id="1_2xo8o"]
+[ext_resource type="Texture2D" uid="uid://d24hn11eemxve" path="res://assets/pvz_projectiles.png" id="2_sr47a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b5r8"]
+atlas = ExtResource("2_sr47a")
+region = Rect2(38, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt3u3"]
+atlas = ExtResource("2_sr47a")
+region = Rect2(64, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgafm"]
+atlas = ExtResource("2_sr47a")
+region = Rect2(90, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoxve"]
+atlas = ExtResource("2_sr47a")
+region = Rect2(116, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_osv0e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1b5r8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt3u3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgafm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoxve")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 60.0
+}]
+
+[node name="HitEffect" type="Node2D"]
+script = ExtResource("1_2xo8o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_osv0e")
+animation = &"hit"

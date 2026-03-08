@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ieajchmkykiw"]
+
+[ext_resource type="PackedScene" uid="uid://drruemiqakt1y" path="res://defender.tscn" id="2_b6nsr"]
+[ext_resource type="PackedScene" uid="uid://ca8gp7opgsqwa" path="res://enemy_spawner.tscn" id="2_c4wn2"]
+
+[node name="Main" type="Node2D"]
+
+[node name="EnemySpawner" parent="." instance=ExtResource("2_c4wn2")]
+position = Vector2(1026, 309)
+
+[node name="Defender" parent="." instance=ExtResource("2_b6nsr")]
+position = Vector2(307, 310)
+
+[node name="Defender2" parent="." instance=ExtResource("2_b6nsr")]
+position = Vector2(266, 310)
