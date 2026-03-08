@@ -80,7 +80,7 @@ func get_waves_old(level_num: int) -> Array:
 
 func get_waves(level_num: int) -> Array:
     var file_name = "level_"+str(level_num)+".txt"
-    var file = FileAccess.open("levels/"+file_name, FileAccess.READ)
+    var file = FileAccess.open("res://levels/"+file_name, FileAccess.READ)
 
     if not file:
         return []
