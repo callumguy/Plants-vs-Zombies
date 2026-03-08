@@ -97,7 +97,7 @@ func get_waves(level_num: int) -> Array:
             current_wave['flag'] = true
             line.trim_prefix("FLAG")
         
-        var zombie_pool = ["basic", "conehead", "buckethead"]
+        var zombie_pool = LevelData.get_level_info(level_num, "zombies")
         var wave_cost = int(line)
         
         while wave_cost > 0:

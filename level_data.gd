@@ -1,14 +1,19 @@
 extends Node
 
+const BASIC_ZOMBIES := ['basic', 'conehead', 'buckethead']
+
 var levels := {
     "default": {
-        "reward": null,
+        "zombies": BASIC_ZOMBIES,
         "seed_slots": 5,
+        "reward": null,
     },
     "1": {
+        "zombies": ['basic'],
         "reward": "plant/cactus"
     },
     "2": {
+        "zombies": ['basic', 'conehead'],
         "reward": "plant/starfruit"
     },
     "3": {
