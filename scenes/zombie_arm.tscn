@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cunv1u3jpj0f0"]
 
-[ext_resource type="Texture2D" uid="uid://3d8dyxulleov" path="res://assets/basic_zombie_assets.png" id="1_a8kdc"]
+[ext_resource type="Texture2D" uid="uid://3d8dyxulleov" path="res://Assets/basic_zombie_assets.png" id="1_a8kdc"]
 [ext_resource type="Script" path="res://scenes/zombie_arm.gd" id="1_krw64"]
-[ext_resource type="PackedScene" uid="uid://dt7weuds10ykf" path="res://detachable_component.tscn" id="2_m0568"]
+[ext_resource type="PackedScene" uid="uid://dt7weuds10ykf" path="res://Components/DetachableComponent/detachable_component.tscn" id="2_m0568"]
 [ext_resource type="PackedScene" uid="uid://d03sgk3p8fup1" path="res://scenes/despawn_component.tscn" id="4_ms06y"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1kerm"]

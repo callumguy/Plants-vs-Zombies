@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c85k0b1csiixe"
-path="res://.godot/imported/kirkinator.png-1a61007f58f34ec3dbb87824a6327227.ctex"
+path="res://.godot/imported/kirkinator.png-5ff43d8a3166dd1b6cb4475eed8988ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kirkinator.png"
-dest_files=["res://.godot/imported/kirkinator.png-1a61007f58f34ec3dbb87824a6327227.ctex"]
+source_file="res://Assets/kirkinator.png"
+dest_files=["res://.godot/imported/kirkinator.png-5ff43d8a3166dd1b6cb4475eed8988ca.ctex"]
 
 [params]
 

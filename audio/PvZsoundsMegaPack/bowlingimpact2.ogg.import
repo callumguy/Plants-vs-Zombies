@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bwny3v2hgcxrk"
-path="res://.godot/imported/bowlingimpact2.ogg-b9839d886dc3f4abdb3a241658faedae.oggvorbisstr"
+path="res://.godot/imported/bowlingimpact2.ogg-0eb3fa90ed2617187ee8024f3af8a894.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/bowlingimpact2.ogg"
-dest_files=["res://.godot/imported/bowlingimpact2.ogg-b9839d886dc3f4abdb3a241658faedae.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/bowlingimpact2.ogg"
+dest_files=["res://.godot/imported/bowlingimpact2.ogg-0eb3fa90ed2617187ee8024f3af8a894.oggvorbisstr"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://caajw4s7m27vt"
-path="res://.godot/imported/Sun_PvZ2.webp-d08f365c6b9bc4bef47ae60eae6ced3d.ctex"
+path="res://.godot/imported/Sun_PvZ2.webp-d10e21cf5c1ec8c69e85ae0dff129b2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sun_PvZ2.webp"
-dest_files=["res://.godot/imported/Sun_PvZ2.webp-d08f365c6b9bc4bef47ae60eae6ced3d.ctex"]
+source_file="res://Assets/Sun_PvZ2.webp"
+dest_files=["res://.godot/imported/Sun_PvZ2.webp-d10e21cf5c1ec8c69e85ae0dff129b2c.ctex"]
 
 [params]
 

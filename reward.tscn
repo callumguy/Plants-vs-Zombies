@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cm1rhfetcofrj"]
 
 [ext_resource type="Script" path="res://reward.gd" id="1_owopt"]
-[ext_resource type="AudioStream" uid="uid://4rj6o0fl8lgx" path="res://audio/PvZsoundsMegaPack/winmusic.ogg" id="2_7fyma"]
-[ext_resource type="Texture2D" uid="uid://c2wjjm72puqhj" path="res://assets/kirkinator_100x100.png" id="2_srsyv"]
+[ext_resource type="AudioStream" uid="uid://4rj6o0fl8lgx" path="res://Audio/PvZsoundsMegaPack/winmusic.ogg" id="2_7fyma"]
+[ext_resource type="Texture2D" uid="uid://c2wjjm72puqhj" path="res://Assets/kirkinator_100x100.png" id="2_srsyv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lq3hi"]
 size = Vector2(105, 105)

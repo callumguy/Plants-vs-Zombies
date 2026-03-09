@@ -7,8 +7,6 @@ signal collected
 @onready var win_music: AudioStreamPlayer = $WinMusic
 
 var reward
-#enum reward_types {PLANT, OTHER}
-#var reward_type
 
 func _ready() -> void:
     sprite_2d.scale = Vector2(0.75, 0.75)

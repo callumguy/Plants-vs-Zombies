@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://eawyo78gjtlh"]
 
 [ext_resource type="Script" path="res://announcements.gd" id="1_dmerh"]
-[ext_resource type="Texture2D" uid="uid://c7s3v7ohruqbq" path="res://assets/announcements/FinalWave.png" id="2_3ggrx"]
-[ext_resource type="AudioStream" uid="uid://h3x0gwv4fgd5" path="res://audio/PvZsoundsMegaPack/readysetplant.ogg" id="2_ivlnt"]
-[ext_resource type="AudioStream" uid="uid://v24yqv8pbb4d" path="res://audio/PvZsoundsMegaPack/finalwave.ogg" id="3_1s82b"]
-[ext_resource type="AudioStream" uid="uid://dl4bv8mdi8jwm" path="res://audio/PvZsoundsMegaPack/hugewave.ogg" id="4_r8n0a"]
+[ext_resource type="Texture2D" uid="uid://c7s3v7ohruqbq" path="res://Assets/announcements/FinalWave.png" id="2_3ggrx"]
+[ext_resource type="AudioStream" uid="uid://h3x0gwv4fgd5" path="res://Audio/PvZsoundsMegaPack/readysetplant.ogg" id="2_ivlnt"]
+[ext_resource type="AudioStream" uid="uid://v24yqv8pbb4d" path="res://Audio/PvZsoundsMegaPack/finalwave.ogg" id="3_1s82b"]
+[ext_resource type="AudioStream" uid="uid://dl4bv8mdi8jwm" path="res://Audio/PvZsoundsMegaPack/hugewave.ogg" id="4_r8n0a"]
 
 [node name="Announcements" type="CanvasLayer"]
 script = ExtResource("1_dmerh")

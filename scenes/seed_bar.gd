@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-@onready var packet_scene: PackedScene = preload("res://scenes/seed_packet.tscn")
+const SEED_PACKET := preload(ScenePaths.SEED_PACKET)
 
 func fill(plant_names: Array) -> void:
     #if len(seed_packets) != seed_slots: # not enough packets selected. or too many though that shouldnt be possible
@@ -13,7 +13,7 @@ func fill(plant_names: Array) -> void:
     for plant_name in plant_names:
         # var plant_name = packet.plant_name
         
-        var packet = packet_scene.instantiate()
+        var packet = SEED_PACKET.instantiate()
         packet.plant_name = plant_name
         add_child(packet)
     

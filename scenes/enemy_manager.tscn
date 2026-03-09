@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://ca8gp7opgsqwa"]
 
 [ext_resource type="Script" path="res://scripts/enemy_manager.gd" id="1_p5naj"]
-[ext_resource type="AudioStream" uid="uid://db1i163nn7k85" path="res://audio/PvZsoundsMegaPack/groan.ogg" id="3_p1nx8"]
-[ext_resource type="AudioStream" uid="uid://ciaw77knbbhe3" path="res://audio/PvZsoundsMegaPack/groan2.ogg" id="4_wh5j2"]
-[ext_resource type="AudioStream" uid="uid://dgr7rj7pjhhxb" path="res://audio/PvZsoundsMegaPack/groan3.ogg" id="5_o41yt"]
-[ext_resource type="AudioStream" uid="uid://ds8q03aaiw0vu" path="res://audio/PvZsoundsMegaPack/groan4.ogg" id="6_7dd2i"]
-[ext_resource type="AudioStream" uid="uid://d16xxb3rqhk10" path="res://audio/PvZsoundsMegaPack/groan5.ogg" id="7_1qn6r"]
-[ext_resource type="AudioStream" uid="uid://cxqik5yavs84u" path="res://audio/PvZsoundsMegaPack/groan6.ogg" id="8_q4dws"]
+[ext_resource type="AudioStream" uid="uid://db1i163nn7k85" path="res://Audio/PvZsoundsMegaPack/groan.ogg" id="3_p1nx8"]
+[ext_resource type="AudioStream" uid="uid://ciaw77knbbhe3" path="res://Audio/PvZsoundsMegaPack/groan2.ogg" id="4_wh5j2"]
+[ext_resource type="AudioStream" uid="uid://dgr7rj7pjhhxb" path="res://Audio/PvZsoundsMegaPack/groan3.ogg" id="5_o41yt"]
+[ext_resource type="AudioStream" uid="uid://ds8q03aaiw0vu" path="res://Audio/PvZsoundsMegaPack/groan4.ogg" id="6_7dd2i"]
+[ext_resource type="AudioStream" uid="uid://d16xxb3rqhk10" path="res://Audio/PvZsoundsMegaPack/groan5.ogg" id="7_1qn6r"]
+[ext_resource type="AudioStream" uid="uid://cxqik5yavs84u" path="res://Audio/PvZsoundsMegaPack/groan6.ogg" id="8_q4dws"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vvhtw"]
 streams_count = 6

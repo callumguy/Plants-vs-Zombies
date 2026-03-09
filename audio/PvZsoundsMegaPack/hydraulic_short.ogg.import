@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cjycpwft3m7re"
-path="res://.godot/imported/hydraulic_short.ogg-eca4ced6e2081f9ec7e00b404910eb76.oggvorbisstr"
+path="res://.godot/imported/hydraulic_short.ogg-2e0bc9e1770deb1b7a7d168b3d150a9d.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/hydraulic_short.ogg"
-dest_files=["res://.godot/imported/hydraulic_short.ogg-eca4ced6e2081f9ec7e00b404910eb76.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/hydraulic_short.ogg"
+dest_files=["res://.godot/imported/hydraulic_short.ogg-2e0bc9e1770deb1b7a7d168b3d150a9d.oggvorbisstr"]
 
 [params]
 

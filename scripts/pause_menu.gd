@@ -1,6 +1,6 @@
 extends Control
 
-@onready var main_menu_scene: PackedScene = load("res://scenes/main_menu.tscn")
+const MAIN_MENU_PATH := ScenePaths.MAIN_MENU
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var settings_menu: CanvasLayer = $SettingsMenu
@@ -40,7 +40,7 @@ func _on_settings_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
     get_tree().paused = false
-    get_tree().change_scene_to_packed(main_menu_scene)
+    get_tree().change_scene_to_packed(load(MAIN_MENU_PATH))
 
 func testEsc():
     if Input.is_action_just_pressed("Escape"): 

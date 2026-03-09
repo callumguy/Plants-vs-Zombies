@@ -2,6 +2,8 @@ extends Node2D
 
 signal tower_placed(selected_tower: PackedScene)
 
+@onready var PLACED_PLANTS_FOLDER := get_node(LevelNodePaths.PLACED_PLANTS_FOLDER_PATH)
+
 @onready var till_sound: AudioStreamPlayer = $TillSound
 @onready var mouse_area: Area2D = $"../mouse_area"
 @onready var preview_ghost_sprite: AnimatedSprite2D = $"../PreviewGhost/Sprite"
@@ -57,7 +59,7 @@ func place_tower(position: Vector2):
     var tower_grid_position = GameManager.get_grid_location(position)
     tower.lane = tower_grid_position.y
     tower.column = tower_grid_position.x
-    $"../Towers".add_child(tower)
+    PLACED_PLANTS_FOLDER.add_child(tower)
     towers.append(tower)
     till_sound.play()
     
@@ -71,7 +73,7 @@ func place_tower(position: Vector2):
 
 func destroy_tower(position: Vector2):
     var tower
-    for t in $"../Towers".get_children():
+    for t in PLACED_PLANTS_FOLDER.get_children():
         if t.position == position:
             tower = t
     
@@ -121,7 +123,6 @@ func enable_shovel():
     Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
     
 func disable_shovel():
-    print("bue")
     is_shovelling = false
     shovel_cursor.visible = false
     Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

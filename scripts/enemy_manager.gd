@@ -3,6 +3,8 @@ extends Node2D
 signal player_wins(zombie_position: Vector2)
 signal player_loses(zombie_position: Vector2)
 
+const LEVEL_WAVES_FOLDER_PATH := "res://Levels/Waves/"
+
 @onready var groan_player: AudioStreamPlayer = $GroanPlayer
 @onready var progress_bar: TextureRect = $"../CanvasLayer/LevelUI/MarginContainer/HBoxContainer/TopBar/ProgressBar"
 
@@ -44,43 +46,9 @@ func start_level():
     total_waves = len(level_waves)
 
 
-func get_waves_old(level_num: int) -> Array:
-    var file_name = "level_"+str(level_num)+".txt"
-    var file = FileAccess.open("levels/"+file_name, FileAccess.READ)
-
-    if not file:
-        return []
-    var waves = []
-    
-    while not file.eof_reached():
-        var current_wave = {flag = false, zombies = []}
-        var line = file.get_line()
-        
-        if line.is_empty() or line.begins_with('#'): # Ignore empty lines
-            continue
-        
-        if line.begins_with("FLAG"): 
-            current_wave[0]['flag'] = true
-            line.trim_prefix("FLAG")
-        
-        for zombie_data in line.split(" + "):
-            var split_zombie_data = zombie_data.split("*")
-            var zombie_type = split_zombie_data[0]
-            
-            var zombie_amount = 1
-            if len(split_zombie_data) > 1: # if there is an amount use that instead
-                zombie_amount = int(split_zombie_data[1])
-            
-            for i in range(0, zombie_amount):
-                current_wave['zombies'].append(zombie_type)
-            
-        waves.append(current_wave)
-    return waves
-
-
 func get_waves(level_num: int) -> Array:
     var file_name = "level_"+str(level_num)+".txt"
-    var file = FileAccess.open("res://levels/"+file_name, FileAccess.READ)
+    var file = FileAccess.open(LEVEL_WAVES_FOLDER_PATH + file_name, FileAccess.READ)
 
     if not file:
         return []
@@ -97,16 +65,20 @@ func get_waves(level_num: int) -> Array:
             current_wave['flag'] = true
             line.trim_prefix("FLAG")
         
-        var zombie_pool = LevelData.get_level_info(level_num, "zombies")
+        print(level_num)
+        var zombie_pool: Array = LevelData.get_level_info(level_num, "zombies").duplicate()
         var wave_cost = int(line)
-        
+        print(zombie_pool)
         while wave_cost > 0:
-            var random_zombie = zombie_pool.pick_random() 
+            var random_zombie = zombie_pool.pick_random()
+            print(random_zombie)
             if ZombieData.zombies[random_zombie]['cost'] <= wave_cost:
                 current_wave['zombies'].append(random_zombie)
                 wave_cost -= ZombieData.zombies[random_zombie]['cost']
             else:
                 zombie_pool.erase(random_zombie)
+                if len(zombie_pool) == 0:
+                    break
 
         waves.append(current_wave)
     
@@ -134,13 +106,6 @@ func send_wave(wave: Dictionary) -> void:
     
     if wave['flag']:
         get_parent().announcements.show_message_index(3, 2)
-        
-    
-func get_zombie_scene_from_name_old(zombie_name: String):
-    var zombie_scene_file = "scenes/zombies/zombie_" + zombie_name + ".tscn"
-    var zombie_scene = load(zombie_scene_file)
-    
-    return zombie_scene
     
 func get_zombie_scene_from_name(zombie_name: String):
     #var zombie_scene_file = "scenes/zombies/zombie_" + zombie_name + ".tscn"

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d24hn11eemxve"
-path="res://.godot/imported/pvz_projectiles.png-f07046aa06231538d36040d5ab2ba2d7.ctex"
+path="res://.godot/imported/pvz_projectiles.png-865f43528c4235c0d057027980e95693.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pvz_projectiles.png"
-dest_files=["res://.godot/imported/pvz_projectiles.png-f07046aa06231538d36040d5ab2ba2d7.ctex"]
+source_file="res://Assets/pvz_projectiles.png"
+dest_files=["res://.godot/imported/pvz_projectiles.png-865f43528c4235c0d057027980e95693.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b7w18b05s75fg"
-path="res://.godot/imported/diamond.wav-7c1efbb3d6ebf380f209f3855439d74f.sample"
+path="res://.godot/imported/diamond.wav-6664106901fe216a87389568dce74637.sample"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/diamond.wav"
-dest_files=["res://.godot/imported/diamond.wav-7c1efbb3d6ebf380f209f3855439d74f.sample"]
+source_file="res://Audio/PvZsoundsMegaPack/diamond.wav"
+dest_files=["res://.godot/imported/diamond.wav-6664106901fe216a87389568dce74637.sample"]
 
 [params]
 

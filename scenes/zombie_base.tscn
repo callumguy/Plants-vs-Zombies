@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://87pxnk628lmt" path="res://scenes/health_component.tscn" id="4_8nix2"]
 [ext_resource type="PackedScene" uid="uid://bs13xbyu1hxhh" path="res://scenes/movement_component.tscn" id="5_2gici"]
 [ext_resource type="Script" path="res://scenes/state_machine.gd" id="8_7jn77"]
-[ext_resource type="PackedScene" uid="uid://dedkaswgc8k6v" path="res://flash_component.tscn" id="8_g4ccy"]
+[ext_resource type="PackedScene" uid="uid://dedkaswgc8k6v" path="res://Components/FlashComponent/flash_component.tscn" id="8_g4ccy"]
 [ext_resource type="Script" path="res://scripts/zombie_walking_state.gd" id="9_tjp0f"]
 [ext_resource type="Script" path="res://scripts/zombie_eating_state.gd" id="10_pu0ma"]
 [ext_resource type="Script" path="res://scripts/zombie_dying_state.gd" id="11_34bcq"]
-[ext_resource type="AudioStream" uid="uid://pihak421xd0p" path="res://audio/PvZsoundsMegaPack/splat.ogg" id="12_f1xw6"]
-[ext_resource type="AudioStream" uid="uid://s0ey3qve2bks" path="res://audio/PvZsoundsMegaPack/splat2.ogg" id="13_aoi7v"]
-[ext_resource type="AudioStream" uid="uid://comd6fpke5ou6" path="res://audio/PvZsoundsMegaPack/splat3.ogg" id="14_btkh1"]
+[ext_resource type="AudioStream" uid="uid://pihak421xd0p" path="res://Audio/PvZsoundsMegaPack/splat.ogg" id="12_f1xw6"]
+[ext_resource type="AudioStream" uid="uid://s0ey3qve2bks" path="res://Audio/PvZsoundsMegaPack/splat2.ogg" id="13_aoi7v"]
+[ext_resource type="AudioStream" uid="uid://comd6fpke5ou6" path="res://Audio/PvZsoundsMegaPack/splat3.ogg" id="14_btkh1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l54jg"]
 size = Vector2(89.5, 120.833)

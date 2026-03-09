@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dp5j5olorsmdt"
-path="res://.godot/imported/jackinthebox.ogg-718ea2c85660ac21bda66ce2091a0b48.oggvorbisstr"
+path="res://.godot/imported/jackinthebox.ogg-2fad0ffea88a34818dfde03ba7f82fac.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/jackinthebox.ogg"
-dest_files=["res://.godot/imported/jackinthebox.ogg-718ea2c85660ac21bda66ce2091a0b48.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/jackinthebox.ogg"
+dest_files=["res://.godot/imported/jackinthebox.ogg-2fad0ffea88a34818dfde03ba7f82fac.oggvorbisstr"]
 
 [params]
 

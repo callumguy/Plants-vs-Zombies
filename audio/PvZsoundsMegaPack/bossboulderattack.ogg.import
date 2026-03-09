@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b40tl87gl2pty"
-path="res://.godot/imported/bossboulderattack.ogg-da54849cc87e0d6ea27105163f392556.oggvorbisstr"
+path="res://.godot/imported/bossboulderattack.ogg-3de6e08ca1a6095cb1e617eaf1511f6b.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/bossboulderattack.ogg"
-dest_files=["res://.godot/imported/bossboulderattack.ogg-da54849cc87e0d6ea27105163f392556.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/bossboulderattack.ogg"
+dest_files=["res://.godot/imported/bossboulderattack.ogg-3de6e08ca1a6095cb1e617eaf1511f6b.oggvorbisstr"]
 
 [params]
 

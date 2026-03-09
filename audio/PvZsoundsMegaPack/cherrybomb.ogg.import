@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://diapgib1wyi12"
-path="res://.godot/imported/cherrybomb.ogg-6043281d36eddd0ca5d71180f631b87e.oggvorbisstr"
+path="res://.godot/imported/cherrybomb.ogg-73db8bbc53813a645088df5b78f523ea.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/cherrybomb.ogg"
-dest_files=["res://.godot/imported/cherrybomb.ogg-6043281d36eddd0ca5d71180f631b87e.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/cherrybomb.ogg"
+dest_files=["res://.godot/imported/cherrybomb.ogg-73db8bbc53813a645088df5b78f523ea.oggvorbisstr"]
 
 [params]
 

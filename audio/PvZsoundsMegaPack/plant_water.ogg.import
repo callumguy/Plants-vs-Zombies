@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://br3kj6y226tkg"
-path="res://.godot/imported/plant_water.ogg-626a55a65bfd44e72a579364a380c746.oggvorbisstr"
+path="res://.godot/imported/plant_water.ogg-8a05735e2a67a8cd8e317e90a41c161f.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/plant_water.ogg"
-dest_files=["res://.godot/imported/plant_water.ogg-626a55a65bfd44e72a579364a380c746.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/plant_water.ogg"
+dest_files=["res://.godot/imported/plant_water.ogg-8a05735e2a67a8cd8e317e90a41c161f.oggvorbisstr"]
 
 [params]
 

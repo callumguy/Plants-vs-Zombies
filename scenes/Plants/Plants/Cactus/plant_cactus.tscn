@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://bok167h1b15fu"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_s20wu"]
+[ext_resource type="Script" path="res://scenes/Plants/Plants/Peashooter/plant_peashooter.gd" id="2_vmbpj"]
+[ext_resource type="PackedScene" uid="uid://bikuxxj128lv3" path="res://scenes/Projectiles/projectile_spike.tscn" id="3_nqbw3"]
+[ext_resource type="SpriteFrames" uid="uid://cx740t8orldtw" path="res://tres/cactus.tres" id="4_sgusg"]
+[ext_resource type="Texture2D" uid="uid://cq2b7cq2nc3h6" path="res://scenes/Plants/SeedPackets/Icons.png" id="5_qiiig"]
+[ext_resource type="PackedScene" uid="uid://chynt50ekbfa" path="res://Components/RaycastComponent/raycast_component.tscn" id="6_k7f6y"]
+[ext_resource type="PackedScene" uid="uid://ctc4f3b87fv6e" path="res://Components/ShootComponent/shoot_component.tscn" id="6_knwm5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbx0i"]
+atlas = ExtResource("5_qiiig")
+region = Rect2(224, 218, 109, 70)
+
+[node name="Cactus" instance=ExtResource("1_s20wu")]
+script = ExtResource("2_vmbpj")
+projectile = ExtResource("3_nqbw3")
+sun_cost = 150
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(17, 4)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("4_sgusg")
+animation = &"idle"
+
+[node name="SeedIcon" parent="." index="2"]
+texture = SubResource("AtlasTexture_vbx0i")
+
+[node name="RaycastComponent" parent="." index="7" node_paths=PackedStringArray("raycasts") instance=ExtResource("6_k7f6y")]
+raycasts = NodePath("../Raycasts")
+
+[node name="Raycasts" type="Node2D" parent="." index="8"]
+
+[node name="Forward" type="RayCast2D" parent="Raycasts" index="0"]
+target_position = Vector2(1160, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="ShootComponent" parent="." index="9" instance=ExtResource("6_knwm5")]

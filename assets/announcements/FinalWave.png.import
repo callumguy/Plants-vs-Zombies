@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7s3v7ohruqbq"
-path="res://.godot/imported/FinalWave.png-9fb0821b129f7a13b7a5da30f71b4c56.ctex"
+path="res://.godot/imported/FinalWave.png-be0bf2c1797ea504af2aa3a435e61a6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/announcements/FinalWave.png"
-dest_files=["res://.godot/imported/FinalWave.png-9fb0821b129f7a13b7a5da30f71b4c56.ctex"]
+source_file="res://Assets/announcements/FinalWave.png"
+dest_files=["res://.godot/imported/FinalWave.png-be0bf2c1797ea504af2aa3a435e61a6d.ctex"]
 
 [params]
 

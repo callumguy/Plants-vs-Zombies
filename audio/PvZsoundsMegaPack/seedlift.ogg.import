@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dgswbq0gq166j"
-path="res://.godot/imported/seedlift.ogg-8ea212ea6b97b5e39aba364736e57199.oggvorbisstr"
+path="res://.godot/imported/seedlift.ogg-cc9e5f6cf8a288c83fe2323b76178dc1.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/seedlift.ogg"
-dest_files=["res://.godot/imported/seedlift.ogg-8ea212ea6b97b5e39aba364736e57199.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/seedlift.ogg"
+dest_files=["res://.godot/imported/seedlift.ogg-cc9e5f6cf8a288c83fe2323b76178dc1.oggvorbisstr"]
 
 [params]
 

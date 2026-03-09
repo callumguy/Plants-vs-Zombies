@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://dsesqi0i4cffp"]
+
+[ext_resource type="Texture2D" uid="uid://cq2b7cq2nc3h6" path="res://scenes/Plants/SeedPackets/Icons.png" id="1_gx3i2"]
+[ext_resource type="PackedScene" uid="uid://87pxnk628lmt" path="res://scenes/health_component.tscn" id="2_y2kre"]
+[ext_resource type="PackedScene" uid="uid://b4rosjmtbgxc1" path="res://scenes/hurtbox_component.tscn" id="3_dneee"]
+[ext_resource type="PackedScene" uid="uid://dedkaswgc8k6v" path="res://Components/FlashComponent/flash_component.tscn" id="4_w2ior"]
+[ext_resource type="PackedScene" uid="uid://3883kvw05fwm" path="res://state_machine.tscn" id="5_c1wst"]
+[ext_resource type="PackedScene" uid="uid://chbynoqrvee5g" path="res://state.tscn" id="6_b7bdj"]
+[ext_resource type="Script" path="res://scenes/Plants/States/plant_waiting_state.gd" id="7_hjvsl"]
+[ext_resource type="Script" path="res://scenes/Plants/States/plant_action_state.gd" id="8_am11v"]
+[ext_resource type="Script" path="res://scenes/Plants/States/plant_cooldown_state.gd" id="9_hs0e5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei3bo"]
+size = Vector2(20, 20.3333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irrdp"]
+atlas = ExtResource("1_gx3i2")
+region = Rect2(2, 2, 109, 70)
+
+[node name="Plant" type="Node2D" groups=["plants"]]
+z_index = 20
+position = Vector2(0, -50)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+
+[node name="Hurtbox" type="Area2D" parent="." groups=["plant_hurtboxes"]]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_ei3bo")
+
+[node name="SeedIcon" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_irrdp")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_y2kre")]
+max_health = 300
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("hurtbox") instance=ExtResource("3_dneee")]
+hurtbox = NodePath("../Hurtbox")
+
+[node name="FlashComponent" parent="." instance=ExtResource("4_w2ior")]
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("5_c1wst")]
+initial_state = NodePath("Waiting")
+
+[node name="Waiting" parent="StateMachine" instance=ExtResource("6_b7bdj")]
+script = ExtResource("7_hjvsl")
+
+[node name="Action" parent="StateMachine" instance=ExtResource("6_b7bdj")]
+script = ExtResource("8_am11v")
+
+[node name="Cooldown" parent="StateMachine" instance=ExtResource("6_b7bdj")]
+script = ExtResource("9_hs0e5")

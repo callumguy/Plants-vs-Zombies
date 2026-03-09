@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=26 format=3 uid="uid://dgxfjqr5x6qbl"]
 
-[ext_resource type="Texture2D" uid="uid://cuia4r20sdthh" path="res://assets/PC_Computer-Plantsvs.Zombies-Sunflower-Idle-ezgif.com-gif-to-sprite-converter.png" id="1_nmhw8"]
+[ext_resource type="Texture2D" uid="uid://cuia4r20sdthh" path="res://Assets/PC_Computer-Plantsvs.Zombies-Sunflower-Idle-ezgif.com-gif-to-sprite-converter.png" id="1_nmhw8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gcbu0"]
 atlas = ExtResource("1_nmhw8")

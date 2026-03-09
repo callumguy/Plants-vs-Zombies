@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ymjsk7vjh82"
-path="res://.godot/imported/losemusic.ogg-963391fe4681ad4c6529e1bcca296304.oggvorbisstr"
+path="res://.godot/imported/losemusic.ogg-844790bd355bb3b52b391e0935797bc8.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/losemusic.ogg"
-dest_files=["res://.godot/imported/losemusic.ogg-963391fe4681ad4c6529e1bcca296304.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/losemusic.ogg"
+dest_files=["res://.godot/imported/losemusic.ogg-844790bd355bb3b52b391e0935797bc8.oggvorbisstr"]
 
 [params]
 

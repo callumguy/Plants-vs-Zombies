@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://df5ssy7w4aj1h"
-path="res://.godot/imported/jalapeno.ogg-ca20a27d550aae6892d593a98c8145bd.oggvorbisstr"
+path="res://.godot/imported/jalapeno.ogg-1dc64c499a229159e332e59551f0dfed.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/jalapeno.ogg"
-dest_files=["res://.godot/imported/jalapeno.ogg-ca20a27d550aae6892d593a98c8145bd.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/jalapeno.ogg"
+dest_files=["res://.godot/imported/jalapeno.ogg-1dc64c499a229159e332e59551f0dfed.oggvorbisstr"]
 
 [params]
 

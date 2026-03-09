@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://btmpua6x16yce"
-path="res://.godot/imported/wakeup.ogg-cf562e441ec36902a091428211ffa16f.oggvorbisstr"
+path="res://.godot/imported/wakeup.ogg-5a46369f3beec0825e5f31fe0564ba10.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/wakeup.ogg"
-dest_files=["res://.godot/imported/wakeup.ogg-cf562e441ec36902a091428211ffa16f.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/wakeup.ogg"
+dest_files=["res://.godot/imported/wakeup.ogg-5a46369f3beec0825e5f31fe0564ba10.oggvorbisstr"]
 
 [params]
 

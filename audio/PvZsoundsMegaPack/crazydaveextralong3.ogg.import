@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://chi4vn6xs6eui"
-path="res://.godot/imported/crazydaveextralong3.ogg-dd744854afb5ed0ac8d78b8c46cb284d.oggvorbisstr"
+path="res://.godot/imported/crazydaveextralong3.ogg-85aadbf4f52f57235f9c3ec60df67b3f.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/crazydaveextralong3.ogg"
-dest_files=["res://.godot/imported/crazydaveextralong3.ogg-dd744854afb5ed0ac8d78b8c46cb284d.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/crazydaveextralong3.ogg"
+dest_files=["res://.godot/imported/crazydaveextralong3.ogg-85aadbf4f52f57235f9c3ec60df67b3f.oggvorbisstr"]
 
 [params]
 

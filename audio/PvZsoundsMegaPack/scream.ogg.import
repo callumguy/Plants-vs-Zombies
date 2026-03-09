@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bie10xj8owodi"
-path="res://.godot/imported/scream.ogg-da9b4ce3442d7a30dd401a8cd369e01a.oggvorbisstr"
+path="res://.godot/imported/scream.ogg-0a427631f18b84b09f502a2ea83b1878.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/scream.ogg"
-dest_files=["res://.godot/imported/scream.ogg-da9b4ce3442d7a30dd401a8cd369e01a.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/scream.ogg"
+dest_files=["res://.godot/imported/scream.ogg-0a427631f18b84b09f502a2ea83b1878.oggvorbisstr"]
 
 [params]
 

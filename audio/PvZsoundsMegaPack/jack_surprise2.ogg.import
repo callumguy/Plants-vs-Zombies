@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://74b368lbfl0f"
-path="res://.godot/imported/jack_surprise2.ogg-77caadd55e1e19bde203ac069eab9c02.oggvorbisstr"
+path="res://.godot/imported/jack_surprise2.ogg-4bc5a24218c6bdca3624e78be696ba43.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/jack_surprise2.ogg"
-dest_files=["res://.godot/imported/jack_surprise2.ogg-77caadd55e1e19bde203ac069eab9c02.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/jack_surprise2.ogg"
+dest_files=["res://.godot/imported/jack_surprise2.ogg-4bc5a24218c6bdca3624e78be696ba43.oggvorbisstr"]
 
 [params]
 

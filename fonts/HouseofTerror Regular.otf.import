@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://qvh1viv41yyb"
-path="res://.godot/imported/HouseofTerror Regular.otf-5d152b2362d94590d2caed0c110920b6.fontdata"
+path="res://.godot/imported/HouseofTerror Regular.otf-da587042f6f3fcc2a9eaba664445bc18.fontdata"
 
 [deps]
 
-source_file="res://fonts/HouseofTerror Regular.otf"
-dest_files=["res://.godot/imported/HouseofTerror Regular.otf-5d152b2362d94590d2caed0c110920b6.fontdata"]
+source_file="res://Fonts/HouseofTerror Regular.otf"
+dest_files=["res://.godot/imported/HouseofTerror Regular.otf-da587042f6f3fcc2a9eaba664445bc18.fontdata"]
 
 [params]
 

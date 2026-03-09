@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://comd6fpke5ou6"
-path="res://.godot/imported/splat3.ogg-d753b018d93c3b256a4e366989b16597.oggvorbisstr"
+path="res://.godot/imported/splat3.ogg-44ae50e05fb5783ba27c92ae5bbeaede.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/splat3.ogg"
-dest_files=["res://.godot/imported/splat3.ogg-d753b018d93c3b256a4e366989b16597.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/splat3.ogg"
+dest_files=["res://.godot/imported/splat3.ogg-44ae50e05fb5783ba27c92ae5bbeaede.oggvorbisstr"]
 
 [params]
 

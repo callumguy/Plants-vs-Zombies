@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://di82k5li755v7"
-path="res://.godot/imported/RVthrow.ogg-1db62c17335efdc33b985adf1ebe6a99.oggvorbisstr"
+path="res://.godot/imported/RVthrow.ogg-366195b4c19f42509798db44ec68e931.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/RVthrow.ogg"
-dest_files=["res://.godot/imported/RVthrow.ogg-1db62c17335efdc33b985adf1ebe6a99.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/RVthrow.ogg"
+dest_files=["res://.godot/imported/RVthrow.ogg-366195b4c19f42509798db44ec68e931.oggvorbisstr"]
 
 [params]
 

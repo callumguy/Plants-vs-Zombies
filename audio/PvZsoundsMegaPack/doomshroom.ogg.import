@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://30nnw0woc83k"
-path="res://.godot/imported/doomshroom.ogg-b3dc5da2e31466e66777669c31fae974.oggvorbisstr"
+path="res://.godot/imported/doomshroom.ogg-f742260f07cef1c551b32636b3b6d26e.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/doomshroom.ogg"
-dest_files=["res://.godot/imported/doomshroom.ogg-b3dc5da2e31466e66777669c31fae974.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/doomshroom.ogg"
+dest_files=["res://.godot/imported/doomshroom.ogg-f742260f07cef1c551b32636b3b6d26e.oggvorbisstr"]
 
 [params]
 

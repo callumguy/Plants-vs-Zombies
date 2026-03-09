@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dc3bunj7jlsks"
-path="res://.godot/imported/ladder_zombie.ogg-0e8c07dde094a088738bd683ee647963.oggvorbisstr"
+path="res://.godot/imported/ladder_zombie.ogg-83898169871a42cf9d31a9f793ea6c15.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/ladder_zombie.ogg"
-dest_files=["res://.godot/imported/ladder_zombie.ogg-0e8c07dde094a088738bd683ee647963.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/ladder_zombie.ogg"
+dest_files=["res://.godot/imported/ladder_zombie.ogg-83898169871a42cf9d31a9f793ea6c15.oggvorbisstr"]
 
 [params]
 

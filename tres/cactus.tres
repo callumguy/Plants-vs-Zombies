@@ -1,7 +1,7 @@
 [gd_resource type="SpriteFrames" load_steps=114 format=3 uid="uid://cx740t8orldtw"]
 
-[ext_resource type="Texture2D" uid="uid://bcauyd88t2n0g" path="res://assets/Mobile-Plantsvs.Zombies2-Cactus-Idle-ezgif.com-gif-to-sprite-converter.png" id="1_7qc5b"]
-[ext_resource type="Texture2D" uid="uid://c0pj2rodjd06l" path="res://assets/cactus_shoot_shifted.png" id="2_so40e"]
+[ext_resource type="Texture2D" uid="uid://bcauyd88t2n0g" path="res://Assets/Mobile-Plantsvs.Zombies2-Cactus-Idle-ezgif.com-gif-to-sprite-converter.png" id="1_7qc5b"]
+[ext_resource type="Texture2D" uid="uid://c0pj2rodjd06l" path="res://Assets/cactus_shoot_shifted.png" id="2_so40e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_he862"]
 atlas = ExtResource("1_7qc5b")

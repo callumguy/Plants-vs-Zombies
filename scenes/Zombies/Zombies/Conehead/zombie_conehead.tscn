@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceaq4csaj5ff"]
+
+[ext_resource type="PackedScene" uid="uid://x0wwc03pe8ue" path="res://scenes/Zombies/Zombies/Basic/zombie_basic.tscn" id="1_7sycm"]
+[ext_resource type="PackedScene" uid="uid://dq717t7l0pvow" path="res://scenes/Zombies/Helmets/HelmetBase/helmet.tscn" id="2_pk2tc"]
+
+[node name="ZombieCone" instance=ExtResource("1_7sycm")]
+z_as_relative = true
+
+[node name="Head" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="0"]
+scale = Vector2(1, 1)
+
+[node name="Jaw" parent="Visuals/Skeleton3/Skeleton2D/Torso/Head" index="0"]
+scale = Vector2(0.999996, 0.999996)
+
+[node name="Helmet" parent="Visuals/Skeleton3/Skeleton2D/Torso/Head/Helmet" index="0" instance=ExtResource("2_pk2tc")]
+position = Vector2(-8.47052, -9.48194)
+rotation = -0.11065
+scale = Vector2(1.00002, 1.00002)
+
+[node name="RightThigh" parent="Visuals/Skeleton3/Skeleton2D/Torso" index="2"]
+scale = Vector2(0.99999, 0.99999)
+
+[node name="RightShin" parent="Visuals/Skeleton3/Skeleton2D/Torso/RightThigh" index="0"]
+position = Vector2(5.62668e-05, 18.0002)
+
+[editable path="Visuals/Skeleton3"]

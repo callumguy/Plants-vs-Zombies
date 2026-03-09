@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0pj2rodjd06l"
-path="res://.godot/imported/cactus_shoot_shifted.png-b0c13bc4a51c0c499c48fb311c0b667c.ctex"
+path="res://.godot/imported/cactus_shoot_shifted.png-e1761ce0799b12ce6a8b955d73c3acbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cactus_shoot_shifted.png"
-dest_files=["res://.godot/imported/cactus_shoot_shifted.png-b0c13bc4a51c0c499c48fb311c0b667c.ctex"]
+source_file="res://Assets/cactus_shoot_shifted.png"
+dest_files=["res://.godot/imported/cactus_shoot_shifted.png-e1761ce0799b12ce6a8b955d73c3acbc.ctex"]
 
 [params]
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://o2nppbr0f522"]
+
+[ext_resource type="PackedScene" uid="uid://dmmqxdhqx5h77" path="res://scenes/Projectiles/ProjectileBase/projectile_base.tscn" id="1_vdh7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubqye"]
+size = Vector2(60, 10)
+
+[node name="SpikeweedProjectile" instance=ExtResource("1_vdh7u")]
+damage = 10
+max_distance = 30
+pierce = 500
+
+[node name="Sprite2D" parent="." index="0"]
+texture = null
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_ubqye")

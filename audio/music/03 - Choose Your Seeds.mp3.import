@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b2kuljn0lwsof"
-path="res://.godot/imported/03 - Choose Your Seeds.mp3-8e0fcb24824c9dac39aa8959d56d57bb.mp3str"
+path="res://.godot/imported/03 - Choose Your Seeds.mp3-05af2d28b400b0d2e9f19aa1a0b18418.mp3str"
 
 [deps]
 
-source_file="res://audio/music/03 - Choose Your Seeds.mp3"
-dest_files=["res://.godot/imported/03 - Choose Your Seeds.mp3-8e0fcb24824c9dac39aa8959d56d57bb.mp3str"]
+source_file="res://Audio/music/03 - Choose Your Seeds.mp3"
+dest_files=["res://.godot/imported/03 - Choose Your Seeds.mp3-05af2d28b400b0d2e9f19aa1a0b18418.mp3str"]
 
 [params]
 

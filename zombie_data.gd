@@ -1,6 +1,11 @@
 extends Node
 
+const ZOMBIES_FOLDER := "res://scenes/Zombies/Zombies/"
+
 const BASIC_HEALTH := 100
+
+func id_to_path(id: String) -> String:
+    return ZOMBIES_FOLDER + id.capitalize() + "/zombie_" + id + ".tscn" 
 
 var helmets := {
     "cone": {
@@ -13,17 +18,17 @@ var helmets := {
 
 var zombies := {
     "basic": {
-        "scene" = preload("res://scenes/zombies/zombie_basic.tscn"),
+        "scene" = load(id_to_path("basic")),
         "cost" = 1,
         "health" = BASIC_HEALTH
     },
     "conehead": {
-        "scene" = preload("res://scenes/zombies/zombie_cone.tscn"),
+        "scene" = load(id_to_path("conehead")),
         "cost" = 2,
         "health" = BASIC_HEALTH + helmets['cone']['health']
     },
     "buckethead": {
-        "scene" = preload("res://scenes/zombies/zombie_bucket.tscn"),
+        "scene" = load(id_to_path("buckethead")),
         "cost" = 4,
         "health" = BASIC_HEALTH + helmets['bucket']['health']
     },

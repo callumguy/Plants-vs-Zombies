@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duptgl1nkblff"
-path="res://.godot/imported/peashooter-ezgif.com-gif-to-sprite-converter.png-49a1aa11e6d69fa42049c18de53b04e2.ctex"
+path="res://.godot/imported/peashooter-ezgif.com-gif-to-sprite-converter.png-381fb32ce70faf669062b0164066e27b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/peashooter-ezgif.com-gif-to-sprite-converter.png"
-dest_files=["res://.godot/imported/peashooter-ezgif.com-gif-to-sprite-converter.png-49a1aa11e6d69fa42049c18de53b04e2.ctex"]
+source_file="res://Assets/peashooter-ezgif.com-gif-to-sprite-converter.png"
+dest_files=["res://.godot/imported/peashooter-ezgif.com-gif-to-sprite-converter.png-381fb32ce70faf669062b0164066e27b.ctex"]
 
 [params]
 

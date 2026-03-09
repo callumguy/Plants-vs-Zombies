@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://cftmhmjnmlyjh"]
 
 [ext_resource type="Script" path="res://scripts/skeleton_3.gd" id="1_6s6qc"]
-[ext_resource type="Texture2D" uid="uid://3d8dyxulleov" path="res://assets/basic_zombie_assets.png" id="1_vcd1d"]
+[ext_resource type="Texture2D" uid="uid://3d8dyxulleov" path="res://Assets/basic_zombie_assets.png" id="1_vcd1d"]
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_bwi5m"]
 target_nodepath = NodePath("../Targets/LeftHandTarget")

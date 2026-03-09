@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ctmp5r61rscab"
-path="res://.godot/imported/siren.ogg-d1131cd2db9bb7308a3627f3944d8941.oggvorbisstr"
+path="res://.godot/imported/siren.ogg-9c25011b289875fdfb919cf7819d6303.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/siren.ogg"
-dest_files=["res://.godot/imported/siren.ogg-d1131cd2db9bb7308a3627f3944d8941.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/siren.ogg"
+dest_files=["res://.godot/imported/siren.ogg-9c25011b289875fdfb919cf7819d6303.oggvorbisstr"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://h3wtopmwejls"
-path="res://.godot/imported/PvZ_alamanac.png-6e07aa609d8c105a3a3dff8818ff2d37.ctex"
+path="res://.godot/imported/PvZ_alamanac.png-89c7eb50811fc30970a8e7c37b015ffa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PvZ_alamanac.png"
-dest_files=["res://.godot/imported/PvZ_alamanac.png-6e07aa609d8c105a3a3dff8818ff2d37.ctex"]
+source_file="res://Assets/PvZ_alamanac.png"
+dest_files=["res://.godot/imported/PvZ_alamanac.png-89c7eb50811fc30970a8e7c37b015ffa.ctex"]
 
 [params]
 

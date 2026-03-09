@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dhgj5jawqknmi"
-path="res://.godot/imported/zombie_entering_water.ogg-d5dafcddcb4af9dda878504a85b6d31f.oggvorbisstr"
+path="res://.godot/imported/zombie_entering_water.ogg-7572b00ef000eb88cc12068d1bb44ec1.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/zombie_entering_water.ogg"
-dest_files=["res://.godot/imported/zombie_entering_water.ogg-d5dafcddcb4af9dda878504a85b6d31f.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/zombie_entering_water.ogg"
+dest_files=["res://.godot/imported/zombie_entering_water.ogg-7572b00ef000eb88cc12068d1bb44ec1.oggvorbisstr"]
 
 [params]
 

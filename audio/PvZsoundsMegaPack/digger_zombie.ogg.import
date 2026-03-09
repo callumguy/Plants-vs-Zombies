@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://du6qwgvq74coy"
-path="res://.godot/imported/digger_zombie.ogg-97aa19e35d726f492bb41789cb71b334.oggvorbisstr"
+path="res://.godot/imported/digger_zombie.ogg-d47f119d7441f3a49071e904379fbb9f.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/digger_zombie.ogg"
-dest_files=["res://.godot/imported/digger_zombie.ogg-97aa19e35d726f492bb41789cb71b334.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/digger_zombie.ogg"
+dest_files=["res://.godot/imported/digger_zombie.ogg-d47f119d7441f3a49071e904379fbb9f.oggvorbisstr"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_resource type="SpriteFrames" load_steps=408 format=3 uid="uid://woab2kopjtl"]
 
-[ext_resource type="Texture2D" uid="uid://b8r5pm4gpb5is" path="res://assets/Mobile-Plantsvs.Zombies2-BasicZombie-Death-ezgif.com-gif-to-sprite-converter.png" id="1_4a7g0"]
-[ext_resource type="Texture2D" uid="uid://bcxs2uabbrrdb" path="res://assets/Mobile-Plantsvs.Zombies2-BasicZombie-Eating-ezgif.com-gif-to-sprite-converter.png" id="2_g4pmw"]
-[ext_resource type="Texture2D" uid="uid://ddvdva88x6uh" path="res://assets/Mobile-Plantsvs.Zombies2-BasicZombie-Walking-ezgif.com-gif-to-sprite-converter.png" id="2_ry1pk"]
+[ext_resource type="Texture2D" uid="uid://b8r5pm4gpb5is" path="res://Assets/Mobile-Plantsvs.Zombies2-BasicZombie-Death-ezgif.com-gif-to-sprite-converter.png" id="1_4a7g0"]
+[ext_resource type="Texture2D" uid="uid://bcxs2uabbrrdb" path="res://Assets/Mobile-Plantsvs.Zombies2-BasicZombie-Eating-ezgif.com-gif-to-sprite-converter.png" id="2_g4pmw"]
+[ext_resource type="Texture2D" uid="uid://ddvdva88x6uh" path="res://Assets/Mobile-Plantsvs.Zombies2-BasicZombie-Walking-ezgif.com-gif-to-sprite-converter.png" id="2_ry1pk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w044a"]
 atlas = ExtResource("1_4a7g0")

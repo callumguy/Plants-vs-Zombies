@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b08t7yjgciqwg"
-path="res://.godot/imported/squash_hmm2.ogg-8d4f5d313c6f7a99ffb9142e745bd9e9.oggvorbisstr"
+path="res://.godot/imported/squash_hmm2.ogg-2cd334b3bb73d31ff71aae920ea72845.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/squash_hmm2.ogg"
-dest_files=["res://.godot/imported/squash_hmm2.ogg-8d4f5d313c6f7a99ffb9142e745bd9e9.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/squash_hmm2.ogg"
+dest_files=["res://.godot/imported/squash_hmm2.ogg-2cd334b3bb73d31ff71aae920ea72845.oggvorbisstr"]
 
 [params]
 

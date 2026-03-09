@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://coxsiflqyqnu0"]
 
 [ext_resource type="Script" path="res://seed_select_menu.gd" id="1_7nw5k"]
-[ext_resource type="Texture2D" uid="uid://bfleadnyt3xu1" path="res://assets/PvZ_level_ui.png" id="2_6c8yf"]
+[ext_resource type="Texture2D" uid="uid://bfleadnyt3xu1" path="res://Assets/PvZ_level_ui.png" id="2_6c8yf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wt1tb"]
 atlas = ExtResource("2_6c8yf")

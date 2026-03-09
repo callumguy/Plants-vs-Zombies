@@ -2,22 +2,22 @@
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_mdk7j"]
 [ext_resource type="PackedScene" uid="uid://b3j624gyglsqe" path="res://scenes/ui.tscn" id="2_tb8wi"]
-[ext_resource type="PackedScene" uid="uid://xj008qauc7kv" path="res://scenes/pause_menu.tscn" id="3_exhb5"]
+[ext_resource type="PackedScene" uid="uid://xj008qauc7kv" path="res://scenes/UI/Menus/PauseMenu/pause_menu.tscn" id="3_exhb5"]
 [ext_resource type="PackedScene" uid="uid://ca8gp7opgsqwa" path="res://scenes/enemy_manager.tscn" id="4_axvqq"]
 [ext_resource type="PackedScene" uid="uid://coxsiflqyqnu0" path="res://seed_select_menu.tscn" id="5_77u45"]
 [ext_resource type="Script" path="res://scripts/building.gd" id="5_c11ed"]
-[ext_resource type="Texture2D" uid="uid://uu6utkbbnwpp" path="res://assets/PC _ Computer - Plants vs. Zombies - Backgrounds - Day.png" id="6_7em5a"]
-[ext_resource type="PackedScene" uid="uid://ripq12qyhds" path="res://scenes/towers/mouse_area.tscn" id="7_druew"]
+[ext_resource type="Texture2D" uid="uid://uu6utkbbnwpp" path="res://Assets/PC _ Computer - Plants vs. Zombies - Backgrounds - Day.png" id="6_7em5a"]
+[ext_resource type="PackedScene" uid="uid://ripq12qyhds" path="res://mouse_area.tscn" id="7_druew"]
 [ext_resource type="PackedScene" uid="uid://fgrsgsk54c5c" path="res://scenes/air_spawner.tscn" id="7_rg4yl"]
 [ext_resource type="PackedScene" uid="uid://usj4gw8n3v3v" path="res://scenes/sun.tscn" id="8_g62mg"]
-[ext_resource type="PackedScene" uid="uid://cv5ffnpuhqel" path="res://scenes/towers/preview_ghost.tscn" id="8_uvvqd"]
-[ext_resource type="AudioStream" uid="uid://bk4ucvbfbqv8a" path="res://audio/PvZsoundsMegaPack/plant.ogg" id="9_d5f3c"]
-[ext_resource type="Texture2D" uid="uid://csrn77n3mbksg" path="res://assets/shovel/111px-Shovel2.png" id="10_6nqi4"]
-[ext_resource type="AudioStream" uid="uid://ch5emd1ovrlnj" path="res://audio/PvZsoundsMegaPack/plant2.ogg" id="10_n1mkd"]
-[ext_resource type="AudioStream" uid="uid://d2j8djf8pp2sl" path="res://audio/music/Plants vs. Zombies - Grasswalk.mp3" id="11_bywjk"]
+[ext_resource type="PackedScene" uid="uid://cv5ffnpuhqel" path="res://scenes/Plants/preview_ghost.tscn" id="8_uvvqd"]
+[ext_resource type="AudioStream" uid="uid://bk4ucvbfbqv8a" path="res://Audio/PvZsoundsMegaPack/plant.ogg" id="9_d5f3c"]
+[ext_resource type="Texture2D" uid="uid://csrn77n3mbksg" path="res://Assets/shovel/111px-Shovel2.png" id="10_6nqi4"]
+[ext_resource type="AudioStream" uid="uid://ch5emd1ovrlnj" path="res://Audio/PvZsoundsMegaPack/plant2.ogg" id="10_n1mkd"]
+[ext_resource type="AudioStream" uid="uid://d2j8djf8pp2sl" path="res://Audio/music/Plants vs. Zombies - Grasswalk.mp3" id="11_bywjk"]
 [ext_resource type="PackedScene" uid="uid://eawyo78gjtlh" path="res://announcements.tscn" id="15_08qip"]
-[ext_resource type="PackedScene" uid="uid://clmrlvkh8juir" path="res://currency_component.tscn" id="16_ydlly"]
-[ext_resource type="AudioStream" uid="uid://b2kuljn0lwsof" path="res://audio/music/03 - Choose Your Seeds.mp3" id="17_8rgub"]
+[ext_resource type="PackedScene" uid="uid://clmrlvkh8juir" path="res://Components/CurrencyComponent/currency_component.tscn" id="16_ydlly"]
+[ext_resource type="AudioStream" uid="uid://b2kuljn0lwsof" path="res://Audio/music/03 - Choose Your Seeds.mp3" id="17_8rgub"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wuy47"]
 streams_count = 2
@@ -65,7 +65,7 @@ wave_interval = 18.0
 
 [node name="AirSpawner" parent="." instance=ExtResource("7_rg4yl")]
 sun_scene = ExtResource("8_g62mg")
-sun_amount = 25
+sun_value = 25
 
 [node name="PlacementManager" type="Node2D" parent="."]
 script = ExtResource("5_c11ed")
@@ -73,7 +73,7 @@ script = ExtResource("5_c11ed")
 [node name="TillSound" type="AudioStreamPlayer" parent="PlacementManager"]
 stream = SubResource("AudioStreamRandomizer_wuy47")
 
-[node name="Towers" type="Node2D" parent="."]
+[node name="PlacedPlantsFolder" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10

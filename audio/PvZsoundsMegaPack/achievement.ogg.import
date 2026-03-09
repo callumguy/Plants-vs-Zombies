@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ceod380yxa8nt"
-path="res://.godot/imported/achievement.ogg-d1734a31ff09be3f4ce7f9fe162e99de.oggvorbisstr"
+path="res://.godot/imported/achievement.ogg-6c70ad50e4117805d7c966dd3016df90.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/achievement.ogg"
-dest_files=["res://.godot/imported/achievement.ogg-d1734a31ff09be3f4ce7f9fe162e99de.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/achievement.ogg"
+dest_files=["res://.godot/imported/achievement.ogg-6c70ad50e4117805d7c966dd3016df90.oggvorbisstr"]
 
 [params]
 

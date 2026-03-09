@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://be8hrt41t4omr"
-path="res://.godot/imported/magnetshroom.ogg-c374902aa7e4d263371928983f871913.oggvorbisstr"
+path="res://.godot/imported/magnetshroom.ogg-c84a2edb552a5c84c5cef1480d402b1c.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/magnetshroom.ogg"
-dest_files=["res://.godot/imported/magnetshroom.ogg-c374902aa7e4d263371928983f871913.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/magnetshroom.ogg"
+dest_files=["res://.godot/imported/magnetshroom.ogg-c84a2edb552a5c84c5cef1480d402b1c.oggvorbisstr"]
 
 [params]
 

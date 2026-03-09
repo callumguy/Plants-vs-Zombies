@@ -1,7 +1,7 @@
 [gd_resource type="SpriteFrames" load_steps=148 format=3 uid="uid://br4xqcuspl6et"]
 
-[ext_resource type="Texture2D" uid="uid://c3ct6kxasd14v" path="res://assets/Mobile-Plantsvs.Zombies2-ZCorpNewHire-Death-ezgif.com-gif-to-sprite-converter.png" id="1_djb8a"]
-[ext_resource type="Texture2D" uid="uid://b5wqh3bcur34m" path="res://assets/zcorpzombie.png" id="2_q0acc"]
+[ext_resource type="Texture2D" uid="uid://c3ct6kxasd14v" path="res://Assets/Mobile-Plantsvs.Zombies2-ZCorpNewHire-Death-ezgif.com-gif-to-sprite-converter.png" id="1_djb8a"]
+[ext_resource type="Texture2D" uid="uid://b5wqh3bcur34m" path="res://Assets/zcorpzombie.png" id="2_q0acc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5d1i4"]
 atlas = ExtResource("1_djb8a")

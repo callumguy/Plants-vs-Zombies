@@ -1,13 +1,12 @@
 extends TextureButton
 
-var main_menu_scene: PackedScene
+const MAIN_MENU_PATH := ScenePaths.MAIN_MENU
 
 func _ready() -> void:
-    main_menu_scene = preload("res://scenes/main_menu.tscn")
     self.pressed.connect(_pressed)
     
 func _pressed() -> void:
     if get_tree() == null:
         return
     
-    get_tree().change_scene_to_packed(main_menu_scene)
+    get_tree().change_scene_to_packed(load(MAIN_MENU_PATH))

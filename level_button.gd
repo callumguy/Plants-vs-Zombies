@@ -1,6 +1,7 @@
 extends Button
 
 @export var level_number: int = 1
+const LEVEL_PATH := ScenePaths.LEVEL
 
 func _ready() -> void:
     connections()
@@ -26,7 +27,7 @@ func _pressed() -> void:
         return
     
     LevelManager.level_number = level_number
-    get_tree().change_scene_to_packed(LevelManager.level_packed_scene)
+    get_tree().change_scene_to_packed(load(LEVEL_PATH))
     queue_free()
     
     

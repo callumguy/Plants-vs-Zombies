@@ -1,10 +1,13 @@
 extends Node2D
 
 var RewardScene: PackedScene = preload("res://reward.tscn")
-var RewardMenuScene: PackedScene = preload("res://reward_menu.tscn")
 
-@onready var main_menu_scene: PackedScene = load("res://scenes/main_menu.tscn")
-@onready var enemy_manager: Node2D = $EnemyManager
+const REWARD_MENU_PATH := ScenePaths.REWARD_MENU
+const MAIN_MENU_PATH := ScenePaths.MAIN_MENU 
+
+@onready var ENEMY_MANAGER := get_node(LevelNodePaths.ENEMY_MANAGER_PATH)
+@onready var SEED_BAR := get_node(LevelNodePaths.SEED_BAR_PATH)
+
 @onready var announcements: CanvasLayer = $Announcements
 @onready var music_player: AudioStreamPlayer = %MusicPlayer
 @onready var music_player_seed_select: AudioStreamPlayer = $MusicPlayerSeedSelect
@@ -15,9 +18,13 @@ var level_number: int
 var level_reward_name: Variant
 var level_seed_slots: int
 
+var engine_speed_locked := true
+var engine_is_sped_up := false
+
 func _ready() -> void:
+    
     level_number = LevelManager.level_number
-    enemy_manager.level_num = level_number
+    ENEMY_MANAGER.level_num = level_number
     
     level_reward_name = LevelData.get_level_info(level_number, 'reward')
     
@@ -29,12 +36,12 @@ func _ready() -> void:
     if len(PlayerStats.plants_unlocked) > level_seed_slots:
         start_picking()
     else:
-        $CanvasLayer/LevelUI/MarginContainer/HBoxContainer/LeftBar/SeedBar.fill(PlayerStats.plants_unlocked)
+        SEED_BAR.fill(PlayerStats.plants_unlocked)
         start_battle()    
     
 func connections() -> void:
-    enemy_manager.player_wins.connect(player_wins)
-    enemy_manager.player_loses.connect(player_loses)
+    ENEMY_MANAGER.player_wins.connect(player_wins)
+    ENEMY_MANAGER.player_loses.connect(player_loses)
     seed_select_menu.ready_pressed.connect(start_battle)
     
 func start_picking() -> void:
@@ -48,9 +55,10 @@ func start_battle():
     await announcements.show_message_index(2, 1)
     music_player_seed_select.stop()
     music_player.play()
-    enemy_manager.start_level()
+    ENEMY_MANAGER.start_level()
     $PlacementManager.read_seedbar()
     air_spawner.enabled = true
+    engine_speed_locked = false
     
 func player_wins(position: Vector2) -> void: # position of the last zombie (that just died)
     var reward_scene: RigidBody2D = RewardScene.instantiate()
@@ -69,9 +77,8 @@ func player_wins(position: Vector2) -> void: # position of the last zombie (that
     if level_number > PlayerStats.high_level:
         PlayerStats.level_up()
     
-    var speed_button = find_child("LevelUI").find_child("SpeedButton")
-    speed_button.allow_speed_up = false
-    speed_button.slow_down()
+    slow_down_engine()
+    engine_speed_locked = true
     
 func player_loses(position: Vector2): # position of the zombie at the house (eating your brains)
     game_over()
@@ -80,10 +87,10 @@ func reward_clicked() -> void:
     music_player.stop()
 
 func reward_collected() -> void:
-    get_tree().change_scene_to_packed(RewardMenuScene)
+    get_tree().change_scene_to_packed(load(REWARD_MENU_PATH))
     
 func game_over():
-    get_tree().change_scene_to_packed(main_menu_scene) # back to menu
+    get_tree().change_scene_to_packed(load(MAIN_MENU_PATH)) # back to menu
     
 func give_reward(reward: Variant) -> void:
     if reward == null:
@@ -92,3 +99,27 @@ func give_reward(reward: Variant) -> void:
     var reward_dict = Rewards.split(reward)
     if reward_dict['type'] == "plant":
         PlayerStats.unlock_plant(reward_dict['name'])
+
+func speed_up_engine() -> void:
+    if engine_speed_locked:
+        return
+        
+    Engine.time_scale = 2.0
+    music_player.pitch_scale = 1.1
+
+func slow_down_engine() -> void:
+    if engine_speed_locked:
+        return
+        
+    Engine.time_scale = 1.0
+    music_player.pitch_scale = 1.0
+
+func change_engine_speed() -> void:
+    if engine_speed_locked:
+        return
+        
+    engine_is_sped_up = !engine_is_sped_up
+    if engine_is_sped_up:
+        speed_up_engine()
+    else:
+        slow_down_engine()

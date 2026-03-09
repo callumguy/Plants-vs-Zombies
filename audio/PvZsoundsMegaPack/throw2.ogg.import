@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bv1a7sla0jxaw"
-path="res://.godot/imported/throw2.ogg-911f29031b84890cca82e536fd5c6b8e.oggvorbisstr"
+path="res://.godot/imported/throw2.ogg-2cbd620c16c5b3af3804ba98bb9cb82d.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/throw2.ogg"
-dest_files=["res://.godot/imported/throw2.ogg-911f29031b84890cca82e536fd5c6b8e.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/throw2.ogg"
+dest_files=["res://.godot/imported/throw2.ogg-2cbd620c16c5b3af3804ba98bb9cb82d.oggvorbisstr"]
 
 [params]
 

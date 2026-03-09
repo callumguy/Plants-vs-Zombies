@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bv5nlaoyrqgk5"
-path="res://.godot/imported/ceramic.ogg-3f36176e4eea5adad53b37fc35070447.oggvorbisstr"
+path="res://.godot/imported/ceramic.ogg-c6a35c381f25c1a2f1fc2c9dd7b7f67a.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/ceramic.ogg"
-dest_files=["res://.godot/imported/ceramic.ogg-3f36176e4eea5adad53b37fc35070447.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/ceramic.ogg"
+dest_files=["res://.godot/imported/ceramic.ogg-c6a35c381f25c1a2f1fc2c9dd7b7f67a.oggvorbisstr"]
 
 [params]
 

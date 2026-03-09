@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ds8q03aaiw0vu"
-path="res://.godot/imported/groan4.ogg-119da9bc61f062d23ee99b1ebba14ad9.oggvorbisstr"
+path="res://.godot/imported/groan4.ogg-ec466ce800ea6ac01d808841c8981d18.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/groan4.ogg"
-dest_files=["res://.godot/imported/groan4.ogg-119da9bc61f062d23ee99b1ebba14ad9.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/groan4.ogg"
+dest_files=["res://.godot/imported/groan4.ogg-ec466ce800ea6ac01d808841c8981d18.oggvorbisstr"]
 
 [params]
 

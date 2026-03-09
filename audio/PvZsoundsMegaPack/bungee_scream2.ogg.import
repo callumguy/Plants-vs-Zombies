@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b2eqf3vvbnqdn"
-path="res://.godot/imported/bungee_scream2.ogg-34e0245587cfae1ed22ec1c484b32441.oggvorbisstr"
+path="res://.godot/imported/bungee_scream2.ogg-4b81065f1d9f78d473f10ff4ab1303a5.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/PvZsoundsMegaPack/bungee_scream2.ogg"
-dest_files=["res://.godot/imported/bungee_scream2.ogg-34e0245587cfae1ed22ec1c484b32441.oggvorbisstr"]
+source_file="res://Audio/PvZsoundsMegaPack/bungee_scream2.ogg"
+dest_files=["res://.godot/imported/bungee_scream2.ogg-4b81065f1d9f78d473f10ff4ab1303a5.oggvorbisstr"]
 
 [params]
 
