@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://nk8rf8w06t7m"]
+
+[ext_resource type="Script" path="res://animation_component.gd" id="1_eoi7o"]
+[ext_resource type="Texture2D" uid="uid://cua2mkem8blds" path="res://scenes/Plants/Plants/Spikeweed/spikeweed.png" id="2_0dwci"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvtb8"]
+atlas = ExtResource("2_0dwci")
+region = Rect2(113, 16, 100, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbjel"]
+atlas = ExtResource("2_0dwci")
+region = Rect2(6, 53, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnxeo"]
+atlas = ExtResource("2_0dwci")
+region = Rect2(27, 53, 17, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l8wl"]
+atlas = ExtResource("2_0dwci")
+region = Rect2(50, 56, 15, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww1d2"]
+atlas = ExtResource("2_0dwci")
+region = Rect2(71, 54, 18, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8n7j"]
+atlas = ExtResource("2_0dwci")
+region = Rect2(138, 66, 46, 10)
+
+[node name="AnimationComponent" type="Node2D"]
+script = ExtResource("1_eoi7o")
+
+[node name="anim_face" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_fvtb8")
+centered = false
+
+[node name="Caltrop_horn1" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_nbjel")
+centered = false
+
+[node name="Caltrop_horn2" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_tnxeo")
+centered = false
+
+[node name="Caltrop_horn3" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_5l8wl")
+centered = false
+
+[node name="Caltrop_horn4" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ww1d2")
+centered = false
+
+[node name="anim_blink" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_l8n7j")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]

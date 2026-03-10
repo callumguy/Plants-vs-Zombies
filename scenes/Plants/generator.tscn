@@ -1,8 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://2wqjjung8ayw"]
+[gd_scene load_steps=32 format=3 uid="uid://dqd53cb4by6hk"]
 
 [ext_resource type="Script" path="res://scripts/generator.gd" id="1_mbulp"]
 [ext_resource type="Texture2D" uid="uid://cuia4r20sdthh" path="res://Assets/PC_Computer-Plantsvs.Zombies-Sunflower-Idle-ezgif.com-gif-to-sprite-converter.png" id="2_dsunh"]
-[ext_resource type="Texture2D" uid="uid://cq2b7cq2nc3h6" path="res://scenes/Plants/SeedPackets/Icons.png" id="3_4fckb"]
+[ext_resource type="Texture2D" uid="uid://cq2b7cq2nc3h6" path="res://Assets/pvzseedpackets.png" id="3_lua07"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gcbu0"]
 atlas = ExtResource("2_dsunh")
@@ -184,7 +184,7 @@ animations = [{
 size = Vector2(1147, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h16dd"]
-atlas = ExtResource("3_4fckb")
+atlas = ExtResource("3_lua07")
 region = Rect2(113, 2, 109, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xtt1"]
