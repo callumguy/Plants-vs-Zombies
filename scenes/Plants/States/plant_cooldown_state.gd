@@ -9,7 +9,9 @@ func enter() -> void:
     plant = actor
     while plant.sprite == null:
         await get_tree().process_frame
-    plant.sprite.play("idle")
+    # plant.sprite.play("idle")
+    if len(plant.reanim.current_animations) == 0:
+        plant.reanim.play(plant.animation_cooldown_name, true)
     
     cooldown_length = plant.cooldown
     
@@ -28,4 +30,3 @@ func physics_update(delta: float) -> void:
     
 func handle_input(event: InputEvent) -> void:
     pass
-    

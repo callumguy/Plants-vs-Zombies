@@ -65,6 +65,7 @@ texture = SubResource("AtlasTexture_og6nf")
 parts = NodePath("../Parts")
 
 [node name="Parts" type="Node2D" parent="." index="8"]
+visible = false
 scale = Vector2(0.8, 0.8)
 
 [node name="Body" type="Sprite2D" parent="Parts" index="0"]
@@ -125,3 +126,20 @@ collide_with_bodies = false
 
 [node name="AnimationComponent2" parent="." index="12" node_paths=PackedStringArray("parts") instance=ExtResource("2_c76ae")]
 parts = NodePath("../Parts")
+
+[node name="ReanimComponent" parent="." index="13"]
+reanim_path = "res://scenes/Plants/Plants/Starfruit/Starfruit_reanim.txt"
+
+[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="0"]
+texture = SubResource("AtlasTexture_hcebs")
+centered = false
+
+[node name="Starfruit_smile" type="Sprite2D" parent="ReanimComponent" index="1"]
+position = Vector2(8, 2)
+texture = SubResource("AtlasTexture_510vp")
+centered = false
+
+[node name="Eyes" type="Sprite2D" parent="ReanimComponent" index="2"]
+visible = false
+position = Vector2(2.5, -11)
+centered = false

@@ -13,7 +13,7 @@ func _ready() -> void:
     settings_button.pressed.connect(settings)
     quit_button.pressed.connect(quit)
     
-    ReanimParser.parse_reanim()
+    # ReanimParser2.ready()
     
 func play():
     get_tree().change_scene_to_packed(load(LEVEL_SELECT_MENU_PATH))

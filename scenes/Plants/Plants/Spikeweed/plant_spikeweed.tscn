@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://ukifgm4rb57u"]
+[gd_scene load_steps=20 format=3 uid="uid://ukifgm4rb57u"]
 
 [ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_fasnb"]
 [ext_resource type="Script" path="res://scenes/Plants/Plants/Spikeweed/plant_spikeweed.gd" id="2_lsjyp"]
 [ext_resource type="PackedScene" uid="uid://o2nppbr0f522" path="res://scenes/Projectiles/projectile_spikeweed.tscn" id="3_kft47"]
-[ext_resource type="Texture2D" uid="uid://w3buavuuv88i" path="res://scenes/Plants/Plants/Spikeweed/spikeweed.png" id="4_bqqqr"]
+[ext_resource type="Texture2D" uid="uid://cua2mkem8blds" path="res://scenes/Plants/Plants/Spikeweed/spikeweed.png" id="4_bqqqr"]
 [ext_resource type="PackedScene" uid="uid://dvcev23pdfvlf" path="res://Components/AnimationComponent/animation_component.tscn" id="5_shghr"]
 [ext_resource type="PackedScene" uid="uid://chynt50ekbfa" path="res://Components/RaycastComponent/raycast_component.tscn" id="6_w7vjf"]
 [ext_resource type="PackedScene" uid="uid://ctc4f3b87fv6e" path="res://Components/ShootComponent/shoot_component.tscn" id="7_l1dd1"]
@@ -46,17 +46,43 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7g5v"]
+atlas = ExtResource("4_bqqqr")
+region = Rect2(113, 16, 100, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q07lb"]
+atlas = ExtResource("4_bqqqr")
+region = Rect2(138, 55, 46, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e33tk"]
+atlas = ExtResource("4_bqqqr")
+region = Rect2(6, 53, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gcjf"]
+atlas = ExtResource("4_bqqqr")
+region = Rect2(27, 53, 17, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n6sd"]
+atlas = ExtResource("4_bqqqr")
+region = Rect2(50, 56, 15, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etxgd"]
+atlas = ExtResource("4_bqqqr")
+region = Rect2(71, 54, 18, 22)
+
 [node name="Spikeweed" instance=ExtResource("1_fasnb")]
 script = ExtResource("2_lsjyp")
 projectile = ExtResource("3_kft47")
-cooldown = 0.6
+cooldown = 1.0
 sun_cost = 125
+animation_action_name = "anim_attack"
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(0, 23.75)
 shape = SubResource("RectangleShape2D_fna8c")
 
 [node name="Parts" type="Node2D" parent="." index="7"]
+visible = false
 position = Vector2(0, 20)
 scale = Vector2(0.8, 0.8)
 
@@ -103,3 +129,33 @@ collide_with_bodies = false
 raycasts = NodePath("../Raycasts")
 
 [node name="ShootComponent" parent="." index="11" instance=ExtResource("7_l1dd1")]
+
+[node name="ReanimComponent" parent="." index="12"]
+position = Vector2(-46, -32)
+
+[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="0"]
+texture = SubResource("AtlasTexture_v7g5v")
+centered = false
+
+[node name="anim_blink" type="Sprite2D" parent="ReanimComponent/anim_face" index="0"]
+visible = false
+z_index = 10
+position = Vector2(19.4, 60.6)
+texture = SubResource("AtlasTexture_q07lb")
+centered = false
+
+[node name="Caltrop_horn1" type="Sprite2D" parent="ReanimComponent" index="1"]
+texture = SubResource("AtlasTexture_e33tk")
+centered = false
+
+[node name="Caltrop_horn2" type="Sprite2D" parent="ReanimComponent" index="2"]
+texture = SubResource("AtlasTexture_4gcjf")
+centered = false
+
+[node name="Caltrop_horn3" type="Sprite2D" parent="ReanimComponent" index="3"]
+texture = SubResource("AtlasTexture_6n6sd")
+centered = false
+
+[node name="Caltrop_horn4" type="Sprite2D" parent="ReanimComponent" index="4"]
+texture = SubResource("AtlasTexture_etxgd")
+centered = false

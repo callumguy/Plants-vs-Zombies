@@ -1,11 +1,15 @@
 [gd_scene load_steps=9 format=3 uid="uid://nk8rf8w06t7m"]
 
-[ext_resource type="Script" path="res://animation_component.gd" id="1_eoi7o"]
+[ext_resource type="Script" path="res://animation_component_3.gd" id="1_bncip"]
 [ext_resource type="Texture2D" uid="uid://cua2mkem8blds" path="res://scenes/Plants/Plants/Spikeweed/spikeweed.png" id="2_0dwci"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvtb8"]
 atlas = ExtResource("2_0dwci")
 region = Rect2(113, 16, 100, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8n7j"]
+atlas = ExtResource("2_0dwci")
+region = Rect2(138, 55, 46, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbjel"]
 atlas = ExtResource("2_0dwci")
@@ -23,15 +27,18 @@ region = Rect2(50, 56, 15, 21)
 atlas = ExtResource("2_0dwci")
 region = Rect2(71, 54, 18, 22)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l8n7j"]
-atlas = ExtResource("2_0dwci")
-region = Rect2(138, 66, 46, 10)
-
-[node name="AnimationComponent" type="Node2D"]
-script = ExtResource("1_eoi7o")
+[node name="ReanimComponent" type="Node2D"]
+script = ExtResource("1_bncip")
 
 [node name="anim_face" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_fvtb8")
+centered = false
+
+[node name="anim_blink" type="Sprite2D" parent="anim_face"]
+visible = false
+z_index = 10
+position = Vector2(19.4, 60.6)
+texture = SubResource("AtlasTexture_l8n7j")
 centered = false
 
 [node name="Caltrop_horn1" type="Sprite2D" parent="."]
@@ -50,8 +57,5 @@ centered = false
 texture = SubResource("AtlasTexture_ww1d2")
 centered = false
 
-[node name="anim_blink" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_l8n7j")
-centered = false
-
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)

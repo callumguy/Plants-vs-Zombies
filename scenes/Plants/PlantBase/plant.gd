@@ -15,6 +15,7 @@ signal tower_destroyed(tower)
 @onready var flash: Flash = $FlashComponent
 @onready var raycast: Raycast = get_node_or_null("RaycastComponent")
 @onready var animate: Animate = get_node_or_null("AnimationComponent")
+@onready var reanim: ReanimComponent = get_node_or_null("ReanimComponent")
 
 @onready var shoot: Shoot = get_node_or_null("ShootComponent")
 @onready var generate: Generate = get_node_or_null("GenerateComponent")
@@ -23,6 +24,10 @@ signal tower_destroyed(tower)
 
 @export var sun_cost := 100 ## seed packet scene?
 @export var recharge := 7.5 ## ------------------
+
+@export var animation_waiting_name: String = "anim_idle"
+@export var animation_action_name: String = "anim_shoot"
+@export var animation_cooldown_name: String = "anim_idle"
 
 var lane: int
 var column: int

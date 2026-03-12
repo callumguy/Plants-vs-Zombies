@@ -151,5 +151,6 @@ position = Vector2(17, 5.5375)
 shape = SubResource("RectangleShape2D_cawt0")
 
 [node name="CurrencyComponent" parent="." instance=ExtResource("16_ydlly")]
+starting_amount = 200
 
 [node name="ProjectileFolder" type="Node2D" parent="."]

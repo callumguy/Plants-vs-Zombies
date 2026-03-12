@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmya0a2ix8xcr"]
+
+[ext_resource type="Script" path="res://animation_component_3.gd" id="1_h3aaa"]
+
+[node name="ReanimComponent" type="Node2D"]
+visible = false
+script = ExtResource("1_h3aaa")

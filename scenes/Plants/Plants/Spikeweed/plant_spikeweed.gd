@@ -4,8 +4,9 @@ extends Plant
 @export var always_shoot: bool = false
 
 func perform_action() -> void:
-    if animate:
-        animate.blink()
+    #if animate:
+    #    animate.blink()
     
     # shoot.shoot(projectile, raycast, always_shoot)
     shoot.shoot_one(projectile, $Raycasts/Up)
+    # $ReanimComponent.play("anim_attack")

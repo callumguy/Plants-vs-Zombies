@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dsesqi0i4cffp"]
+[gd_scene load_steps=13 format=3 uid="uid://dsesqi0i4cffp"]
 
 [ext_resource type="Texture2D" uid="uid://cq2b7cq2nc3h6" path="res://scenes/Plants/SeedPackets/Icons.png" id="1_gx3i2"]
 [ext_resource type="PackedScene" uid="uid://87pxnk628lmt" path="res://scenes/health_component.tscn" id="2_y2kre"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scenes/Plants/States/plant_waiting_state.gd" id="7_hjvsl"]
 [ext_resource type="Script" path="res://scenes/Plants/States/plant_action_state.gd" id="8_am11v"]
 [ext_resource type="Script" path="res://scenes/Plants/States/plant_cooldown_state.gd" id="9_hs0e5"]
+[ext_resource type="PackedScene" uid="uid://dmya0a2ix8xcr" path="res://reanim_component.tscn" id="10_ibbap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ei3bo"]
 size = Vector2(20, 20.3333)
@@ -57,3 +58,5 @@ script = ExtResource("8_am11v")
 
 [node name="Cooldown" parent="StateMachine" instance=ExtResource("6_b7bdj")]
 script = ExtResource("9_hs0e5")
+
+[node name="ReanimComponent" parent="." instance=ExtResource("10_ibbap")]

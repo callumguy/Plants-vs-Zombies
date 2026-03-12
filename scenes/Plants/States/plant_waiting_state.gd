@@ -8,7 +8,8 @@ func enter() -> void:
     plant = actor
     while plant.sprite == null:
         await get_tree().process_frame
-    plant.sprite.play("idle")
+    # plant.sprite.play("idle")
+    plant.reanim.play(plant.animation_waiting_name, true)
     
 func exit() -> void:
     pass

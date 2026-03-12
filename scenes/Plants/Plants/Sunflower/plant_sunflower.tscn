@@ -1,14 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://croyotosh53mj"]
+[gd_scene load_steps=9 format=3 uid="uid://croyotosh53mj"]
 
 [ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_wdlwu"]
 [ext_resource type="PackedScene" uid="uid://d20h00cyuaqvc" path="res://Components/GenerateComponent/generate_component.tscn" id="2_nh6tt"]
 [ext_resource type="Script" path="res://scenes/Plants/Plants/Sunflower/plant_sunflower.gd" id="2_s4del"]
 [ext_resource type="SpriteFrames" uid="uid://dgxfjqr5x6qbl" path="res://tres/sunflower.tres" id="3_ixa18"]
 [ext_resource type="Texture2D" uid="uid://cq2b7cq2nc3h6" path="res://scenes/Plants/SeedPackets/Icons.png" id="3_poug5"]
+[ext_resource type="Texture2D" uid="uid://r844car45hfo" path="res://scenes/Plants/Plants/Sunflower/sunflower.png" id="6_uo2na"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekjs0"]
 atlas = ExtResource("3_poug5")
 region = Rect2(113, 2, 109, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6tcj"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(2, 2, 57, 43)
 
 [node name="Sunflower" instance=ExtResource("1_wdlwu")]
 script = ExtResource("2_s4del")
@@ -17,6 +22,7 @@ cooldown = 24.0
 sun_cost = 50
 
 [node name="Sprite" parent="." index="0"]
+visible = false
 sprite_frames = ExtResource("3_ixa18")
 animation = &"idle"
 
@@ -27,3 +33,11 @@ texture = SubResource("AtlasTexture_ekjs0")
 initial_state = NodePath("Cooldown")
 
 [node name="GenerateComponent" parent="." index="7" instance=ExtResource("2_nh6tt")]
+
+[node name="ReanimComponent" parent="." index="8"]
+position = Vector2(-31, -31)
+reanim_path = "res://scenes/Plants/Plants/Sunflower/sunflower_reanim.txt"
+
+[node name="anim_idle" type="Sprite2D" parent="ReanimComponent" index="0"]
+texture = SubResource("AtlasTexture_h6tcj")
+centered = false
