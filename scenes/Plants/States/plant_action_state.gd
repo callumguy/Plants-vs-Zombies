@@ -7,10 +7,9 @@ func enter() -> void:
     if plant.has_method("perform_action"):
         plant.perform_action()
         plant.reanim.stop(plant.animation_waiting_name)
-        plant.reanim.play(plant.animation_action_name)
-        #plant.reanim.stop("anim_attack")
-        #plant.reanim.play("anim_idle")
-        # maybe a wait needed?
+        for animation_name in plant.animation_action_names:
+            plant.reanim.play(animation_name)
+            
     state_machine.change_state("cooldown")
     
 func exit() -> void:

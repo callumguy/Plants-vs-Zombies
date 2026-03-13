@@ -75,7 +75,6 @@ script = ExtResource("2_lsjyp")
 projectile = ExtResource("3_kft47")
 cooldown = 1.0
 sun_cost = 125
-animation_action_name = "anim_attack"
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(0, 23.75)

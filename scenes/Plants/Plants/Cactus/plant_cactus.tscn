@@ -69,7 +69,6 @@ region = Rect2(5, 181, 17, 27)
 script = ExtResource("2_vmbpj")
 projectile = ExtResource("3_nqbw3")
 sun_cost = 150
-animation_action_name = "anim_shooting"
 
 [node name="Sprite" parent="." index="0"]
 visible = false

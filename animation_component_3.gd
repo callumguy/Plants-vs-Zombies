@@ -40,7 +40,7 @@ func stop(anim_name: String):
         if anim_name == current_animation['name']:
             current_animations.erase(current_animation)
             
-            if anim_name == actor.animation_action_name: #mmm
+            if anim_name in actor.animation_action_names: #mmm
                 play(actor.animation_cooldown_name, true) # mmm
 
 func _process(delta: float) -> void:
@@ -72,6 +72,8 @@ func apply_transforms(animation_frame: Dictionary, sprite: Sprite2D) -> void:
         return
     
     var tags = ['x', 'y', 'sx', 'sy', 'kx', 'ky', 'f', 'i']
+    var kx: float
+    var ky: float
     
     for tag in tags:
         if tag not in animation_frame:
@@ -84,11 +86,19 @@ func apply_transforms(animation_frame: Dictionary, sprite: Sprite2D) -> void:
             'sx': sprite.scale.x = animation_frame[tag]
             'sy': sprite.scale.y = animation_frame[tag]
             'kx': 
-                sprite.rotation = deg_to_rad(animation_frame[tag])
-                # sprite.skew = animation_frame[tag]
-                pass
+                # sprite.rotation = deg_to_rad(animation_frame[tag])
+                kx = animation_frame[tag]
             'ky':
-                sprite.skew = deg_to_rad(animation_frame[tag])
+                ky = animation_frame[tag]
+                #if ky == kx:
+                #    sprite.rotation = deg_to_rad(kx)
+                #else:
+                #    sprite.rotation - deg_to_rad(kx)
+                #    sprite.skew = deg_to_rad(kx - ky)
+                
+                sprite.rotation = deg_to_rad(kx)
+                sprite.skew = deg_to_rad(ky - kx)
+                
             'i':
                 if AnimationData.atlas_regions.get(animation_frame[tag]):
                     sprite.texture.region = AnimationData.atlas_regions[animation_frame[tag]]

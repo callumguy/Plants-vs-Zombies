@@ -26,7 +26,7 @@ signal tower_destroyed(tower)
 @export var recharge := 7.5 ## ------------------
 
 @export var animation_waiting_name: String = "anim_idle"
-@export var animation_action_name: String = "anim_shoot"
+@export var animation_action_names: Array[String] = ["anim_shoot"]
 @export var animation_cooldown_name: String = "anim_idle"
 
 var lane: int

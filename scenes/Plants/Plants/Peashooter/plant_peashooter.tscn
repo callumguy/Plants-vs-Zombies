@@ -7,6 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://ctc4f3b87fv6e" path="res://Components/ShootComponent/shoot_component.tscn" id="4_5f23n"]
 [ext_resource type="Texture2D" uid="uid://beanmr0ong3g3" path="res://scenes/Plants/Plants/Peashooter/peashooter.png" id="6_ajw32"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx0k2"]
+atlas = ExtResource("6_ajw32")
+region = Rect2(260, 110, 15, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk0dc"]
+atlas = ExtResource("6_ajw32")
+region = Rect2(251, 87, 26, 17)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_co7b2"]
 atlas = ExtResource("6_ajw32")
 region = Rect2(77, 72, 69, 63)
@@ -15,18 +23,9 @@ region = Rect2(77, 72, 69, 63)
 atlas = ExtResource("6_ajw32")
 region = Rect2(162, 51, 33, 49)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tk0dc"]
-atlas = ExtResource("6_ajw32")
-region = Rect2(256, 92, 15, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vx0k2"]
-atlas = ExtResource("6_ajw32")
-region = Rect2(260, 110, 15, 19)
-
 [node name="Peashooter" instance=ExtResource("1_0rlbm")]
 script = ExtResource("2_7djh6")
 animation_waiting_name = "anim_full_idle"
-animation_action_name = "anim_shooting"
 animation_cooldown_name = "anim_full_idle"
 
 [node name="Sprite" parent="." index="0"]
@@ -55,18 +54,18 @@ visible = true
 position = Vector2(-88, -88)
 reanim_path = "res://scenes/Plants/Plants/Peashooter/peashooter_single_reanim.txt"
 
-[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="0"]
-texture = SubResource("AtlasTexture_co7b2")
+[node name="stalk_bottom" type="Sprite2D" parent="ReanimComponent" index="0"]
+texture = SubResource("AtlasTexture_vx0k2")
 centered = false
 
-[node name="idle_mouth" type="Sprite2D" parent="ReanimComponent" index="1"]
-texture = SubResource("AtlasTexture_8fby0")
-centered = false
-
-[node name="stalk_top" type="Sprite2D" parent="ReanimComponent" index="2"]
+[node name="stalk_top" type="Sprite2D" parent="ReanimComponent" index="1"]
 texture = SubResource("AtlasTexture_tk0dc")
 centered = false
 
-[node name="stalk_bottom" type="Sprite2D" parent="ReanimComponent" index="3"]
-texture = SubResource("AtlasTexture_vx0k2")
+[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="2"]
+texture = SubResource("AtlasTexture_co7b2")
+centered = false
+
+[node name="idle_mouth" type="Sprite2D" parent="ReanimComponent" index="3"]
+texture = SubResource("AtlasTexture_8fby0")
 centered = false
