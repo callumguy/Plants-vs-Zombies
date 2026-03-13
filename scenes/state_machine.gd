@@ -15,6 +15,7 @@ func _ready() -> void:
         
     # Start with initial state
     if initial_state:
+        await owner.ready
         change_state(initial_state.name.to_lower())
         
 func _process(delta: float) -> void:

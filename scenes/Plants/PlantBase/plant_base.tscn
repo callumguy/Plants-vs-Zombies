@@ -60,3 +60,6 @@ script = ExtResource("8_am11v")
 script = ExtResource("9_hs0e5")
 
 [node name="ReanimComponent" parent="." instance=ExtResource("10_ibbap")]
+visible = true
+
+[node name="Marker2D" type="Marker2D" parent="ReanimComponent"]

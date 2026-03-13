@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fqfi6l23llhb"
-path="res://.godot/imported/wallnut.png-3d47232e48cf482227e9c1190ae9826f.ctex"
+uid="uid://cegwqqilox4lk"
+path="res://.godot/imported/Aspearagus_blink1.png-33416a7a4c19cdd8b5bf067d35a06edb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/wallnut.png"
-dest_files=["res://.godot/imported/wallnut.png-3d47232e48cf482227e9c1190ae9826f.ctex"]
+source_file="res://scenes/Plants/Plants/Aspearagus/Sprites/Aspearagus_blink1.png"
+dest_files=["res://.godot/imported/Aspearagus_blink1.png-33416a7a4c19cdd8b5bf067d35a06edb.ctex"]
 
 [params]
 

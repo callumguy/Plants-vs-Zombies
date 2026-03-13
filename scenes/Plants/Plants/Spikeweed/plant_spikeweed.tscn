@@ -50,10 +50,6 @@ animations = [{
 atlas = ExtResource("4_bqqqr")
 region = Rect2(113, 16, 100, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q07lb"]
-atlas = ExtResource("4_bqqqr")
-region = Rect2(138, 55, 46, 10)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_e33tk"]
 atlas = ExtResource("4_bqqqr")
 region = Rect2(6, 53, 16, 25)
@@ -70,6 +66,10 @@ region = Rect2(50, 56, 15, 21)
 atlas = ExtResource("4_bqqqr")
 region = Rect2(71, 54, 18, 22)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q07lb"]
+atlas = ExtResource("4_bqqqr")
+region = Rect2(138, 55, 46, 10)
+
 [node name="Spikeweed" instance=ExtResource("1_fasnb")]
 script = ExtResource("2_lsjyp")
 projectile = ExtResource("3_kft47")
@@ -79,6 +79,9 @@ sun_cost = 125
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(0, 23.75)
 shape = SubResource("RectangleShape2D_fna8c")
+
+[node name="StateMachine" parent="." index="6" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("Cooldown")
 
 [node name="Parts" type="Node2D" parent="." index="7"]
 visible = false
@@ -136,13 +139,6 @@ position = Vector2(-46, -32)
 texture = SubResource("AtlasTexture_v7g5v")
 centered = false
 
-[node name="anim_blink" type="Sprite2D" parent="ReanimComponent/anim_face" index="0"]
-visible = false
-z_index = 10
-position = Vector2(19.4, 60.6)
-texture = SubResource("AtlasTexture_q07lb")
-centered = false
-
 [node name="Caltrop_horn1" type="Sprite2D" parent="ReanimComponent" index="1"]
 texture = SubResource("AtlasTexture_e33tk")
 centered = false
@@ -157,4 +153,10 @@ centered = false
 
 [node name="Caltrop_horn4" type="Sprite2D" parent="ReanimComponent" index="4"]
 texture = SubResource("AtlasTexture_etxgd")
+centered = false
+
+[node name="anim_blink" type="Sprite2D" parent="ReanimComponent" index="6"]
+z_index = 10
+position = Vector2(19.4, 60.6)
+texture = SubResource("AtlasTexture_q07lb")
 centered = false

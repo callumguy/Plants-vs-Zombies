@@ -1,0 +1,67 @@
+[gd_scene load_steps=13 format=3 uid="uid://cg7rs6yegok60"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_atnjm"]
+[ext_resource type="Script" path="res://scenes/Plants/Plants/Aspearagus/plant_aspearagus.gd" id="2_3o1ep"]
+[ext_resource type="PackedScene" uid="uid://c42byrgfp0f7o" path="res://projectile_spear.tscn" id="3_uvvq5"]
+[ext_resource type="Texture2D" uid="uid://eknm1x6fucqb" path="res://scenes/Plants/Plants/Aspearagus/Sprites/Aspearagus_body.png" id="4_u7pgr"]
+[ext_resource type="Texture2D" uid="uid://ftge3487i81l" path="res://scenes/Plants/Plants/Aspearagus/Sprites/Aspearagus_hair2.png" id="5_esvtp"]
+[ext_resource type="Texture2D" uid="uid://df16niwvot7tc" path="res://scenes/Plants/Plants/Aspearagus/Sprites/Aspearagus_hair.png" id="6_74blk"]
+[ext_resource type="Texture2D" uid="uid://10ifib0dhjmx" path="res://scenes/Plants/Plants/Aspearagus/Sprites/Aspearagus_Head.png" id="7_nvpdp"]
+[ext_resource type="Texture2D" uid="uid://bcp562cds56ak" path="res://scenes/Plants/Plants/Aspearagus/Sprites/Aspearagus_Mouth.png" id="8_kf2oa"]
+[ext_resource type="Texture2D" uid="uid://usr3dxgcc0yl" path="res://scenes/Plants/Plants/Aspearagus/Sprites/Aspearagus_Mouth_Open.png" id="9_ikj03"]
+[ext_resource type="Texture2D" uid="uid://c4fik661at0rl" path="res://scenes/Plants/Plants/Aspearagus/Sprites/Aspearagus_tip.png" id="10_rcyai"]
+[ext_resource type="Script" path="res://Components/RaycastComponent/raycast_component.gd" id="11_wmx5e"]
+[ext_resource type="PackedScene" uid="uid://ctc4f3b87fv6e" path="res://Components/ShootComponent/shoot_component.tscn" id="12_enwqb"]
+
+[node name="Aspearagus" instance=ExtResource("1_atnjm")]
+script = ExtResource("2_3o1ep")
+projectile = ExtResource("3_uvvq5")
+sun_cost = 300
+
+[node name="StateMachine" parent="." index="6" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("Cooldown")
+
+[node name="ReanimComponent" parent="." index="7"]
+reanim_path = "res://scenes/Plants/Plants/Aspearagus/Aspearagus_reanim.txt"
+
+[node name="anim_sprout" type="Sprite2D" parent="ReanimComponent" index="1"]
+texture = ExtResource("4_u7pgr")
+centered = false
+
+[node name="Aspearagus_hair2" type="Sprite2D" parent="ReanimComponent" index="2"]
+texture = ExtResource("5_esvtp")
+centered = false
+
+[node name="Aspearagus_Hair" type="Sprite2D" parent="ReanimComponent" index="3"]
+texture = ExtResource("6_74blk")
+centered = false
+
+[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="4"]
+texture = ExtResource("7_nvpdp")
+centered = false
+
+[node name="idle_mouth_copy" type="Sprite2D" parent="ReanimComponent" index="5"]
+texture = ExtResource("8_kf2oa")
+centered = false
+
+[node name="idle_mouth" type="Sprite2D" parent="ReanimComponent" index="6"]
+texture = ExtResource("9_ikj03")
+centered = false
+
+[node name="Aspearagus_Tip" type="Sprite2D" parent="ReanimComponent" index="7"]
+texture = ExtResource("10_rcyai")
+centered = false
+
+[node name="RaycastComponent" type="Node2D" parent="." index="8" node_paths=PackedStringArray("raycasts")]
+script = ExtResource("11_wmx5e")
+raycasts = NodePath("../Raycasts")
+
+[node name="Raycasts" type="Node2D" parent="." index="9"]
+
+[node name="Forward" type="RayCast2D" parent="Raycasts" index="0"]
+target_position = Vector2(1160, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="ShootComponent" parent="." index="10" instance=ExtResource("12_enwqb")]

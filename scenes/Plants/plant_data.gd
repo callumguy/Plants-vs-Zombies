@@ -7,6 +7,9 @@ const ICON_ATLAS_TEXTURE = preload(SEED_PACKET_FOLDER + "Icons.png")
 const ICON_ATLAS_WIDTH := 8
 
 const RECHARGE_FAST := 7.5
+const RECHARGE_MEDIUM := 15
+const RECHARGE_LONG := 30
+const RECHARGE_VERY_LONG := 60
 
 # Returns a rectangle that can be used to get a plant's icon texture from the atlas.
 func id_to_rect(id: int) -> Rect2:
@@ -54,12 +57,19 @@ var plants := {
         "description" = "Shoots stars in 5 directions."
     },
     "spikeweed": {
-    "scene" = load(id_to_path("spikeweed")),
-    "icon_region" = id_to_rect(21),
-    "cost" = 125,
-    "recharge" = RECHARGE_FAST,
-    "description" = "Damages zombies that walk over it."
+        "scene" = load(id_to_path("spikeweed")),
+        "icon_region" = id_to_rect(21),
+        "cost" = 125,
+        "recharge" = RECHARGE_FAST,
+        "description" = "Damages zombies that walk over it."
     },
+    "aspearagus": {
+        "scene" = load(id_to_path("aspearagus")),
+        "icon_region" = id_to_rect(9),
+        "cost" = 100,
+        "recharge" = RECHARGE_MEDIUM,
+        "description" = "SHOOTS SPEARS"
+    }
 }
 
 func _ready() -> void:

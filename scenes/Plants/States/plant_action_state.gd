@@ -6,9 +6,10 @@ func enter() -> void:
     plant = actor
     if plant.has_method("perform_action"):
         plant.perform_action()
-        plant.reanim.stop(plant.animation_waiting_name)
-        for animation_name in plant.animation_action_names:
-            plant.reanim.play(animation_name)
+        
+        #var final_frame = plant.reanim.stop(plant.animation_waiting_name)
+        #for animation_name in plant.animation_action_names:
+        #    plant.reanim.play(animation_name)
             
     state_machine.change_state("cooldown")
     

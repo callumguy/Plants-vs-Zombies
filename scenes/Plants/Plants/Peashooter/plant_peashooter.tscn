@@ -25,8 +25,6 @@ region = Rect2(162, 51, 33, 49)
 
 [node name="Peashooter" instance=ExtResource("1_0rlbm")]
 script = ExtResource("2_7djh6")
-animation_waiting_name = "anim_full_idle"
-animation_cooldown_name = "anim_full_idle"
 
 [node name="Sprite" parent="." index="0"]
 visible = false
@@ -50,7 +48,6 @@ collide_with_bodies = false
 [node name="ShootComponent" parent="." index="9" instance=ExtResource("4_5f23n")]
 
 [node name="ReanimComponent" parent="." index="10"]
-visible = true
 position = Vector2(-88, -88)
 reanim_path = "res://scenes/Plants/Plants/Peashooter/peashooter_single_reanim.txt"
 

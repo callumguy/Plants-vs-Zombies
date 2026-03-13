@@ -1,12 +1,15 @@
 extends Node2D
 class_name ReanimComponent
 
+signal animation_finished(animation_name: String)
+
 @export_file("*.txt") var reanim_path: String = PlantData.PLANTS_FOLDER + "Spikeweed/spikeweed_reanim.txt"
 
 var actor
 var animations: Dictionary
 var current_animations: Array = []
 
+var ooga_booga: String
 
 func _ready() -> void:
     actor = get_parent()
@@ -14,8 +17,7 @@ func _ready() -> void:
     animations = ReanimParser2.parse(content)
     apply_default_transforms()
 
-func play(anim_name: String, loop: bool = false): # make it so if played with loop=true it overrides the non looper and vise-versa
-    print("booly", loop)
+func play(anim_name: String, loop: bool = false, custom_start_frame: int = -1): # make it so if played with loop=true it overrides the non looper and vise-versa
     var anim = animations.get(anim_name)
     if not anim:
         return
@@ -28,24 +30,30 @@ func play(anim_name: String, loop: bool = false): # make it so if played with lo
     anim_info['delta_count'] = 0
     
     anim_info['name'] = anim_name
-    anim_info['start_frame'] = animations[anim_name]['info']['start_frame']
+    if custom_start_frame == -1:
+        anim_info['start_frame'] = animations[anim_name]['info']['start_frame'] # no start frame given so set to the default
+    else:
+        anim_info['start_frame'] = custom_start_frame # start midway through the animation
     anim_info['end_frame'] = animations[anim_name]['info']['end_frame']
     anim_info['current_frame'] = animations[anim_name]['info']['start_frame'] - 1 # -1 since the first time a frame changes will be after this var increases in _process
     anim_info['looping'] = loop
     current_animations.append(anim_info)
-    print(anim_info)
+    # print(anim_info)
 
-func stop(anim_name: String):
+func stop(anim_name: String) -> int:
     for current_animation in current_animations:
         if anim_name == current_animation['name']:
+            var frame_ended_on = current_animation['current_frame']
             current_animations.erase(current_animation)
+            emit_signal("animation_finished", anim_name)
             
-            if anim_name in actor.animation_action_names: #mmm
-                play(actor.animation_cooldown_name, true) # mmm
-
+            return frame_ended_on
+    return -1 # uuuuuuuuuuuuuuuuuh
+    
 func _process(delta: float) -> void:
+    print(current_animations)
     visible = true
-    print("---")
+    # print("---")
     for anim_info in current_animations:
         #print(anim_info['name'])
         anim_info['delta_count'] += delta
@@ -57,7 +65,7 @@ func _process(delta: float) -> void:
         anim_info['current_frame'] = wrapi(anim_info['current_frame'] + 1, anim_info['start_frame'], anim_info['end_frame'] + 1)
         var _is = anim_info['current_frame'] # mmm
         
-        print(anim_info['current_frame'])
+        # print(anim_info['current_frame'])
         
         if _is < was and not anim_info['looping']: # mmm
             stop(anim_info['name']) # mmm
@@ -65,6 +73,7 @@ func _process(delta: float) -> void:
         
         for animation_name in animations.keys():
             var animation_frame = animations[animation_name]['frames'][anim_info['current_frame']]
+            ooga_booga = anim_info['name']
             apply_transforms(animation_frame, find_child(animation_name)) # find child takes lots of cpu juice? so cache it porbably
             
 func apply_transforms(animation_frame: Dictionary, sprite: Sprite2D) -> void:
@@ -72,6 +81,11 @@ func apply_transforms(animation_frame: Dictionary, sprite: Sprite2D) -> void:
         return
     
     var tags = ['x', 'y', 'sx', 'sy', 'kx', 'ky', 'f', 'i']
+    
+    #if ooga_booga == 'anim_shooting' or ooga_booga == 'anim_head_idle':
+     #   tags.erase('x')
+     #   tags.erase('y')
+    
     var kx: float
     var ky: float
     

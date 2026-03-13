@@ -25,9 +25,9 @@ signal tower_destroyed(tower)
 @export var sun_cost := 100 ## seed packet scene?
 @export var recharge := 7.5 ## ------------------
 
-@export var animation_waiting_name: String = "anim_idle"
-@export var animation_action_names: Array[String] = ["anim_shoot"]
-@export var animation_cooldown_name: String = "anim_idle"
+#@export var animation_waiting_name: String = "anim_idle"
+#@export var animation_action_names: Array[String] = ["anim_shoot"]
+#@export var animation_cooldown_name: String = "anim_idle"
 
 var lane: int
 var column: int
@@ -39,6 +39,7 @@ func _ready():
 func connections() -> void:
     health.health_changed.connect(_on_health_changed)
     health.died.connect(die)
+    reanim.animation_finished.connect(animation_finished)
     
 func _on_health_changed(amount: int, max_health: int):
     flash.flash()
@@ -49,8 +50,9 @@ func die():
     tower_destroyed.emit(self)
     queue_free()
 
-
-
+func animation_finished(animation_name: String) -> void:
+    print("hm")
+    pass
 
 
 

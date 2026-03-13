@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://bok167h1b15fu"]
 
 [ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_s20wu"]
-[ext_resource type="Script" path="res://scenes/Plants/Plants/Peashooter/plant_peashooter.gd" id="2_vmbpj"]
+[ext_resource type="Script" path="res://scenes/Plants/Plants/Cactus/plant_cactus.gd" id="2_d3qee"]
 [ext_resource type="PackedScene" uid="uid://bikuxxj128lv3" path="res://scenes/Projectiles/projectile_spike.tscn" id="3_nqbw3"]
 [ext_resource type="SpriteFrames" uid="uid://cx740t8orldtw" path="res://tres/cactus.tres" id="4_sgusg"]
 [ext_resource type="Texture2D" uid="uid://cq2b7cq2nc3h6" path="res://scenes/Plants/SeedPackets/Icons.png" id="5_qiiig"]
@@ -66,9 +66,8 @@ atlas = ExtResource("8_hybik")
 region = Rect2(5, 181, 17, 27)
 
 [node name="Cactus" instance=ExtResource("1_s20wu")]
-script = ExtResource("2_vmbpj")
+script = ExtResource("2_d3qee")
 projectile = ExtResource("3_nqbw3")
-sun_cost = 150
 
 [node name="Sprite" parent="." index="0"]
 visible = false
@@ -97,7 +96,6 @@ collide_with_bodies = false
 [node name="ShootComponent" parent="." index="9" instance=ExtResource("6_knwm5")]
 
 [node name="ReanimComponent" parent="." index="10"]
-visible = true
 position = Vector2(-51, -58)
 reanim_path = "res://scenes/Plants/Plants/Cactus/cactus_reanim.txt"
 

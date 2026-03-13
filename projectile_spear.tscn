@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c42byrgfp0f7o"]
+
+[ext_resource type="PackedScene" uid="uid://dmmqxdhqx5h77" path="res://scenes/Projectiles/ProjectileBase/projectile_base.tscn" id="1_hdfgm"]
+[ext_resource type="Texture2D" uid="uid://ygmpjrddm4ui" path="res://scenes/Plants/Plants/Aspearagus/spear.png" id="2_38rtb"]
+[ext_resource type="PackedScene" uid="uid://bi125jx4e54ei" path="res://scenes/hit_effect_spikey.tscn" id="2_o5mr6"]
+
+[node name="Spear" instance=ExtResource("1_hdfgm")]
+damage = 40
+hit_effect_scene = ExtResource("2_o5mr6")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-11, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_38rtb")
