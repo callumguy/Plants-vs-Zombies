@@ -65,6 +65,7 @@ func _ready_pressed() -> void:
 func create_packets() -> void:
     var plants_unlocked = PlayerStats.plants_unlocked
     plants_unlocked.append("aspearagus")
+    plants_unlocked.append("cherrybomb")
     for plant in plants_unlocked:
         var packet = SEED_PACKET.instantiate()
         packet.set_script(load("res://pickme_packet.gd"))

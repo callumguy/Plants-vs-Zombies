@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://croyotosh53mj"]
+[gd_scene load_steps=36 format=3 uid="uid://croyotosh53mj"]
 
 [ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_wdlwu"]
 [ext_resource type="PackedScene" uid="uid://d20h00cyuaqvc" path="res://Components/GenerateComponent/generate_component.tscn" id="2_nh6tt"]
@@ -10,6 +10,114 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekjs0"]
 atlas = ExtResource("3_poug5")
 region = Rect2(113, 2, 109, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k07nw"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(150, 91, 44, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0swxy"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(134, 91, 15, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0447k"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(195, 91, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c2hx"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(25, 122, 67, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npmbr"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(2, 122, 22, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ihse"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(93, 122, 15, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn33p"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(177, 70, 15, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txdyq"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(194, 70, 26, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kscu"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(13, 91, 10, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdnf1"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(2, 91, 10, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tml2f"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(24, 91, 15, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx80o"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(40, 91, 15, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl8xw"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(56, 91, 14, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duw7j"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(71, 91, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx06h"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(86, 91, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3snv6"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(99, 91, 12, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scyqp"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(2, 108, 10, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdhwi"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(13, 108, 11, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hex4b"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(25, 108, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ivxg"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(36, 108, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoosm"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(49, 108, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipxxb"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(62, 108, 11, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yu02"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(74, 108, 13, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbwr1"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(88, 108, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3087"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(100, 108, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mod7f"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(113, 91, 19, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yhmv"]
+atlas = ExtResource("6_uo2na")
+region = Rect2(113, 108, 16, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6tcj"]
 atlas = ExtResource("6_uo2na")
@@ -38,6 +146,114 @@ initial_state = NodePath("Cooldown")
 position = Vector2(-31, -31)
 reanim_path = "res://scenes/Plants/Plants/Sunflower/sunflower_reanim.txt"
 
-[node name="anim_idle" type="Sprite2D" parent="ReanimComponent" index="0"]
+[node name="backleaf" type="Sprite2D" parent="ReanimComponent" index="0"]
+texture = SubResource("AtlasTexture_k07nw")
+centered = false
+
+[node name="backleaf_left_tip" type="Sprite2D" parent="ReanimComponent" index="1"]
+texture = SubResource("AtlasTexture_0swxy")
+centered = false
+
+[node name="backleaf_right_tip" type="Sprite2D" parent="ReanimComponent" index="2"]
+texture = SubResource("AtlasTexture_0447k")
+centered = false
+
+[node name="frontleaf" type="Sprite2D" parent="ReanimComponent" index="3"]
+texture = SubResource("AtlasTexture_0c2hx")
+centered = false
+
+[node name="frontleaf_left_tip" type="Sprite2D" parent="ReanimComponent" index="4"]
+texture = SubResource("AtlasTexture_npmbr")
+centered = false
+
+[node name="frontleaf_right_tip" type="Sprite2D" parent="ReanimComponent" index="5"]
+texture = SubResource("AtlasTexture_6ihse")
+centered = false
+
+[node name="stalk_bottom" type="Sprite2D" parent="ReanimComponent" index="6"]
+texture = SubResource("AtlasTexture_fn33p")
+centered = false
+
+[node name="stalk_top" type="Sprite2D" parent="ReanimComponent" index="7"]
+texture = SubResource("AtlasTexture_txdyq")
+centered = false
+
+[node name="SunFlower_leftpetal1" type="Sprite2D" parent="ReanimComponent" index="8"]
+texture = SubResource("AtlasTexture_4kscu")
+centered = false
+
+[node name="SunFlower_leftpetal2" type="Sprite2D" parent="ReanimComponent" index="9"]
+texture = SubResource("AtlasTexture_bdnf1")
+centered = false
+
+[node name="SunFlower_leftpetal3" type="Sprite2D" parent="ReanimComponent" index="10"]
+texture = SubResource("AtlasTexture_tml2f")
+centered = false
+
+[node name="SunFlower_leftpetal4" type="Sprite2D" parent="ReanimComponent" index="11"]
+texture = SubResource("AtlasTexture_kx80o")
+centered = false
+
+[node name="SunFlower_leftpetal5" type="Sprite2D" parent="ReanimComponent" index="12"]
+texture = SubResource("AtlasTexture_vl8xw")
+centered = false
+
+[node name="SunFlower_leftpetal6" type="Sprite2D" parent="ReanimComponent" index="13"]
+texture = SubResource("AtlasTexture_duw7j")
+centered = false
+
+[node name="SunFlower_leftpetal7" type="Sprite2D" parent="ReanimComponent" index="14"]
+texture = SubResource("AtlasTexture_bx06h")
+centered = false
+
+[node name="SunFlower_leftpetal8" type="Sprite2D" parent="ReanimComponent" index="15"]
+texture = SubResource("AtlasTexture_3snv6")
+centered = false
+
+[node name="SunFlower_rightpetal1" type="Sprite2D" parent="ReanimComponent" index="16"]
+texture = SubResource("AtlasTexture_scyqp")
+centered = false
+
+[node name="SunFlower_rightpetal2" type="Sprite2D" parent="ReanimComponent" index="17"]
+texture = SubResource("AtlasTexture_fdhwi")
+centered = false
+
+[node name="SunFlower_rightpetal3" type="Sprite2D" parent="ReanimComponent" index="18"]
+texture = SubResource("AtlasTexture_hex4b")
+centered = false
+
+[node name="SunFlower_rightpetal4" type="Sprite2D" parent="ReanimComponent" index="19"]
+texture = SubResource("AtlasTexture_5ivxg")
+centered = false
+
+[node name="SunFlower_rightpetal5" type="Sprite2D" parent="ReanimComponent" index="20"]
+texture = SubResource("AtlasTexture_hoosm")
+centered = false
+
+[node name="SunFlower_rightpetal6" type="Sprite2D" parent="ReanimComponent" index="21"]
+texture = SubResource("AtlasTexture_ipxxb")
+centered = false
+
+[node name="SunFlower_rightpetal7" type="Sprite2D" parent="ReanimComponent" index="22"]
+texture = SubResource("AtlasTexture_0yu02")
+centered = false
+
+[node name="SunFlower_rightpetal8" type="Sprite2D" parent="ReanimComponent" index="23"]
+texture = SubResource("AtlasTexture_xbwr1")
+centered = false
+
+[node name="SunFlower_rightpetal9" type="Sprite2D" parent="ReanimComponent" index="24"]
+texture = SubResource("AtlasTexture_r3087")
+centered = false
+
+[node name="SunFlower_bottompetals" type="Sprite2D" parent="ReanimComponent" index="25"]
+texture = SubResource("AtlasTexture_mod7f")
+centered = false
+
+[node name="SunFlower_toppetals" type="Sprite2D" parent="ReanimComponent" index="26"]
+texture = SubResource("AtlasTexture_0yhmv")
+centered = false
+
+[node name="anim_idle" type="Sprite2D" parent="ReanimComponent" index="27"]
 texture = SubResource("AtlasTexture_h6tcj")
 centered = false

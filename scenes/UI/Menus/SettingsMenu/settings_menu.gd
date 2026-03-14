@@ -37,8 +37,8 @@ func load_settings():
     apply_display()
     
 func apply_volume() -> void:
-    AudioManager.update_volume(AudioManager.VolumeChannel.master, master_volume_scrollbar.value)
-    AudioManager.update_volume(AudioManager.VolumeChannel.music, music_volume_scrollbar.value)
+    AudioManager.update_volume(AudioManager.VolumeChannel.MASTER, master_volume_scrollbar.value)
+    AudioManager.update_volume(AudioManager.VolumeChannel.MUSIC, music_volume_scrollbar.value)
     AudioManager.update_volume(AudioManager.VolumeChannel.SFX, sfx_volume_scrollbar.value)
 
 func apply_display() -> void:
@@ -59,11 +59,11 @@ func save_settings() -> void:
     cfg.save(CONFIG_PATH)
 
 func change_master_volume(new_value) -> void:
-    AudioManager.update_volume(AudioManager.VolumeChannel.master, new_value)
+    AudioManager.update_volume(AudioManager.VolumeChannel.MASTER, new_value)
     save_settings()
     
 func change_music_volume(new_value) -> void:
-    AudioManager.update_volume(AudioManager.VolumeChannel.music, new_value)
+    AudioManager.update_volume(AudioManager.VolumeChannel.MUSIC, new_value)
     save_settings()
     
 func change_sfx_volume(new_value) -> void:

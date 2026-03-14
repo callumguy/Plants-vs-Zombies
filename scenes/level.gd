@@ -28,6 +28,11 @@ func _ready() -> void:
     
     level_reward_name = LevelData.get_level_info(level_number, 'reward')
     
+    if LevelData.get_level_info(level_number, 'world') == LevelData.Worlds.DAY:
+        $BackgroundDay.visible = true
+    else:
+        $BackgroundNight.visible = true
+    
     get_tree().paused = false
     connections()
     
@@ -57,7 +62,8 @@ func start_battle():
     music_player.play()
     ENEMY_MANAGER.start_level()
     $PlacementManager.read_seedbar()
-    air_spawner.enabled = true
+    if LevelData.get_level_info(level_number, 'world') != LevelData.Worlds.NIGHT:
+        air_spawner.enabled = true
     engine_speed_locked = false
     
 func player_wins(position: Vector2) -> void: # position of the last zombie (that just died)

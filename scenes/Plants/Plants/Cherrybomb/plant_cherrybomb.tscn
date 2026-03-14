@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://yk6tak3yddgn"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_rnrcb"]
+[ext_resource type="Script" path="res://scenes/Plants/Plants/Cherrybomb/plant_cherrybomb.gd" id="2_gn5li"]
+[ext_resource type="Texture2D" uid="uid://bq7sjv67ofveu" path="res://Assets/icon.svg" id="3_kjo8i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myf6i"]
+
+[node name="CherryBomb" instance=ExtResource("1_rnrcb")]
+script = ExtResource("2_gn5li")
+cooldown = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("3_kjo8i")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_myf6i")
+
+[node name="StateMachine" parent="." index="7" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("Cooldown")

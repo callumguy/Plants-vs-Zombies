@@ -102,7 +102,7 @@ sprite = NodePath("../Parts/Body")
 parts = NodePath("../Parts")
 
 [node name="ReanimComponent" parent="." index="10"]
-position = Vector2(-44, -50)
+position = Vector2(-43, -35)
 reanim_path = "res://scenes/Plants/Plants/Wallnut/wallnut_reanim.txt"
 
 [node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="0"]

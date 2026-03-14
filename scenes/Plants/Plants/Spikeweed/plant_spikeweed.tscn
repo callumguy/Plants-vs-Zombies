@@ -133,7 +133,7 @@ raycasts = NodePath("../Raycasts")
 [node name="ShootComponent" parent="." index="11" instance=ExtResource("7_l1dd1")]
 
 [node name="ReanimComponent" parent="." index="12"]
-position = Vector2(-46, -32)
+position = Vector2(-41, -32)
 
 [node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="0"]
 texture = SubResource("AtlasTexture_v7g5v")

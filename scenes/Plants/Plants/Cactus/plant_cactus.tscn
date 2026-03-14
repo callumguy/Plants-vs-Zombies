@@ -68,6 +68,7 @@ region = Rect2(5, 181, 17, 27)
 [node name="Cactus" instance=ExtResource("1_s20wu")]
 script = ExtResource("2_d3qee")
 projectile = ExtResource("3_nqbw3")
+cooldown = 1.5
 
 [node name="Sprite" parent="." index="0"]
 visible = false
@@ -96,7 +97,7 @@ collide_with_bodies = false
 [node name="ShootComponent" parent="." index="9" instance=ExtResource("6_knwm5")]
 
 [node name="ReanimComponent" parent="." index="10"]
-position = Vector2(-51, -58)
+position = Vector2(-34, -38)
 reanim_path = "res://scenes/Plants/Plants/Cactus/cactus_reanim.txt"
 
 [node name="Cactus_arm2_2" type="Sprite2D" parent="ReanimComponent" index="0"]
@@ -112,12 +113,10 @@ texture = SubResource("AtlasTexture_tid6n")
 centered = false
 
 [node name="Cactus_body2" type="Sprite2D" parent="ReanimComponent" index="3"]
-visible = false
 texture = SubResource("AtlasTexture_elykj")
 centered = false
 
 [node name="Cactus_body3" type="Sprite2D" parent="ReanimComponent" index="4"]
-visible = false
 texture = SubResource("AtlasTexture_8dqd4")
 centered = false
 
@@ -135,7 +134,6 @@ texture = SubResource("AtlasTexture_mu6rt")
 centered = false
 
 [node name="Cactus_blink" type="Sprite2D" parent="ReanimComponent" index="8"]
-visible = false
 texture = SubResource("AtlasTexture_fwdf7")
 centered = false
 

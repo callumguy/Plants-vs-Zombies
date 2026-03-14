@@ -17,7 +17,7 @@ func _ready() -> void:
     animations = ReanimParser2.parse(content)
     apply_default_transforms()
 
-func play(anim_name: String, loop: bool = false, custom_start_frame: int = -1): # make it so if played with loop=true it overrides the non looper and vise-versa
+func play(anim_name: String, loop: bool = false, speed_mult: float = 1.0, custom_start_frame: int = -1): # make it so if played with loop=true it overrides the non looper and vise-versa
     var anim = animations.get(anim_name)
     if not anim:
         return
@@ -27,16 +27,18 @@ func play(anim_name: String, loop: bool = false, custom_start_frame: int = -1): 
         
     var anim_info: Dictionary = {}
     anim_info['fps'] = 12
-    anim_info['delta_count'] = 0
+    anim_info['delta_count'] = 0.0
     
     anim_info['name'] = anim_name
+    anim_info['start_frame'] = animations[anim_name]['info']['start_frame']
     if custom_start_frame == -1:
-        anim_info['start_frame'] = animations[anim_name]['info']['start_frame'] # no start frame given so set to the default
+        anim_info['current_frame'] = anim_info['start_frame'] -1 # no start frame given so set to the default
     else:
-        anim_info['start_frame'] = custom_start_frame # start midway through the animation
+        anim_info['current_frame'] = custom_start_frame -1 # start midway through the animation
     anim_info['end_frame'] = animations[anim_name]['info']['end_frame']
-    anim_info['current_frame'] = animations[anim_name]['info']['start_frame'] - 1 # -1 since the first time a frame changes will be after this var increases in _process
+    # anim_info['current_frame'] = animations[anim_name]['info']['start_frame']
     anim_info['looping'] = loop
+    anim_info['speed_mult'] = speed_mult
     current_animations.append(anim_info)
     # print(anim_info)
 
@@ -51,31 +53,33 @@ func stop(anim_name: String) -> int:
     return -1 # uuuuuuuuuuuuuuuuuh
     
 func _process(delta: float) -> void:
-    print(current_animations)
+    # print(current_animations)
     visible = true
     # print("---")
     for anim_info in current_animations:
         #print(anim_info['name'])
         anim_info['delta_count'] += delta
-        if anim_info['delta_count'] < (1.0 / anim_info['fps']):
+        if anim_info['delta_count'] < (1.0 / anim_info['fps'] / anim_info['speed_mult']):
             continue # it's not time for this animations next frame yet
-        anim_info['delta_count'] = 0
+        anim_info['delta_count'] -= (1.0 / anim_info['fps'] / anim_info['speed_mult'])
         
         var was = anim_info['current_frame'] # mmm
-        anim_info['current_frame'] = wrapi(anim_info['current_frame'] + 1, anim_info['start_frame'], anim_info['end_frame'] + 1)
+        anim_info['current_frame'] = wrapi(anim_info['current_frame'] + 1, anim_info['start_frame'], anim_info['end_frame'])
         var _is = anim_info['current_frame'] # mmm
         
         # print(anim_info['current_frame'])
+        print("---")
+        print(current_animations)
+        print(anim_info)
+        for animation_name in animations.keys():
+            var animation_frame = animations[animation_name]['frames'][anim_info['current_frame']]
+            ooga_booga = anim_info['name']
+            apply_transforms(animation_frame, find_child(animation_name)) # find child takes lots of cpu juice? so cache it porbably
         
         if _is < was and not anim_info['looping']: # mmm
             stop(anim_info['name']) # mmm
             continue # mmm
         
-        for animation_name in animations.keys():
-            var animation_frame = animations[animation_name]['frames'][anim_info['current_frame']]
-            ooga_booga = anim_info['name']
-            apply_transforms(animation_frame, find_child(animation_name)) # find child takes lots of cpu juice? so cache it porbably
-            
 func apply_transforms(animation_frame: Dictionary, sprite: Sprite2D) -> void:
     if not sprite:
         return
@@ -116,17 +120,23 @@ func apply_transforms(animation_frame: Dictionary, sprite: Sprite2D) -> void:
             'i':
                 if AnimationData.atlas_regions.get(animation_frame[tag]):
                     sprite.texture.region = AnimationData.atlas_regions[animation_frame[tag]]
-                
+            'f':
+                if animation_frame[tag] == 0:
+                    sprite.visible = true
+                else:
+                    sprite.visible = false
+            
+            
 func apply_default_transforms() -> void: # this should be removed at some point when the rest of this script is better
     for animation_name in animations.keys():
         for animation_frame in animations[animation_name]['frames']:
             apply_transforms(animation_frame, find_child(animation_name)) # find child takes lots of cpu juice? so cache it porbably
 
-func compose_transform(translation: Vector2, rotation: float, skew_y: float, scale: Vector2) -> Transform2D: # get y skew
-    var t := Transform2D()
-    t[0][0] = cos(rotation + skew_y) * scale.x
-    t[0][1] = sin(rotation + skew_y) * scale.x
-    t[1][0] = -sin(rotation) * scale.y
-    t[1][1] = cos(rotation) * scale.y
-    t[2] = translation
-    return t
+#func compose_transform(translation: Vector2, rotation: float, skew_y: float, scale: Vector2) -> Transform2D: # get y skew
+#    var t := Transform2D()
+#    t[0][0] = cos(rotation + skew_y) * scale.x
+#    t[0][1] = sin(rotation + skew_y) * scale.x
+#    t[1][0] = -sin(rotation) * scale.y
+#    t[1][1] = cos(rotation) * scale.y
+#    t[2] = translation
+#    return t

@@ -16,40 +16,42 @@
 [node name="Aspearagus" instance=ExtResource("1_atnjm")]
 script = ExtResource("2_3o1ep")
 projectile = ExtResource("3_uvvq5")
+cooldown = 2.15
 sun_cost = 300
 
 [node name="StateMachine" parent="." index="6" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("Cooldown")
 
 [node name="ReanimComponent" parent="." index="7"]
+position = Vector2(-31, -43)
 reanim_path = "res://scenes/Plants/Plants/Aspearagus/Aspearagus_reanim.txt"
 
 [node name="anim_sprout" type="Sprite2D" parent="ReanimComponent" index="1"]
 texture = ExtResource("4_u7pgr")
 centered = false
 
-[node name="Aspearagus_hair2" type="Sprite2D" parent="ReanimComponent" index="2"]
-texture = ExtResource("5_esvtp")
-centered = false
-
-[node name="Aspearagus_Hair" type="Sprite2D" parent="ReanimComponent" index="3"]
-texture = ExtResource("6_74blk")
-centered = false
-
-[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="4"]
+[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="2"]
 texture = ExtResource("7_nvpdp")
 centered = false
 
-[node name="idle_mouth_copy" type="Sprite2D" parent="ReanimComponent" index="5"]
+[node name="Aspearagus_hair2" type="Sprite2D" parent="ReanimComponent" index="3"]
+texture = ExtResource("5_esvtp")
+centered = false
+
+[node name="Aspearagus_Hair" type="Sprite2D" parent="ReanimComponent" index="4"]
+texture = ExtResource("6_74blk")
+centered = false
+
+[node name="idle_mouth copy" type="Sprite2D" parent="ReanimComponent" index="5"]
 texture = ExtResource("8_kf2oa")
 centered = false
 
-[node name="idle_mouth" type="Sprite2D" parent="ReanimComponent" index="6"]
-texture = ExtResource("9_ikj03")
+[node name="Aspearagus_Tip" type="Sprite2D" parent="ReanimComponent" index="6"]
+texture = ExtResource("10_rcyai")
 centered = false
 
-[node name="Aspearagus_Tip" type="Sprite2D" parent="ReanimComponent" index="7"]
-texture = ExtResource("10_rcyai")
+[node name="idle_mouth" type="Sprite2D" parent="ReanimComponent" index="7"]
+texture = ExtResource("9_ikj03")
 centered = false
 
 [node name="RaycastComponent" type="Node2D" parent="." index="8" node_paths=PackedStringArray("raycasts")]

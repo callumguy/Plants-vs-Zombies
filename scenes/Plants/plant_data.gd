@@ -68,7 +68,14 @@ var plants := {
         "icon_region" = id_to_rect(9),
         "cost" = 100,
         "recharge" = RECHARGE_MEDIUM,
-        "description" = "SHOOTS SPEARS"
+        "description" = "Shoots ze spears."
+    },
+    "cherrybomb": {
+        "scene" = load(id_to_path("cherrybomb")),
+        "icon_region" = id_to_rect(2),
+        "cost" = 150,
+        "recharge" = RECHARGE_FAST,
+        "description" = "Explodes ze zombies."
     }
 }
 

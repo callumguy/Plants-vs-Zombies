@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbqf336pca6av"]
+[gd_scene load_steps=18 format=3 uid="uid://bbqf336pca6av"]
 
 [ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_0rlbm"]
 [ext_resource type="Script" path="res://scenes/Plants/Plants/Peashooter/plant_peashooter.gd" id="2_7djh6"]
@@ -6,6 +6,7 @@
 [ext_resource type="SpriteFrames" uid="uid://d1kctbw8mxvtl" path="res://tres/peashooter.tres" id="3_57uff"]
 [ext_resource type="PackedScene" uid="uid://ctc4f3b87fv6e" path="res://Components/ShootComponent/shoot_component.tscn" id="4_5f23n"]
 [ext_resource type="Texture2D" uid="uid://beanmr0ong3g3" path="res://scenes/Plants/Plants/Peashooter/peashooter.png" id="6_ajw32"]
+[ext_resource type="Texture2D" uid="uid://r844car45hfo" path="res://scenes/Plants/Plants/Sunflower/sunflower.png" id="7_2wsrv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vx0k2"]
 atlas = ExtResource("6_ajw32")
@@ -23,8 +24,33 @@ region = Rect2(77, 72, 69, 63)
 atlas = ExtResource("6_ajw32")
 region = Rect2(162, 51, 33, 49)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_71g2e"]
+atlas = ExtResource("7_2wsrv")
+region = Rect2(150, 91, 44, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bubxc"]
+atlas = ExtResource("7_2wsrv")
+region = Rect2(134, 91, 15, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usqdw"]
+atlas = ExtResource("7_2wsrv")
+region = Rect2(195, 91, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mwbu"]
+atlas = ExtResource("7_2wsrv")
+region = Rect2(25, 122, 67, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybxsc"]
+atlas = ExtResource("7_2wsrv")
+region = Rect2(2, 122, 22, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eiwgl"]
+atlas = ExtResource("7_2wsrv")
+region = Rect2(93, 122, 15, 31)
+
 [node name="Peashooter" instance=ExtResource("1_0rlbm")]
 script = ExtResource("2_7djh6")
+cooldown = 1.5
 
 [node name="Sprite" parent="." index="0"]
 visible = false
@@ -48,7 +74,7 @@ collide_with_bodies = false
 [node name="ShootComponent" parent="." index="9" instance=ExtResource("4_5f23n")]
 
 [node name="ReanimComponent" parent="." index="10"]
-position = Vector2(-88, -88)
+position = Vector2(-31, -30)
 reanim_path = "res://scenes/Plants/Plants/Peashooter/peashooter_single_reanim.txt"
 
 [node name="stalk_bottom" type="Sprite2D" parent="ReanimComponent" index="0"]
@@ -65,4 +91,28 @@ centered = false
 
 [node name="idle_mouth" type="Sprite2D" parent="ReanimComponent" index="3"]
 texture = SubResource("AtlasTexture_8fby0")
+centered = false
+
+[node name="backleaf" type="Sprite2D" parent="ReanimComponent" index="5"]
+texture = SubResource("AtlasTexture_71g2e")
+centered = false
+
+[node name="backleaf_left_tip" type="Sprite2D" parent="ReanimComponent" index="6"]
+texture = SubResource("AtlasTexture_bubxc")
+centered = false
+
+[node name="backleaf_right_tip" type="Sprite2D" parent="ReanimComponent" index="7"]
+texture = SubResource("AtlasTexture_usqdw")
+centered = false
+
+[node name="frontleaf" type="Sprite2D" parent="ReanimComponent" index="8"]
+texture = SubResource("AtlasTexture_0mwbu")
+centered = false
+
+[node name="frontleaf_tip_left" type="Sprite2D" parent="ReanimComponent" index="9"]
+texture = SubResource("AtlasTexture_ybxsc")
+centered = false
+
+[node name="frontleaf_right_tip" type="Sprite2D" parent="ReanimComponent" index="10"]
+texture = SubResource("AtlasTexture_eiwgl")
 centered = false

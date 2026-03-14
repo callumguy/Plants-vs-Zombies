@@ -1,9 +1,11 @@
 extends Node
 
+enum Worlds {DAY, NIGHT}
 const BASIC_ZOMBIES := ['basic', 'conehead', 'buckethead']
 
 var levels := {
     "default": {
+        "world": Worlds.DAY,
         "zombies": BASIC_ZOMBIES,
         "seed_slots": 5,
         "reward": null,
@@ -20,7 +22,7 @@ var levels := {
         "reward": "plant/spikeweed"
     },
     "4": {
-        # nada
+        "world": Worlds.NIGHT
     },
     "5": {
         "seed_slots": 3

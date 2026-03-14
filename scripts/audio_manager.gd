@@ -1,12 +1,12 @@
 extends Node
 
-enum VolumeChannel {master, music, SFX}
+enum VolumeChannel {MASTER, MUSIC, SFX}
 
 func update_volume(channel: VolumeChannel, new_value: float) -> void:
     var bus = null
-    if channel == VolumeChannel.master:
+    if channel == VolumeChannel.MASTER:
         bus = AudioServer.get_bus_index("Master")
-    elif channel == VolumeChannel.music:
+    elif channel == VolumeChannel.MUSIC:
         bus = AudioServer.get_bus_index("Music")
     elif channel == VolumeChannel.SFX:
         bus = AudioServer.get_bus_index("SFX")

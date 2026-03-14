@@ -5,5 +5,5 @@ extends Plant
 func perform_action() -> void:
     generate.generate(sun_amount)
 
-#func _ready() -> void:
-#    statemachine.change_state("cooldown")
+func enter_cooldown() -> void:
+    reanim.play("anim_idle", true)
