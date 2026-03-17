@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://xpmdmgg1idsn"
+path="res://.godot/imported/20 - Laura Shigihara - Grasswalk (in game).ogg-83fe8ad551b4e714fc0f3b15d596469c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/music/20 - Laura Shigihara - Grasswalk (in game).ogg"
+dest_files=["res://.godot/imported/20 - Laura Shigihara - Grasswalk (in game).ogg-83fe8ad551b4e714fc0f3b15d596469c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

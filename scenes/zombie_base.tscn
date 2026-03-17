@@ -199,15 +199,6 @@ visible = false
 position = Vector2(-15.3846, -87.574)
 rotation = 0.11065
 
-[node name="Hurtbox" type="Area2D" parent="." groups=["zombie_hurtboxes"]]
-collision_layer = 2
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(8.625, -30)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_l54jg")
-
 [node name="BiteRaycast" type="RayCast2D" parent="."]
 position = Vector2(96.9231, 0)
 target_position = Vector2(-120, 0)
@@ -217,7 +208,16 @@ collide_with_bodies = false
 [node name="HealthComponent" parent="." instance=ExtResource("4_8nix2")]
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("hurtbox") instance=ExtResource("3_476ce")]
-hurtbox = NodePath("../Hurtbox")
+hurtbox = NodePath("Hurtbox")
+
+[node name="Hurtbox" type="Area2D" parent="HurtboxComponent" groups=["zombie_hurtboxes"]]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent/Hurtbox"]
+position = Vector2(8.625, -30)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_l54jg")
 
 [node name="MovementComponent" parent="." node_paths=PackedStringArray("character") instance=ExtResource("5_2gici")]
 character = NodePath("..")

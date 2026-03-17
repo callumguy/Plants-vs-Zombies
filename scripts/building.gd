@@ -6,16 +6,16 @@ signal tower_placed(selected_tower: PackedScene)
 
 @onready var till_sound: AudioStreamPlayer = $TillSound
 @onready var mouse_area: Area2D = $"../mouse_area"
-@onready var preview_ghost_sprite: AnimatedSprite2D = $"../PreviewGhost/Sprite"
+# @onready var preview_ghost_sprite: AnimatedSprite2D = $"../PreviewGhost/Sprite"
 
 @onready var shovel_button: TextureButton = $"../CanvasLayer/LevelUI/MarginContainer/HBoxContainer/TopBar/ShovelButton"
 @onready var shovel_cursor: Sprite2D = $"../CursorLayer/Shovel"
 
 @onready var currency: Currency = $"../CurrencyComponent"
 
-var selected_tower = null
+var selected_packet: SeedPacket
+
 var towers := []
-var is_placing = false
 var towers_on_cooldown: Array = []
 var is_shovelling = false
 
@@ -42,34 +42,34 @@ func is_position_occupied(pos: Vector2) -> bool:
     return false
 
 func place_tower(position: Vector2):
-    if selected_tower == null:
+    if selected_packet == null or position == Vector2.ZERO or is_position_occupied(position):
         return
-    if position == Vector2.ZERO:
-        return
-    if is_position_occupied(position):
-        return
- 
-    var tower_cost = selected_tower.instantiate().sun_cost
-    if not currency.can_afford(tower_cost):
-        return
-    currency.spend(tower_cost)
     
-    var tower = selected_tower.instantiate()
+    if selected_packet.recharge_time_left > 0:
+        return
+    
+    var cost = selected_packet.cost
+    if not currency.can_afford(cost):
+        return   
+    currency.spend(cost)
+    
+    var tower = selected_packet.scene.instantiate()
     tower.position = position
-    var tower_grid_position = GameManager.get_grid_location(position)
-    tower.lane = tower_grid_position.y
-    tower.column = tower_grid_position.x
+    
+    var grid_position = GameManager.get_grid_location(position) # converts position to grid coords. I.e. (458, 675) -> (2, 3)
+    tower.lane = grid_position.y
+    tower.column = grid_position.x
+    
     PLACED_PLANTS_FOLDER.add_child(tower)
     towers.append(tower)
     till_sound.play()
     
-    emit_signal("tower_placed", selected_tower)
-    towers_on_cooldown.append(selected_tower)
+    emit_signal("tower_placed", selected_packet.scene)
+    # towers_on_cooldown.append(selected_packet.scene)
     tower.tower_destroyed.connect(_on_tower_destroyed)
-    selected_tower = null
     
-    is_placing = false
-    preview_ghost_sprite.visible = false
+    selected_packet = null
+    # preview_ghost_sprite.visible = false
 
 func destroy_tower(position: Vector2):
     var tower
@@ -83,20 +83,23 @@ func destroy_tower(position: Vector2):
     tower.die()
     
 func read_seedbar(): 
-    for seed_packet in $"../CanvasLayer/LevelUI/MarginContainer/HBoxContainer/LeftBar/SeedBar".get_children():
-        if seed_packet is TextureRect:
+    for battle_packet in $"../CanvasLayer/LevelUI/MarginContainer/HBoxContainer/LeftBar/SeedBar".get_children():
+        if not battle_packet is BattlePacket: #TextureRect:
             continue
-        seed_packet.clicked.connect(_on_seed_selected)
+        battle_packet.clicked.connect(_on_packet_clicked)
         
-func _on_seed_selected(scene: PackedScene):
-    selected_tower = scene
-    is_placing = true
-    preview_ghost_sprite.visible = true
+func _on_packet_clicked(battle_packet: BattlePacket):
+    if selected_packet == battle_packet:
+        selected_packet = null
+        return
     
-    var to_preview_sprite = selected_tower.instantiate().find_child("Sprite")
-    preview_ghost_sprite.sprite_frames = to_preview_sprite.sprite_frames
-    preview_ghost_sprite.scale = to_preview_sprite.scale
-    preview_ghost_sprite.position = to_preview_sprite.position
+    selected_packet = battle_packet
+    #preview_ghost_sprite.visible = true
+    
+    #var to_preview_sprite = selected_tower.instantiate().find_child("Sprite")
+    #preview_ghost_sprite.sprite_frames = to_preview_sprite.sprite_frames
+    #preview_ghost_sprite.scale = to_preview_sprite.scale
+    #preview_ghost_sprite.position = to_preview_sprite.position
     
 func _ready() -> void:
     shovel_button.clicked.connect(_shovel_button_clicked)

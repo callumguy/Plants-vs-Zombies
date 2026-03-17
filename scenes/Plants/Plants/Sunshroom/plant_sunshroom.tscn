@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://b23d1syrokw3r"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_8hclv"]
+[ext_resource type="Script" path="res://scenes/Plants/Plants/Sunshroom/plant_sunshroom.gd" id="2_35nn3"]
+[ext_resource type="Texture2D" uid="uid://4wtl1g6pvkd1" path="res://scenes/Plants/Plants/Sunshroom/sunshroom.png" id="3_kpg17"]
+[ext_resource type="PackedScene" uid="uid://d20h00cyuaqvc" path="res://Components/GenerateComponent/generate_component.tscn" id="3_tew7b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30y6d"]
+atlas = ExtResource("3_kpg17")
+region = Rect2(19, 18, 59, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4cke"]
+atlas = ExtResource("3_kpg17")
+region = Rect2(111, 10, 96, 63)
+
+[node name="Sunshroom" instance=ExtResource("1_8hclv")]
+script = ExtResource("2_35nn3")
+cooldown = 24.0
+sun_cost = 25
+
+[node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("Cooldown")
+
+[node name="ReanimComponent" parent="." index="5"]
+visible = false
+position = Vector2(-48, -43)
+reanim_path = "res://scenes/Plants/Plants/Sunshroom/sunshroom_reanim.txt"
+
+[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="0"]
+texture = SubResource("AtlasTexture_30y6d")
+centered = false
+
+[node name="SunShroom_head" type="Sprite2D" parent="ReanimComponent" index="1"]
+texture = SubResource("AtlasTexture_j4cke")
+centered = false
+
+[node name="GenerateComponent" parent="." index="6" instance=ExtResource("3_tew7b")]

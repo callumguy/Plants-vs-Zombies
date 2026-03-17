@@ -53,7 +53,7 @@ text = "x"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Timer" type="Timer" parent="."]
+[node name="RechargeTimer" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

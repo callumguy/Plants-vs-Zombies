@@ -13,6 +13,8 @@ func _ready() -> void:
     settings_button.pressed.connect(settings)
     quit_button.pressed.connect(quit)
     
+    AudioManager.play_music("menu")
+    
     # ReanimParser2.ready()
     
 func play():

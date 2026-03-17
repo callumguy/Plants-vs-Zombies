@@ -1,35 +1,66 @@
-extends Control
-class_name SeedPacket
+class_name SeedPacket extends Control
 
-@export var plant_name: String = "peashooter"
-@onready var plant_data: Dictionary = PlantData.plants.get(plant_name)
+var plant_id: String
 
-var plant_cost: int
-var plant_recharge: float
+var display_name: String
+var description: String
+var icon_rect: Rect2
 
-@onready var shader_material: ShaderMaterial = $TextureRect.material
-@onready var texturerect: TextureRect = $TextureRect
-@onready var cost_label: Label = $CostLabel
+var cost: int
+var recharge: float
+var scene: PackedScene
 
-# Battle Stuff
-@onready var timer: Timer = $Timer
-var packed_plant_scene: PackedScene
+var texturerect: TextureRect
+var shader_material: ShaderMaterial
+var cost_label: Label
+var timer: Timer
+
+var recharge_time_left: float:
+    get: return timer.time_left
 
 func setup() -> void:
-    var plant_atlas_icon_rect: Rect2 = plant_data.get("icon_region")
-    texturerect.texture.region = plant_atlas_icon_rect
+    var plant: Dictionary = PlantData.plants.get(plant_id)
     
-    plant_cost = plant_data.get("cost")
-    cost_label.text = str(plant_cost)
+    display_name = plant_id # add a name section to plant data
+    description = plant.get("description")
+    icon_rect = plant.get("icon_region")
     
-func battle_setup() -> void:
-    plant_recharge = plant_data.get("recharge")
-    timer.wait_time = plant_recharge
+    cost = plant.get("cost")
+    recharge = plant.get("recharge")
+    scene = plant.get("scene")
+
+
+    texturerect = $TextureRect
+    shader_material = texturerect.material
+    cost_label = $CostLabel
+    timer = $RechargeTimer # only used during battle
+    
+    texturerect.texture.region = icon_rect
     
     var region = texturerect.texture.region
     var tex_size = texturerect.texture.get_atlas().get_size()
-        
     texturerect.material.set_shader_parameter("uv_start", region.position / tex_size)
     texturerect.material.set_shader_parameter("uv_size", region.size / tex_size)
     
-    packed_plant_scene = plant_data.get("scene")
+    cost_label.text = str(cost)
+    timer.wait_time = recharge
+    
+    
+
+
+
+#func setup() -> void:
+    #pass
+    ##texturerect.texture.region = icon_rect
+    ##cost_label.text = str(cost)
+    #
+#func battle_setup() -> void:
+    #pass
+    ## timer.wait_time = recharge
+    #
+    ##var region = texturerect.texture.region
+    ##var tex_size = texturerect.texture.get_atlas().get_size()
+        ##
+    ##texturerect.material.set_shader_parameter("uv_start", region.position / tex_size)
+    ##texturerect.material.set_shader_parameter("uv_size", region.size / tex_size)
+    ##

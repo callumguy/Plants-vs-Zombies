@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c31mtyameo0gb"]
+
+[ext_resource type="PackedScene" uid="uid://dmmqxdhqx5h77" path="res://scenes/Projectiles/ProjectileBase/projectile_base.tscn" id="1_8ud8x"]
+[ext_resource type="Texture2D" uid="uid://d24hn11eemxve" path="res://Assets/pvz_projectiles.png" id="2_o6rr5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lphds"]
+atlas = ExtResource("2_o6rr5")
+region = Rect2(5, 144, 32, 27)
+
+[node name="projectile_spore" instance=ExtResource("1_8ud8x")]
+damage = 10
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_lphds")

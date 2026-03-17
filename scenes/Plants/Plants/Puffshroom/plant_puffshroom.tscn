@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://d4ccpw8iemccw"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_qds0y"]
+[ext_resource type="Script" path="res://scenes/Plants/Plants/Puffshroom/plant_puffshroom.gd" id="2_ft5hd"]
+[ext_resource type="Texture2D" uid="uid://cl3nlpjjducsh" path="res://scenes/Plants/Plants/Puffshroom/puffshroom.png" id="2_k5a1v"]
+[ext_resource type="PackedScene" uid="uid://ctc4f3b87fv6e" path="res://Components/ShootComponent/shoot_component.tscn" id="3_s3ctb"]
+[ext_resource type="PackedScene" uid="uid://chynt50ekbfa" path="res://Components/RaycastComponent/raycast_component.tscn" id="4_y4348"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xttj4"]
+atlas = ExtResource("2_k5a1v")
+region = Rect2(16, 57, 47, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6ivk"]
+atlas = ExtResource("2_k5a1v")
+region = Rect2(2, 1, 80, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok30s"]
+atlas = ExtResource("2_k5a1v")
+region = Rect2(64, 66, 2, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn1b0"]
+atlas = ExtResource("2_k5a1v")
+region = Rect2(68, 61, 12, 22)
+
+[node name="Puffshroom" instance=ExtResource("1_qds0y")]
+script = ExtResource("2_ft5hd")
+sun_cost = 25
+
+[node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("Cooldown")
+
+[node name="ReanimComponent" parent="." index="5"]
+position = Vector2(-32, -30)
+reanim_path = "res://scenes/Plants/Plants/Puffshroom/PuffShroom_reanim.txt"
+
+[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="0"]
+texture = SubResource("AtlasTexture_xttj4")
+centered = false
+
+[node name="PuffShroom_head" type="Sprite2D" parent="ReanimComponent" index="1"]
+texture = SubResource("AtlasTexture_g6ivk")
+centered = false
+
+[node name="PuffShroom_stem" type="Sprite2D" parent="ReanimComponent" index="2"]
+texture = SubResource("AtlasTexture_ok30s")
+centered = false
+
+[node name="PuffShroom_tip" type="Sprite2D" parent="ReanimComponent" index="3"]
+texture = SubResource("AtlasTexture_hn1b0")
+centered = false
+
+[node name="ShootComponent" parent="." index="6" instance=ExtResource("3_s3ctb")]
+
+[node name="RaycastComponent" parent="." index="7" node_paths=PackedStringArray("raycasts") instance=ExtResource("4_y4348")]
+raycasts = NodePath("../Raycasts")
+
+[node name="Raycasts" type="Node2D" parent="." index="8"]
+
+[node name="Forward" type="RayCast2D" parent="Raycasts" index="0"]
+target_position = Vector2(386, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false

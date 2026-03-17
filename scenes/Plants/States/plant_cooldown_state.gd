@@ -7,10 +7,6 @@ var count: float
 
 func enter() -> void:
     plant = actor
-    #while plant.sprite == null:
-    #    await get_tree().process_frame
-    # plant.sprite.play("idle")
-    
     if plant.has_method("enter_cooldown"):
         plant.enter_cooldown()
     

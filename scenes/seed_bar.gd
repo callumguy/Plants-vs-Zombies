@@ -2,7 +2,7 @@ extends VBoxContainer
 
 const SEED_PACKET := preload(ScenePaths.SEED_PACKET)
 
-func fill(plant_names: Array) -> void:
+func fill(plant_ids: Array) -> void:
     #if len(seed_packets) != seed_slots: # not enough packets selected. or too many though that shouldnt be possible
     #    return
     
@@ -10,11 +10,11 @@ func fill(plant_names: Array) -> void:
         child.queue_free()
     
     # Create a battle_packet in SeedBar for each pickme_packet which is about to be deleted probably ig or just hidden actually
-    for plant_name in plant_names:
+    for plant_id in plant_ids:
         # var plant_name = packet.plant_name
         
         var packet = SEED_PACKET.instantiate()
-        packet.plant_name = plant_name
+        packet.plant_id = plant_id
         add_child(packet)
     
     #emit_signal("ready_pressed")

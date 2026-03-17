@@ -22,6 +22,7 @@ static func parse(file_content: String) -> Dictionary:
         var track_name = track_xml.substr(name_start, name_end - name_start)
         
         result[track_name] = {}
+        #result[track_name]['info'] = {'start_frame': 0, 'end_frame': -1}
         result[track_name]['info'] = {}
         
         var frames = []
@@ -36,6 +37,9 @@ static func parse(file_content: String) -> Dictionary:
             var frame_content = track_xml.substr(frame_start + 3, frame_end - frame_start - 3) # 3 for the chars in "<t>"
             
             var frame_data = parse_frame(frame_content)
+            if not 'f' in frame_data and frame_num == 0:
+                frame_data['f'] = 0
+                
             frames.append(frame_data)
             
             # ---
@@ -43,7 +47,7 @@ static func parse(file_content: String) -> Dictionary:
                 if frame_data['f'] == 0:
                     result[track_name]['info']['start_frame'] = frame_num
                 else:
-                    result[track_name]['info']['end_frame'] = frame_num - 1
+                    result[track_name]['info']['end_frame'] = frame_num #- 1
             # ---
             frame_pos = frame_end + 1
             frame_num += 1
@@ -57,7 +61,9 @@ static func parse(file_content: String) -> Dictionary:
             result[track_name]['info']['end_frame'] = -1
         
         if result[track_name]['info']['end_frame'] == -1:
-            result[track_name]['info']['end_frame'] = frame_num - 1
+            result[track_name]['info']['end_frame'] =  frame_num - 1
+        else:
+            result[track_name]['info']['end_frame'] -= 1
         # --- 
         pos = track_end + 1
         

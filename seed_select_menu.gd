@@ -57,17 +57,21 @@ func _ready_pressed() -> void:
     if len(seed_packets_picked) != seed_slots: # not enough packets selected. or too many though that shouldnt be possible
         return
         
-    var plant_names = seed_packets_picked.map(func(x): return x.plant_name)
+    var plant_names = seed_packets_picked.map(func(x): return x.plant_id)
     SEED_BAR.fill(plant_names)
     emit_signal("ready_pressed")
 
 
 func create_packets() -> void:
     var plants_unlocked = PlayerStats.plants_unlocked
-    plants_unlocked.append("aspearagus")
+    #plants_unlocked.append("aspearagus")
+    #plants_unlocked.append("cherrybomb")
+    plants_unlocked.append("puffshroom")
+    plants_unlocked.append("sunshroom")
+    plants_unlocked.append("potatomine")
     plants_unlocked.append("cherrybomb")
     for plant in plants_unlocked:
         var packet = SEED_PACKET.instantiate()
         packet.set_script(load("res://pickme_packet.gd"))
-        packet.plant_name = plant
+        packet.plant_id = plant
         $PanelContainer/VBoxContainer/GridContainer.add_child(packet)

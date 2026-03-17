@@ -12,6 +12,7 @@ var current_animations: Array = []
 var ooga_booga: String
 
 func _ready() -> void:
+    visible = false
     actor = get_parent()
     var content = FileAccess.get_file_as_string(reanim_path)
     animations = ReanimParser2.parse(content)
@@ -53,9 +54,6 @@ func stop(anim_name: String) -> int:
     return -1 # uuuuuuuuuuuuuuuuuh
     
 func _process(delta: float) -> void:
-    # print(current_animations)
-    visible = true
-    # print("---")
     for anim_info in current_animations:
         #print(anim_info['name'])
         anim_info['delta_count'] += delta
@@ -66,23 +64,29 @@ func _process(delta: float) -> void:
         var was = anim_info['current_frame'] # mmm
         anim_info['current_frame'] = wrapi(anim_info['current_frame'] + 1, anim_info['start_frame'], anim_info['end_frame'])
         var _is = anim_info['current_frame'] # mmm
+        #print(was)
+        #print(_is)
         
         # print(anim_info['current_frame'])
-        print("---")
-        print(current_animations)
-        print(anim_info)
+        #print("---")
+        #print(current_animations)
+        #print(anim_info)
         for animation_name in animations.keys():
             var animation_frame = animations[animation_name]['frames'][anim_info['current_frame']]
             ooga_booga = anim_info['name']
+            # print(animation_name, " ", animation_frame)
             apply_transforms(animation_frame, find_child(animation_name)) # find child takes lots of cpu juice? so cache it porbably
+        
+        visible = true
         
         if _is < was and not anim_info['looping']: # mmm
             stop(anim_info['name']) # mmm
             continue # mmm
-        
+    
 func apply_transforms(animation_frame: Dictionary, sprite: Sprite2D) -> void:
     if not sprite:
         return
+    # print(sprite.name)
     
     var tags = ['x', 'y', 'sx', 'sy', 'kx', 'ky', 'f', 'i']
     
@@ -98,25 +102,15 @@ func apply_transforms(animation_frame: Dictionary, sprite: Sprite2D) -> void:
             continue
         
         match tag:
-            
             'x': sprite.position.x = animation_frame[tag] #- sprite.get_parent().position.x
             'y': sprite.position.y = animation_frame[tag] #- sprite.get_parent().position.y            
             'sx': sprite.scale.x = animation_frame[tag]
             'sy': sprite.scale.y = animation_frame[tag]
-            'kx': 
-                # sprite.rotation = deg_to_rad(animation_frame[tag])
-                kx = animation_frame[tag]
+            'kx': kx = animation_frame[tag]
             'ky':
                 ky = animation_frame[tag]
-                #if ky == kx:
-                #    sprite.rotation = deg_to_rad(kx)
-                #else:
-                #    sprite.rotation - deg_to_rad(kx)
-                #    sprite.skew = deg_to_rad(kx - ky)
-                
                 sprite.rotation = deg_to_rad(kx)
                 sprite.skew = deg_to_rad(ky - kx)
-                
             'i':
                 if AnimationData.atlas_regions.get(animation_frame[tag]):
                     sprite.texture.region = AnimationData.atlas_regions[animation_frame[tag]]
@@ -129,14 +123,12 @@ func apply_transforms(animation_frame: Dictionary, sprite: Sprite2D) -> void:
             
 func apply_default_transforms() -> void: # this should be removed at some point when the rest of this script is better
     for animation_name in animations.keys():
-        for animation_frame in animations[animation_name]['frames']:
-            apply_transforms(animation_frame, find_child(animation_name)) # find child takes lots of cpu juice? so cache it porbably
-
-#func compose_transform(translation: Vector2, rotation: float, skew_y: float, scale: Vector2) -> Transform2D: # get y skew
-#    var t := Transform2D()
-#    t[0][0] = cos(rotation + skew_y) * scale.x
-#    t[0][1] = sin(rotation + skew_y) * scale.x
-#    t[1][0] = -sin(rotation) * scale.y
-#    t[1][1] = cos(rotation) * scale.y
-#    t[2] = translation
-#    return t
+        print(animation_name)
+        #for track in animations[animation_name]:
+        #    pass
+        
+        var start_frame_index = animations[animation_name]['info']['start_frame']
+        print(start_frame_index)
+        var frame = animations[animation_name]['frames'][start_frame_index]
+        print(frame)
+        apply_transforms(frame, find_child(animation_name)) # find child takes lots of cpu juice? so cache it porbably

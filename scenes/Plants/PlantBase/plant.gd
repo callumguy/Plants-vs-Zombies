@@ -1,5 +1,4 @@
-extends Node2D
-class_name Plant
+class_name Plant extends Node2D
 
 signal tower_destroyed(tower)
 
@@ -14,20 +13,12 @@ signal tower_destroyed(tower)
 @onready var damage_visuals: DamageVisuals = get_node_or_null("DamageVisualsComponent") # not all plants have
 @onready var flash: Flash = $FlashComponent
 @onready var raycast: Raycast = get_node_or_null("RaycastComponent")
-@onready var animate: Animate = get_node_or_null("AnimationComponent")
+@onready var animate: Animate = get_node_or_null("AnimationComponent") # not used anymore i think
 @onready var reanim: ReanimComponent = get_node_or_null("ReanimComponent")
 
 @onready var shoot: Shoot = get_node_or_null("ShootComponent")
 @onready var generate: Generate = get_node_or_null("GenerateComponent")
-
-# @onready var sun_folder: Node2D = get_tree().current_scene.get_node("%SunFolder")
-
-@export var sun_cost := 100 ## seed packet scene?
-@export var recharge := 7.5 ## ------------------
-
-#@export var animation_waiting_name: String = "anim_idle"
-#@export var animation_action_names: Array[String] = ["anim_shoot"]
-#@export var animation_cooldown_name: String = "anim_idle"
+@onready var splash: Splash = get_node_or_null("SplashComponent")
 
 var lane: int
 var column: int
@@ -51,26 +42,4 @@ func die():
     queue_free()
 
 func animation_finished(animation_name: String) -> void:
-    print("hm")
     pass
-
-
-
-#func _on_sprite_animation_finished() -> void: # state machine can do this <--------------------------
-#    if sprite.animation == "shoot":
-#        sprite.play("idle") 
-#    if sprite.animation == "idle":
-#        pass
-        
-#func produce_sun(amount: int): 
-    #var sun = sun_scene.instantiate()
-    #sun.global_position = global_position
-    #sun.lane = lane
-    #sun.column = column
-    #sun_folder.add_child(sun)
-    #sun.spawn_movement()
-
-#func shoot(projectile_scene: PackedScene, spawn_marker: Marker2D):
-    #var projectile = projectile_scene.instantiate()
-    #projectile.position = spawn_marker.position
-    #add_child(projectile)

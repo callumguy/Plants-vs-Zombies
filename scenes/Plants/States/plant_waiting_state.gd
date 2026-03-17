@@ -9,11 +9,6 @@ func enter() -> void:
     if plant.has_method("enter_waiting"):
         plant.enter_waiting()
     
-    #while plant.sprite == null:
-    #    await get_tree().process_frame
-    # plant.sprite.play("idle")
-    # plant.reanim.play(plant.animation_waiting_name, true)
-    
 func exit() -> void:
     pass
     

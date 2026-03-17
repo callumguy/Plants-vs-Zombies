@@ -22,6 +22,7 @@ var engine_speed_locked := true
 var engine_is_sped_up := false
 
 func _ready() -> void:
+    slow_down_engine()
     
     level_number = LevelManager.level_number
     ENEMY_MANAGER.level_num = level_number
@@ -44,6 +45,9 @@ func _ready() -> void:
         SEED_BAR.fill(PlayerStats.plants_unlocked)
         start_battle()    
     
+    var level_starting_sun = LevelData.get_level_info(level_number, "starting_sun")
+    $CurrencyComponent.currency = level_starting_sun
+    
 func connections() -> void:
     ENEMY_MANAGER.player_wins.connect(player_wins)
     ENEMY_MANAGER.player_loses.connect(player_loses)
@@ -51,20 +55,29 @@ func connections() -> void:
     
 func start_picking() -> void:
     seed_select_menu.visible = true
-    music_player_seed_select.play()
-
+    # music_player_seed_select.play()
+    AudioManager.play_music("chooseyourseeds")
+    
 func start_battle():
+    AudioManager.stop_music()
     seed_select_menu.visible = false
     await announcements.show_message_index(0, 0.75)
     await announcements.show_message_index(1, 0.75)
     await announcements.show_message_index(2, 1)
-    music_player_seed_select.stop()
-    music_player.play()
+    
+    var world = LevelData.get_level_info(level_number, 'world')
+    var world_name = LevelData.Worlds.find_key(world) 
+    AudioManager.play_music(world_name)
+    
+    $CurrencyComponent.add(0) # just to emit the _currency_changed signal to set default seed packet shader values
+    
+    
     ENEMY_MANAGER.start_level()
     $PlacementManager.read_seedbar()
     if LevelData.get_level_info(level_number, 'world') != LevelData.Worlds.NIGHT:
         air_spawner.enabled = true
     engine_speed_locked = false
+    
     
 func player_wins(position: Vector2) -> void: # position of the last zombie (that just died)
     var reward_scene: RigidBody2D = RewardScene.instantiate()
@@ -90,7 +103,8 @@ func player_loses(position: Vector2): # position of the zombie at the house (eat
     game_over()
 
 func reward_clicked() -> void:
-    music_player.stop()
+    AudioManager.stop_music()
+    # music_player.stop()
 
 func reward_collected() -> void:
     get_tree().change_scene_to_packed(load(REWARD_MENU_PATH))

@@ -8,6 +8,7 @@ var levels := {
         "world": Worlds.DAY,
         "zombies": BASIC_ZOMBIES,
         "seed_slots": 5,
+        "starting_sun": 50,
         "reward": null,
     },
     "1": {
@@ -22,13 +23,14 @@ var levels := {
         "reward": "plant/spikeweed"
     },
     "4": {
-        "world": Worlds.NIGHT
+        "world": Worlds.NIGHT,
+        "starting_sun": 150
     },
     "5": {
         "seed_slots": 3
     },
     "6": {
-        #nada
+        "starting_sun": 50
     }
 }
 

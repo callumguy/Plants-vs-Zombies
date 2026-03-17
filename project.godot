@@ -22,14 +22,13 @@ buses/default_bus_layout="res://tres/default_bus_layout.tres"
 [autoload]
 
 GameManager="*res://scripts/game_manager.gd"
-AudioManager="*res://scripts/audio_manager.gd"
 LevelManager="*res://scripts/level_manager.gd"
 SettingsManager="*res://scripts/settings_manager.gd"
 PlayerStats="*res://player_stats.gd"
-PlantData="*res://scenes/Plants/plant_data.gd"
 ZombieData="*res://zombie_data.gd"
 LevelData="*res://Levels/level_data.gd"
 Rewards="*res://rewards.gd"
+AudioManager="*res://audio_manager.tscn"
 
 [display]
 

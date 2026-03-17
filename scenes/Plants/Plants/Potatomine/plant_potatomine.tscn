@@ -1,0 +1,142 @@
+[gd_scene load_steps=17 format=3 uid="uid://sb7xpqdww13g"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_dur4t"]
+[ext_resource type="Script" path="res://scenes/Plants/Plants/Potatomine/plant_potatomine.gd" id="2_svj16"]
+[ext_resource type="Texture2D" uid="uid://cgyjwkft0naym" path="res://scenes/Plants/Plants/Potatomine/potatomine.png" id="3_464dc"]
+[ext_resource type="PackedScene" uid="uid://ctc4f3b87fv6e" path="res://Components/ShootComponent/shoot_component.tscn" id="4_xmqt8"]
+[ext_resource type="PackedScene" uid="uid://chynt50ekbfa" path="res://Components/RaycastComponent/raycast_component.tscn" id="5_d46mq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kfsm"]
+atlas = ExtResource("3_464dc")
+region = Rect2(1, 11, 101, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3qpq"]
+atlas = ExtResource("3_464dc")
+region = Rect2(12, 204, 34, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpek5"]
+atlas = ExtResource("3_464dc")
+region = Rect2(68, 204, 35, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5mt6"]
+atlas = ExtResource("3_464dc")
+region = Rect2(1, 121, 45, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsq04"]
+atlas = ExtResource("3_464dc")
+region = Rect2(1, 158, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mq6v"]
+atlas = ExtResource("3_464dc")
+region = Rect2(30, 149, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knx3b"]
+atlas = ExtResource("3_464dc")
+region = Rect2(1, 234, 132, 93)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38h4i"]
+atlas = ExtResource("3_464dc")
+region = Rect2(1, 204, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3olj"]
+atlas = ExtResource("3_464dc")
+region = Rect2(47, 204, 20, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg8q0"]
+atlas = ExtResource("3_464dc")
+region = Rect2(104, 204, 22, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7adj"]
+atlas = ExtResource("3_464dc")
+region = Rect2(127, 204, 19, 13)
+
+[node name="Potatomine" instance=ExtResource("1_dur4t")]
+script = ExtResource("2_svj16")
+cooldown = 0.1
+sun_cost = 25
+
+[node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("Cooldown")
+
+[node name="ReanimComponent" parent="." index="5"]
+position = Vector2(-42, -48)
+reanim_path = "res://scenes/Plants/Plants/Potatomine/potatomine_reanim.txt"
+
+[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="0"]
+texture = SubResource("AtlasTexture_6kfsm")
+centered = false
+
+[node name="PotatoMine_rock2" type="Sprite2D" parent="ReanimComponent" index="1"]
+texture = SubResource("AtlasTexture_r3qpq")
+centered = false
+
+[node name="PotatoMine_rock4" type="Sprite2D" parent="ReanimComponent" index="2"]
+texture = SubResource("AtlasTexture_bpek5")
+centered = false
+
+[node name="PotatoMine_rock4b" type="Sprite2D" parent="ReanimComponent" index="3"]
+texture = SubResource("AtlasTexture_bpek5")
+centered = false
+
+[node name="PotatoMine_stem" type="Sprite2D" parent="ReanimComponent" index="4"]
+texture = SubResource("AtlasTexture_m5mt6")
+centered = false
+
+[node name="anim_light" type="Sprite2D" parent="ReanimComponent" index="5"]
+texture = SubResource("AtlasTexture_fsq04")
+centered = false
+
+[node name="anim_glow" type="Sprite2D" parent="ReanimComponent" index="6"]
+texture = SubResource("AtlasTexture_6mq6v")
+centered = false
+
+[node name="anim_mashed" type="Sprite2D" parent="ReanimComponent" index="7"]
+texture = SubResource("AtlasTexture_knx3b")
+centered = false
+
+[node name="PotatoMine_rock1" type="Sprite2D" parent="ReanimComponent" index="8"]
+texture = SubResource("AtlasTexture_38h4i")
+centered = false
+
+[node name="PotatoMine_rock1b" type="Sprite2D" parent="ReanimComponent" index="9"]
+texture = SubResource("AtlasTexture_38h4i")
+centered = false
+
+[node name="PotatoMine_rock3" type="Sprite2D" parent="ReanimComponent" index="10"]
+texture = SubResource("AtlasTexture_s3olj")
+centered = false
+
+[node name="PotatoMine_rock3b" type="Sprite2D" parent="ReanimComponent" index="11"]
+texture = SubResource("AtlasTexture_s3olj")
+centered = false
+
+[node name="PotatoMine_rock5" type="Sprite2D" parent="ReanimComponent" index="12"]
+texture = SubResource("AtlasTexture_gg8q0")
+centered = false
+
+[node name="PotatoMine_rock5b" type="Sprite2D" parent="ReanimComponent" index="13"]
+texture = SubResource("AtlasTexture_gg8q0")
+centered = false
+
+[node name="PotatoMine_rock6b" type="Sprite2D" parent="ReanimComponent" index="14"]
+texture = SubResource("AtlasTexture_o7adj")
+centered = false
+
+[node name="ShootComponent" parent="." index="6" instance=ExtResource("4_xmqt8")]
+
+[node name="RaycastComponent" parent="." index="7" node_paths=PackedStringArray("raycasts") instance=ExtResource("5_d46mq")]
+raycasts = NodePath("../Raycasts")
+
+[node name="Raycasts" type="Node2D" parent="." index="8"]
+
+[node name="Forward" type="RayCast2D" parent="Raycasts" index="0"]
+target_position = Vector2(75, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Backward" type="RayCast2D" parent="Raycasts" index="1"]
+target_position = Vector2(-75, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
