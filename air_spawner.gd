@@ -30,10 +30,10 @@ func spawn() -> void:
     sun.sun_amount = sun_value
     
     sun.lane = randi_range(0, 4)
-    sun.column = GameManager.get_grid_location(sun.position).y
+    sun.column = GridManager.pos_to_grid_pos(sun.position).y
     
     SUN_FOLDER.add_child(sun)
     
 func choose_spawn_loc() -> Vector2:
-    var x = randf_range(GameManager.LAWN_LEFT, GameManager.LAWN_LEFT + GameManager.LAWN_WIDTH)
+    var x = randf_range(GridManager.LAWN_LEFT, GridManager.LAWN_LEFT + GridManager.LAWN_WIDTH)
     return Vector2(x, spawn_y_level)

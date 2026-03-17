@@ -8,7 +8,7 @@ atlas = ExtResource("2_o6rr5")
 region = Rect2(5, 144, 32, 27)
 
 [node name="projectile_spore" instance=ExtResource("1_8ud8x")]
-damage = 10
+tile_range = 3.5
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("AtlasTexture_lphds")

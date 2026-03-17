@@ -11,11 +11,11 @@ func get_targets(origin: Vector2):
     
     if shape == Shape.RECTANGLE:
         query_shape = RectangleShape2D.new()
-        query_shape.size = size * Vector2(GameManager.CELL_WIDTH, GameManager.CELL_HEIGHT)
+        query_shape.size = size * Vector2(GridManager.cell_width, GridManager.cell_height)
         print(query_shape.size)
     else:
         query_shape = CircleShape2D.new()
-        query_shape.size = size * Vector2(GameManager.CELL_WIDTH, GameManager.CELL_HEIGHT)
+        query_shape.size = size * Vector2(GridManager.cell_width, GridManager.cell_height)
         
     var query = PhysicsShapeQueryParameters2D.new()
     query.shape = query_shape

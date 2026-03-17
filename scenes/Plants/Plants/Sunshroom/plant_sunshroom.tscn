@@ -16,14 +16,12 @@ region = Rect2(111, 10, 96, 63)
 [node name="Sunshroom" instance=ExtResource("1_8hclv")]
 script = ExtResource("2_35nn3")
 cooldown = 24.0
-sun_cost = 25
 
 [node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("Cooldown")
 
 [node name="ReanimComponent" parent="." index="5"]
-visible = false
-position = Vector2(-48, -43)
+position = Vector2(-39, -43)
 reanim_path = "res://scenes/Plants/Plants/Sunshroom/sunshroom_reanim.txt"
 
 [node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="0"]

@@ -9,7 +9,7 @@ func enter() -> void:
 
 func update(delta) -> void:
     
-    if zombie.position.x < GameManager.HOUSE_X:
+    if zombie.position.x < GridManager.HOUSE_X:
         zombie.zombie_at_house.emit(zombie.position)
     
     if zombie.should_eat():

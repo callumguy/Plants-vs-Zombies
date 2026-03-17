@@ -9,4 +9,3 @@ func _ready() -> void:
 
 func _on_currency_changed(new_amount):
     text = str(floor(new_amount))
-    print(str(new_amount))

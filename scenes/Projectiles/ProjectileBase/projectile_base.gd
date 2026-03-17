@@ -5,9 +5,12 @@ extends Area2D
 
 @export var speed: int = 400
 @export var direction: Vector2 = Vector2.RIGHT
-@export var max_travel_distance: int = 10000 # infinite basically // make this in terms of tiles
+@export var tile_range: float = 8.5
 
-var start_position: Vector2
+var range: float = tile_range * GridManager.cell_width
+var distance_traveled: float = 0
+
+# var start_position: Vector2
 
 func _physics_process(delta: float) -> void:
     
@@ -26,8 +29,12 @@ func _physics_process(delta: float) -> void:
         _on_hit(collider)
     
     global_position += direction * speed * delta
-    if global_position.distance_to(start_position) > max_travel_distance:
+    distance_traveled += (direction * speed * delta).length()
+    if distance_traveled > range:
         queue_free()
+    
+    #if global_position.distance_to(start_position) > max_travel_distance:
+    #   queue_free()
         
 func _on_hit(collider: Dictionary):
     var collider_position = collider.get("position") # exactly where the ray hit

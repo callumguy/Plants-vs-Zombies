@@ -87,7 +87,7 @@ func player_wins(position: Vector2) -> void: # position of the last zombie (that
     reward_scene.collected.connect(reward_collected)
     reward_scene.position = position
     
-    var lane = int(GameManager.get_grid_location(position).y)
+    var lane = int(GridManager.get_grid_location(position).y)
     reward_scene.collision_mask = 1 << (lane + 9 - 1)
     
     add_child(reward_scene)

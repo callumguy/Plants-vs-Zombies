@@ -26,7 +26,7 @@ func _input(event):
 func _on_left_click(event: InputEvent) -> void:
     if mouse_is_under_sun():
         return
-    var pos = GameManager.get_grid_position(event.position)
+    var pos = GridManager.pos_to_grid_pos(event.position)
     
     if is_shovelling:
         destroy_tower(pos)
@@ -41,8 +41,8 @@ func is_position_occupied(pos: Vector2) -> bool:
             return true
     return false
 
-func place_tower(position: Vector2):
-    if selected_packet == null or position == Vector2.ZERO or is_position_occupied(position):
+func place_tower(grid_pos: Vector2):
+    if selected_packet == null or grid_pos == Vector2.ZERO or is_position_occupied(GridManager.grid_pos_to_pos(grid_pos)):
         return
     
     if selected_packet.recharge_time_left > 0:
@@ -54,11 +54,11 @@ func place_tower(position: Vector2):
     currency.spend(cost)
     
     var tower = selected_packet.scene.instantiate()
-    tower.position = position
+    tower.position = GridManager.clamp_pos_to_grid(GridManager.grid_pos_to_pos(grid_pos))
     
-    var grid_position = GameManager.get_grid_location(position) # converts position to grid coords. I.e. (458, 675) -> (2, 3)
-    tower.lane = grid_position.y
-    tower.column = grid_position.x
+    # var grid_pos = GridManager.pos_to_grid_pos(pos) # converts position to grid coords. I.e. (458, 675) -> (2, 3)
+    tower.lane = grid_pos.y
+    tower.column = grid_pos.x
     
     PLACED_PLANTS_FOLDER.add_child(tower)
     towers.append(tower)

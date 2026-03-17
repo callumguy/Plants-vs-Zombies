@@ -21,7 +21,6 @@ buses/default_bus_layout="res://tres/default_bus_layout.tres"
 
 [autoload]
 
-GameManager="*res://scripts/game_manager.gd"
 LevelManager="*res://scripts/level_manager.gd"
 SettingsManager="*res://scripts/settings_manager.gd"
 PlayerStats="*res://player_stats.gd"
@@ -29,6 +28,7 @@ ZombieData="*res://zombie_data.gd"
 LevelData="*res://Levels/level_data.gd"
 Rewards="*res://rewards.gd"
 AudioManager="*res://audio_manager.tscn"
+GridManager="*res://scripts/grid_manager.gd"
 
 [display]
 

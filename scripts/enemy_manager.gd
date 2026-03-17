@@ -65,13 +65,10 @@ func get_waves(level_num: int) -> Array:
             current_wave['flag'] = true
             line.trim_prefix("FLAG")
         
-        print(level_num)
         var zombie_pool: Array = LevelData.get_level_info(level_num, "zombies").duplicate()
         var wave_cost = int(line)
-        print(zombie_pool)
         while wave_cost > 0:
             var random_zombie = zombie_pool.pick_random()
-            print(random_zombie)
             if ZombieData.zombies[random_zombie]['cost'] <= wave_cost:
                 current_wave['zombies'].append(random_zombie)
                 wave_cost -= ZombieData.zombies[random_zombie]['cost']
@@ -92,7 +89,7 @@ func get_waves(level_num: int) -> Array:
 
 func send_wave(wave: Dictionary) -> void:
     var wave_zombies = wave['zombies']
-    var lanes = range(0, GameManager.number_of_lanes)
+    var lanes = range(0, GridManager.number_of_lanes)
     wave_zombies.shuffle()
     # lanes.shuffle()
     
@@ -123,7 +120,7 @@ func spawn_enemy(lane: int, zombie_name: String):
     waves_healthpools[str(next_wave - 1)]['current'] += ZombieData.zombies[zombie_name]['health']
     waves_healthpools[str(next_wave - 1)]['max'] += ZombieData.zombies[zombie_name]['health']
     
-    var lane_y = GameManager.LAWN_TOP + (GameManager.CELL_HEIGHT * lane + GameManager.CELL_HEIGHT / 2)
+    var lane_y = GridManager.LAWN_TOP + (GridManager.cell_height * lane + GridManager.cell_height / 2)
     var x = randi_range(spawn_x - 10, spawn_x + 10)
     enemy.position = Vector2(x, lane_y)
  

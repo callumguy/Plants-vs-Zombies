@@ -55,7 +55,7 @@ cooldown = 1.5
 initial_state = NodePath("Cooldown")
 
 [node name="ReanimComponent" parent="." index="5"]
-position = Vector2(-31, -30)
+position = Vector2(-44, -30)
 reanim_path = "res://scenes/Plants/Plants/Peashooter/peashooter_single_reanim.txt"
 
 [node name="stalk_bottom" type="Sprite2D" parent="ReanimComponent" index="0"]

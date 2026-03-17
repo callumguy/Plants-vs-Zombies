@@ -42,7 +42,6 @@ func collect():
 func _physics_process(delta: float) -> void:
     if linear_velocity.y > max_fall_speed:
         linear_velocity.y = max_fall_speed
-    #print("-" + str(collision_mask))
 
 func _on_click_detector_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
     if event is InputEventMouseButton and event.is_pressed():

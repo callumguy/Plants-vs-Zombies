@@ -28,7 +28,7 @@ func _collect() -> void:
     scale_tween.tween_property(sprite_2d, "scale", Vector2(1, 1), 4).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
     
     var tween = create_tween()
-    tween.tween_property(self, "global_position", Vector2(GameManager.window_width / 2, GameManager.window_height / 2), 4).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+    tween.tween_property(self, "global_position", Vector2(GridManager.WINDOW_WIDTH / 2, GridManager.WINDOW_WIDTH / 2), 4).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
     
     await scale_tween.finished
     collected.emit()

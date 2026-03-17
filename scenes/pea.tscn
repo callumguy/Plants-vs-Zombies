@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmy0nepa7o4gq"]
+[gd_scene load_steps=4 format=3 uid="uid://cmy0nepa7o4gq"]
 
 [ext_resource type="Script" path="res://scenes/Projectiles/ProjectileBase/projectile_base.gd" id="1_gi6ka"]
-[ext_resource type="PackedScene" uid="uid://d0hbfycjbje82" path="res://scenes/hit_effect.tscn" id="2_3xvya"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lcebh"]
 load_path = "res://.godot/imported/pvz_projectiles.png-f07046aa06231538d36040d5ab2ba2d7.ctex"
@@ -11,8 +10,6 @@ size = Vector2(10, 10)
 
 [node name="Pea" type="Area2D"]
 script = ExtResource("1_gi6ka")
-damage = 10
-hit_effect_scene = ExtResource("2_3xvya")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -5
