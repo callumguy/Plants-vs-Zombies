@@ -1,6 +1,9 @@
 extends Node
 enum VolumeChannel {MASTER, MUSIC, SFX}
 
+const MAX_SFX_PLAYERS: int = 8
+var _sfx_player_pool: Array[AudioStreamPlayer] = []
+
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 
 static func update_volume(channel: VolumeChannel, new_value: float) -> void:
@@ -23,6 +26,27 @@ func play_music(track_name: String) -> void:
     music_player.playing = true
 
 func stop_music():
-    music_player["parameters/switch_to_clip"] = null
+    music_player["parameters/switch_to_clip"] = null # not necesasrryfsdfsdf
     music_player.playing = false
+    
+func _ready() -> void:
+    for i in MAX_SFX_PLAYERS:
+        var player = AudioStreamPlayer.new()
+        add_child(player)
+        _sfx_player_pool.append(player)
+        
+func _get_free_sfx_player() -> AudioStreamPlayer:
+    for player in _sfx_player_pool:
+        if not player.playing:
+            return player
+    return null
+    
+func play_sfx(stream: AudioStream, volume_db: float = 0.0) -> void:
+    var player = _get_free_sfx_player()
+    if not player: return
+    player.stream = stream
+    player.volume_db = volume_db
+    player.play()
+    
+
     

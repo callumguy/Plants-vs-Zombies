@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5egb7bjwaaww"]
+[gd_scene load_steps=8 format=3 uid="uid://b5egb7bjwaaww"]
 
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="1_j3kfv"]
 [ext_resource type="AudioStream" uid="uid://xpmdmgg1idsn" path="res://Audio/music/20 - Laura Shigihara - Grasswalk (in game).ogg" id="2_2rai5"]
 [ext_resource type="AudioStream" uid="uid://dvf6q7jx7bt7j" path="res://Audio/music/22 - Laura Shigihara - Moongrains (in game).ogg" id="2_f02fe"]
 [ext_resource type="AudioStream" uid="uid://3e11pgvdmfq3" path="res://Audio/music/19 - Laura Shigihara - Choose Your Seeds (in game).ogg" id="3_vbh3x"]
 [ext_resource type="AudioStream" uid="uid://bx5hftflrqucb" path="res://Audio/music/18 - Laura Shigihara - Crazy Dave (in game).ogg" id="4_of6jd"]
+[ext_resource type="AudioStream" uid="uid://c3pqqlbywi526" path="res://Audio/music/23 - Laura Shigihara - Zen Garden (in game).ogg" id="6_cunop"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_gufeu"]
-clip_count = 4
+clip_count = 5
 clip_0/name = &"day"
 clip_0/stream = ExtResource("2_2rai5")
 clip_0/auto_advance = 0
@@ -20,6 +21,9 @@ clip_2/auto_advance = 0
 clip_3/name = &"menu"
 clip_3/stream = ExtResource("4_of6jd")
 clip_3/auto_advance = 0
+clip_4/name = &"zen"
+clip_4/stream = ExtResource("6_cunop")
+clip_4/auto_advance = 0
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_j3kfv")

@@ -27,7 +27,7 @@ func enter_cooldown() -> void:
     if len(reanim.current_animations) == 0:
         match current_size:
             Size.SMALL: reanim.play("anim_idle", true)
-            Size.BIG: reanim.play("anim_idle", true)
+            Size.BIG: reanim.play("anim_big_idle", true)
 
 func animation_finished(animation_name: String) -> void:
     if animation_name == "anim_grow":

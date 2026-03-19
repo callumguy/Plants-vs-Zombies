@@ -32,3 +32,6 @@ func shoot(projectile_scene: PackedScene, raycast_component: Node2D, shoot_all: 
     #
     #print(raycast_start_position, raycast_direction)
     #_spawn_projectile(projectile_scene, raycast_start_position, raycast_direction)
+
+func new_shoot(projectile_scene: PackedScene, location: Vector2, direction: Vector2) -> void:
+    _spawn_projectile(projectile_scene, location, direction)

@@ -8,8 +8,10 @@ var idle_previous_frame: int
 func perform_action() -> void:
     idle_previous_frame = reanim.stop("anim_full_idle")
     reanim.play("anim_shooting", false, 3.0)
-    shoot.shoot(projectile, raycast, always_shoot)
-
+    # shoot.shoot(projectile, raycast, always_shoot)
+    shoot.new_shoot(projectile, global_position, Vector2.RIGHT)
+    AudioManager.play_sfx(SoundDatabase.PLANTS['peashooter_shoot'])
+    
 func enter_cooldown() -> void:
     if len(reanim.current_animations) == 0:
         reanim.play("anim_full_idle", true)

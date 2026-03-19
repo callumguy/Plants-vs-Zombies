@@ -42,7 +42,8 @@ func is_position_occupied(pos: Vector2) -> bool:
     return false
 
 func place_tower(grid_pos: Vector2):
-    if selected_packet == null or grid_pos == Vector2.ZERO or is_position_occupied(GridManager.grid_pos_to_pos(grid_pos)):
+    print(grid_pos)
+    if selected_packet == null or grid_pos == Vector2(-1, -1) or is_position_occupied(GridManager.grid_pos_to_pos(grid_pos)):
         return
     
     if selected_packet.recharge_time_left > 0:

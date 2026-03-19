@@ -21,7 +21,9 @@ func _ready() -> void:
         if reward_type == "plant":
             description = PlantData.plants[reward_name]['description']
         description_label.text = description
-        
+    
+    AudioManager.play_music("zen")
+    
 func set_texture(reward: Variant) -> void:
     if not reward is String:
         return

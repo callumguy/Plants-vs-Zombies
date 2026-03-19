@@ -7,6 +7,7 @@ const ICON_ATLAS_TEXTURE = preload(SEED_PACKET_FOLDER + "Icons.png")
 const ICON_ATLAS_WIDTH := 8
 
 const RECHARGE_FAST := 7.5 # sunflower, peashooter, repeater
+const RECHARGE_MEDIUM := 15
 const RECHARGE_SLOW := 30 # wallnut, potato mine, hypno shroom
 const RECHARGE_VERY_SLOW := 50 # cherry bomb, jalapeno, doom shroom
 
@@ -83,7 +84,7 @@ static var plants := {
         "scene" = load(_id_to_path("puffshroom")),
         "icon_region" = _id_to_rect(8),
         "cost" = 25,
-        "recharge" = RECHARGE_FAST,
+        "recharge" = RECHARGE_SLOW,
         "description" = "Shoots spores at nearby zombies."
     },
     "sunshroom": {
