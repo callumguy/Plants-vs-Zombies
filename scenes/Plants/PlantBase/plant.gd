@@ -3,10 +3,11 @@ class_name Plant extends Node2D
 signal tower_destroyed(tower)
 
 @onready var sprite = $Sprite
-@onready var sun_scene := preload("res://scenes/sun.tscn")
+@onready var sun_scene := preload(ScenePaths.SUN)
 
 @onready var statemachine: StateMachine = $StateMachine
 @export var cooldown: float = 1.4
+var speed_multiplier: float = 1.0
 
 @onready var health: Health = $HealthComponent
 @onready var hurtbox: Hurtbox = $HurtboxComponent
@@ -19,13 +20,13 @@ signal tower_destroyed(tower)
 @onready var shoot: Shoot = get_node_or_null("ShootComponent")
 @onready var generate: Generate = get_node_or_null("GenerateComponent")
 @onready var splash: Splash = get_node_or_null("SplashComponent")
+@onready var scan: ScanComponent = get_node_or_null("ScanComponent")
 
 var lane: int
 var column: int
 
 func _ready():
     connections()
-    #statemachine.change_state("waiting")
 
 func connections() -> void:
     health.health_changed.connect(_on_health_changed)
@@ -43,3 +44,5 @@ func die():
 
 func animation_finished(animation_name: String) -> void:
     pass
+
+# ----- STATES ----- #

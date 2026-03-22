@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://icpo4lsxqy05" path="res://Assets/almanac2.webp" id="2_jd8mi"]
 [ext_resource type="Texture2D" uid="uid://c2wjjm72puqhj" path="res://Assets/kirkinator_100x100.png" id="4_qfk0g"]
 [ext_resource type="Texture2D" uid="uid://chydcp17atknb" path="res://Assets/menubutton.webp" id="5_7eyrm"]
-[ext_resource type="Script" path="res://return_menu.gd" id="6_e11ft"]
-[ext_resource type="Script" path="res://next_level.gd" id="6_vxcdf"]
+[ext_resource type="Script" path="res://scenes/UI/Menus/return_menu.gd" id="6_e11ft"]
+[ext_resource type="Script" path="res://scenes/UI/Menus/next_level.gd" id="6_vxcdf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpw5t"]
 atlas = ExtResource("2_jd8mi")

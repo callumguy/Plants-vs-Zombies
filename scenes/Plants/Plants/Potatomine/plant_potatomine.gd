@@ -1,10 +1,9 @@
 extends Plant
 
-@onready var projectile: PackedScene = preload("res://scenes/Projectiles/projectile_potatomine.tscn")
-
+const DAMAGE: int = 800
 const ARM_TIME: float = 15
 
-enum Status {PREPARING, ARMING, ARMED}
+enum Status {PREPARING, ARMING, ARMED, EXPLODED}
 var status: int = Status.PREPARING
 var delta_count: float = 0
 
@@ -13,10 +12,18 @@ func perform_action() -> void:
         return
     
     var raycast_hits = raycast.get_targets()
-    if raycast_hits.any(func(x): return x != null): # if at least one of the raycasts found something
+    # if raycast_hits.any(func(x): return x != null): # if at least one of the raycasts found something
+    if scan.get_targets(global_position, Vector2(1, 1), 2):
+        status = Status.EXPLODED
         reanim.stop("anim_armed")
         reanim.play("anim_mashed", true)
-        shoot.shoot(projectile, raycast, true)
+        # shoot.shoot(projectile, raycast, true)
+        var targets = splash.get_targets(self.global_position)
+        for target in targets:
+            target.get_parent().take_damage(DAMAGE)
+            
+        
+        AudioManager.play_sfx(SoundDatabase.PLANTS['potato_mine_explode'])
         await get_tree().create_timer(2).timeout
         die()
     

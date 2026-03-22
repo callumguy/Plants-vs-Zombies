@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://xj008qauc7kv"]
 
-[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_6qknu"]
-[ext_resource type="AudioStream" uid="uid://bt23ndtjm87qf" path="res://Audio/PvZsoundsMegaPack/pause.ogg" id="2_o06py"]
+[ext_resource type="Script" path="res://scenes/UI/Menus/pause_menu.gd" id="1_6qknu"]
+[ext_resource type="AudioStream" uid="uid://bt23ndtjm87qf" path="res://Audio/SFX/pause.ogg" id="2_o06py"]
 [ext_resource type="PackedScene" uid="uid://cdfasoo00r7nm" path="res://scenes/UI/Menus/SettingsMenu/settings_menu.tscn" id="3_px4rv"]
 
 [node name="PauseMenu" type="Control"]

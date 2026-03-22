@@ -62,22 +62,22 @@ static var plants := {
     "spikeweed": {
         "scene" = load(_id_to_path("spikeweed")),
         "icon_region" = _id_to_rect(21),
-        "cost" = 125,
+        "cost" = 100,
         "recharge" = RECHARGE_FAST,
         "description" = "Damages zombies that walk over it."
     },
     "aspearagus": {
         "scene" = load(_id_to_path("aspearagus")),
-        "icon_region" = _id_to_rect(9),
-        "cost" = 100,
+        "icon_region" = _id_to_rect(7),
+        "cost" = 200,
         "recharge" = RECHARGE_FAST,
-        "description" = "Shoots ze spears."
+        "description" = "100% repeater."
     },
     "cherrybomb": {
         "scene" = load(_id_to_path("cherrybomb")),
         "icon_region" = _id_to_rect(2),
         "cost" = 150,
-        "recharge" = RECHARGE_SLOW,
+        "recharge" = RECHARGE_VERY_SLOW,
         "description" = "Explodes in a 3x3 area."
     },
     "puffshroom": {
@@ -100,5 +100,26 @@ static var plants := {
         "cost" = 25,
         "recharge" = RECHARGE_SLOW,
         "description" = "Explodes on contact with zombies. Takes time to arm itself."
+    },
+    "jalapeno": {
+        "scene" = load(_id_to_path("jalapeno")),
+        "icon_region" = _id_to_rect(20),
+        "cost" = 125,
+        "recharge" = RECHARGE_VERY_SLOW,
+        "description" = "Ignites a lane of zombies."
+    },
+    "tallnut": {
+        "scene" = load(_id_to_path("tallnut")),
+        "icon_region" = _id_to_rect(23),
+        "cost" = 125,
+        "recharge" = RECHARGE_SLOW,
+        "description" = "Wall that cannot be vaulted over."
+    },
+    "repeater": {
+        "scene" = load(_id_to_path("repeater")),
+        "icon_region" = _id_to_rect(7),
+        "cost" = 25,
+        "recharge" = RECHARGE_FAST,
+        "description" = "Shoots two peas at once."
     },
 }

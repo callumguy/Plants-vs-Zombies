@@ -23,12 +23,13 @@ buses/default_bus_layout="res://tres/default_bus_layout.tres"
 
 LevelManager="*res://scripts/level_manager.gd"
 SettingsManager="*res://scripts/settings_manager.gd"
-PlayerStats="*res://player_stats.gd"
-ZombieData="*res://zombie_data.gd"
+PlayerStats="*res://Data/player_stats.gd"
+ZombieData="*res://Data/zombie_data.gd"
 LevelData="*res://Levels/level_data.gd"
 Rewards="*res://rewards.gd"
-AudioManager="*res://audio_manager.tscn"
-GridManager="*res://scripts/grid_manager.gd"
+AudioManager="*res://Audio/Scenes/AudioManager/audio_manager.tscn"
+GridManager="*res://scenes/Level/grid_manager.gd"
+Cache="*res://cache.gd"
 
 [display]
 

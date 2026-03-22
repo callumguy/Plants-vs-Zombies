@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://dsesqi0i4cffp"]
 
-[ext_resource type="PackedScene" uid="uid://87pxnk628lmt" path="res://scenes/health_component.tscn" id="2_y2kre"]
-[ext_resource type="PackedScene" uid="uid://b4rosjmtbgxc1" path="res://scenes/hurtbox_component.tscn" id="3_dneee"]
+[ext_resource type="PackedScene" uid="uid://87pxnk628lmt" path="res://Components/HealthComponent/health_component.tscn" id="2_y2kre"]
+[ext_resource type="PackedScene" uid="uid://b4rosjmtbgxc1" path="res://Components/HurtboxComponent/hurtbox_component.tscn" id="3_dneee"]
 [ext_resource type="PackedScene" uid="uid://dedkaswgc8k6v" path="res://Components/FlashComponent/flash_component.tscn" id="4_w2ior"]
-[ext_resource type="PackedScene" uid="uid://3883kvw05fwm" path="res://state_machine.tscn" id="5_c1wst"]
-[ext_resource type="PackedScene" uid="uid://chbynoqrvee5g" path="res://state.tscn" id="6_b7bdj"]
+[ext_resource type="PackedScene" uid="uid://3883kvw05fwm" path="res://StateMachine/state_machine.tscn" id="5_c1wst"]
+[ext_resource type="PackedScene" uid="uid://chbynoqrvee5g" path="res://StateMachine/state.tscn" id="6_b7bdj"]
 [ext_resource type="Script" path="res://scenes/Plants/States/plant_waiting_state.gd" id="7_hjvsl"]
 [ext_resource type="Script" path="res://scenes/Plants/States/plant_action_state.gd" id="8_am11v"]
 [ext_resource type="Script" path="res://scenes/Plants/States/plant_cooldown_state.gd" id="9_hs0e5"]
-[ext_resource type="PackedScene" uid="uid://dmya0a2ix8xcr" path="res://reanim_component.tscn" id="10_ibbap"]
+[ext_resource type="PackedScene" uid="uid://dmya0a2ix8xcr" path="res://Components/ReanimComponent/reanim_component.tscn" id="10_ibbap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ei3bo"]
 size = Vector2(20, 20.3333)
@@ -45,4 +45,3 @@ script = ExtResource("8_am11v")
 script = ExtResource("9_hs0e5")
 
 [node name="ReanimComponent" parent="." instance=ExtResource("10_ibbap")]
-visible = true

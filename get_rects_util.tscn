@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://wss3dffq45e2"]
+
+[ext_resource type="Script" path="res://get_rects_util.gd" id="1_37uw5"]
+[ext_resource type="Texture2D" uid="uid://fqfi6l23llhb" path="res://scenes/Plants/Plants/Wallnut/wallnut.png" id="2_enlgx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3k01"]
+atlas = ExtResource("2_enlgx")
+region = Rect2(1, 1, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehesi"]
+atlas = ExtResource("2_enlgx")
+region = Rect2(103, 1, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6g3a"]
+atlas = ExtResource("2_enlgx")
+region = Rect2(205, 1, 100, 100)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_37uw5")
+
+[node name="anim_face" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_j3k01")
+centered = false
+
+[node name="anim_face2" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ehesi")
+centered = false
+
+[node name="anim_face3" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_e6g3a")
+centered = false

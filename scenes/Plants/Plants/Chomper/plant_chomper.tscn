@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://xqp0rt3fknve"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_xw2sf"]
+
+[node name="Chomper" instance=ExtResource("1_xw2sf")]

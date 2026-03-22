@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_s20wu"]
 [ext_resource type="Script" path="res://scenes/Plants/Plants/Cactus/plant_cactus.gd" id="2_d3qee"]
-[ext_resource type="PackedScene" uid="uid://bikuxxj128lv3" path="res://scenes/Projectiles/projectile_spike.tscn" id="3_nqbw3"]
+[ext_resource type="PackedScene" uid="uid://bikuxxj128lv3" path="res://scenes/Projectiles/Projectiles/projectile_spike.tscn" id="3_nqbw3"]
 [ext_resource type="SpriteFrames" uid="uid://cx740t8orldtw" path="res://tres/cactus.tres" id="4_sgusg"]
 [ext_resource type="Texture2D" uid="uid://cq2b7cq2nc3h6" path="res://scenes/Plants/SeedPackets/Icons.png" id="5_qiiig"]
 [ext_resource type="PackedScene" uid="uid://chynt50ekbfa" path="res://Components/RaycastComponent/raycast_component.tscn" id="6_k7f6y"]

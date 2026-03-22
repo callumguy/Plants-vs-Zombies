@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d4ccpw8iemccw"]
+[gd_scene load_steps=11 format=3 uid="uid://d4ccpw8iemccw"]
 
 [ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_qds0y"]
 [ext_resource type="Script" path="res://scenes/Plants/Plants/Puffshroom/plant_puffshroom.gd" id="2_ft5hd"]
 [ext_resource type="Texture2D" uid="uid://cl3nlpjjducsh" path="res://scenes/Plants/Plants/Puffshroom/puffshroom.png" id="2_k5a1v"]
 [ext_resource type="PackedScene" uid="uid://ctc4f3b87fv6e" path="res://Components/ShootComponent/shoot_component.tscn" id="3_s3ctb"]
 [ext_resource type="PackedScene" uid="uid://chynt50ekbfa" path="res://Components/RaycastComponent/raycast_component.tscn" id="4_y4348"]
+[ext_resource type="Script" path="res://Components/scan_component.gd" id="6_3csss"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xttj4"]
 atlas = ExtResource("2_k5a1v")
@@ -24,7 +25,6 @@ region = Rect2(68, 61, 12, 22)
 
 [node name="Puffshroom" instance=ExtResource("1_qds0y")]
 script = ExtResource("2_ft5hd")
-sun_cost = 25
 
 [node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("Cooldown")
@@ -61,3 +61,6 @@ target_position = Vector2(386, 0)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="ScanComponent" type="Node" parent="." index="9"]
+script = ExtResource("6_3csss")

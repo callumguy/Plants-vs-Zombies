@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://sb7xpqdww13g"]
+[gd_scene load_steps=19 format=3 uid="uid://sb7xpqdww13g"]
 
 [ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_dur4t"]
 [ext_resource type="Script" path="res://scenes/Plants/Plants/Potatomine/plant_potatomine.gd" id="2_svj16"]
 [ext_resource type="Texture2D" uid="uid://cgyjwkft0naym" path="res://scenes/Plants/Plants/Potatomine/potatomine.png" id="3_464dc"]
 [ext_resource type="PackedScene" uid="uid://ctc4f3b87fv6e" path="res://Components/ShootComponent/shoot_component.tscn" id="4_xmqt8"]
 [ext_resource type="PackedScene" uid="uid://chynt50ekbfa" path="res://Components/RaycastComponent/raycast_component.tscn" id="5_d46mq"]
+[ext_resource type="PackedScene" uid="uid://b250wm2x1fkx8" path="res://Components/SplashComponent/splash_component.tscn" id="6_abmqb"]
+[ext_resource type="Script" path="res://Components/scan_component.gd" id="7_nvrm8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6kfsm"]
 atlas = ExtResource("3_464dc")
@@ -53,7 +55,6 @@ region = Rect2(127, 204, 19, 13)
 [node name="Potatomine" instance=ExtResource("1_dur4t")]
 script = ExtResource("2_svj16")
 cooldown = 0.1
-sun_cost = 25
 
 [node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("Cooldown")
@@ -140,3 +141,9 @@ target_position = Vector2(-75, 0)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="SplashComponent" parent="." index="9" instance=ExtResource("6_abmqb")]
+size = Vector2(1.5, 1)
+
+[node name="ScanComponent" type="Node" parent="." index="10"]
+script = ExtResource("7_nvrm8")

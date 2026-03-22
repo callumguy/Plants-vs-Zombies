@@ -1,15 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://2ge4ribp1l2j"]
+[gd_scene load_steps=14 format=3 uid="uid://2ge4ribp1l2j"]
 
 [ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_sbgb7"]
 [ext_resource type="Script" path="res://scenes/Plants/Plants/Wallnut/plant_wallnut.gd" id="2_dmdi6"]
-[ext_resource type="Texture2D" uid="uid://cq2b7cq2nc3h6" path="res://scenes/Plants/SeedPackets/Icons.png" id="3_ok2ov"]
 [ext_resource type="Texture2D" uid="uid://fqfi6l23llhb" path="res://scenes/Plants/Plants/Wallnut/wallnut.png" id="4_v66rl"]
-[ext_resource type="PackedScene" uid="uid://bckw4fgbala7t" path="res://scenes/damage_visuals_component.tscn" id="5_3o8vp"]
+[ext_resource type="PackedScene" uid="uid://bckw4fgbala7t" path="res://Components/DamageVisualsComponent/damage_visuals_component.tscn" id="5_3o8vp"]
 [ext_resource type="PackedScene" uid="uid://dvcev23pdfvlf" path="res://Components/AnimationComponent/animation_component.tscn" id="6_oeqpp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gdav0"]
-atlas = ExtResource("3_ok2ov")
-region = Rect2(335, 2, 109, 70)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fajuy"]
+atlas = ExtResource("4_v66rl")
+region = Rect2(1, 1, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hetdm"]
 atlas = ExtResource("4_v66rl")
@@ -68,21 +67,21 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fajuy"]
-atlas = ExtResource("4_v66rl")
-region = Rect2(1, 1, 100, 100)
-
 [node name="Wallnut" instance=ExtResource("1_sbgb7")]
 script = ExtResource("2_dmdi6")
-sun_cost = 50
 
-[node name="SeedIcon" parent="." index="2"]
-texture = SubResource("AtlasTexture_gdav0")
-
-[node name="HealthComponent" parent="." index="3"]
+[node name="HealthComponent" parent="." index="1"]
 max_health = 4000
 
-[node name="Parts" type="Node2D" parent="." index="7"]
+[node name="ReanimComponent" parent="." index="5"]
+position = Vector2(-43, -35)
+reanim_path = "res://scenes/Plants/Plants/Wallnut/wallnut_reanim.txt"
+
+[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="0"]
+texture = SubResource("AtlasTexture_fajuy")
+centered = false
+
+[node name="Parts" type="Node2D" parent="." index="6"]
 visible = false
 scale = Vector2(0.8, 0.8)
 
@@ -95,16 +94,9 @@ sprite_frames = SubResource("SpriteFrames_4j2ja")
 animation = &"Blink"
 frame = 3
 
-[node name="DamageVisualsComponent" parent="." index="8" node_paths=PackedStringArray("sprite") instance=ExtResource("5_3o8vp")]
-sprite = NodePath("../Parts/Body")
+[node name="DamageVisualsComponent" parent="." index="7" node_paths=PackedStringArray("sprite") instance=ExtResource("5_3o8vp")]
+sprite = NodePath("../ReanimComponent/anim_face")
+stageImages = ["Wallnut_cracked1", "Wallnut_cracked2"]
 
-[node name="AnimationComponent" parent="." index="9" node_paths=PackedStringArray("parts") instance=ExtResource("6_oeqpp")]
+[node name="AnimationComponent" parent="." index="8" node_paths=PackedStringArray("parts") instance=ExtResource("6_oeqpp")]
 parts = NodePath("../Parts")
-
-[node name="ReanimComponent" parent="." index="10"]
-position = Vector2(-43, -35)
-reanim_path = "res://scenes/Plants/Plants/Wallnut/wallnut_reanim.txt"
-
-[node name="anim_face" type="Sprite2D" parent="ReanimComponent" index="0"]
-texture = SubResource("AtlasTexture_fajuy")
-centered = false

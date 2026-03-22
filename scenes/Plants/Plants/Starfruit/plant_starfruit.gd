@@ -1,6 +1,6 @@
 extends Plant
 
-@export var projectile: PackedScene = preload("res://scenes/projectiles/projectile_pea.tscn")
+@export var projectile: PackedScene = preload(ScenePaths.PROJECTILE_PEA)
 @export var always_shoot: bool = false
 
 func perform_action() -> void:

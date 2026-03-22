@@ -1,11 +1,15 @@
 extends Plant
 
-@export var projectile: PackedScene = preload("res://scenes/projectiles/projectile_pea.tscn")
-@export var always_shoot: bool = false
+# @export var projectile: PackedScene = preload(ScenePaths.PROJECTILE_PEA)
+# @export var always_shoot: bool = false
 
 func perform_action() -> void:
 
-    shoot.shoot_one(projectile, $Raycasts/Up)
+    # shoot.shoot_one(projectile, $Raycasts/Up)
+    var targets = scan.get_targets(global_position, Vector2(0.5, 0.5), 2)
+    for target in targets:
+        target.get_parent().take_damage(10)
+    
     reanim.stop("anim_idle")
     reanim.play("anim_attack")
 

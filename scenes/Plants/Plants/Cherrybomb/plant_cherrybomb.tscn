@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://yk6tak3yddgn"]
+[gd_scene load_steps=11 format=3 uid="uid://yk6tak3yddgn"]
 
 [ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_rnrcb"]
 [ext_resource type="Script" path="res://scenes/Plants/Plants/Cherrybomb/plant_cherrybomb.gd" id="2_gn5li"]
-[ext_resource type="Texture2D" uid="uid://bq7sjv67ofveu" path="res://Assets/icon.svg" id="3_kjo8i"]
 [ext_resource type="Texture2D" uid="uid://t8pi8j2t7pmq" path="res://scenes/Plants/Plants/Cherrybomb/cherrybomb.png" id="4_mfum5"]
-[ext_resource type="PackedScene" uid="uid://b250wm2x1fkx8" path="res://scenes/splash_component.tscn" id="5_x6yct"]
+[ext_resource type="PackedScene" uid="uid://b250wm2x1fkx8" path="res://Components/SplashComponent/splash_component.tscn" id="5_x6yct"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dtqx4"]
 atlas = ExtResource("4_mfum5")
@@ -34,14 +33,13 @@ region = Rect2(52, 139, 11, 11)
 script = ExtResource("2_gn5li")
 cooldown = 0.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
-position = Vector2(121, 150)
-texture = ExtResource("3_kjo8i")
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = null
 
-[node name="StateMachine" parent="." index="5" node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("Action")
 
-[node name="ReanimComponent" parent="." index="6"]
+[node name="ReanimComponent" parent="." index="5"]
 position = Vector2(-41, -41)
 reanim_path = "res://scenes/Plants/Plants/Cherrybomb/CherryBomb_reanim.txt"
 
@@ -69,5 +67,5 @@ centered = false
 texture = SubResource("AtlasTexture_7g5fi")
 centered = false
 
-[node name="SplashComponent" parent="." index="7" instance=ExtResource("5_x6yct")]
+[node name="SplashComponent" parent="." index="6" instance=ExtResource("5_x6yct")]
 size = Vector2(3, 3)

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c3pqqlbywi526"
-path="res://.godot/imported/23 - Laura Shigihara - Zen Garden (in game).ogg-6d84d26285aa0315e22018e19c6ea435.oggvorbisstr"
+path="res://.godot/imported/23 - Laura Shigihara - Zen Garden (in game).ogg-6e33bf9c2ef55c9416e814ed229d1f02.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/music/23 - Laura Shigihara - Zen Garden (in game).ogg"
-dest_files=["res://.godot/imported/23 - Laura Shigihara - Zen Garden (in game).ogg-6d84d26285aa0315e22018e19c6ea435.oggvorbisstr"]
+source_file="res://Audio/Music/23 - Laura Shigihara - Zen Garden (in game).ogg"
+dest_files=["res://.godot/imported/23 - Laura Shigihara - Zen Garden (in game).ogg-6e33bf9c2ef55c9416e814ed229d1f02.oggvorbisstr"]
 
 [params]
 

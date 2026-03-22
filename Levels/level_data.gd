@@ -13,32 +13,35 @@ var levels := {
     },
     "1": {
         "zombies": ['basic'],
-        "reward": "plant/puffshroom"
+        "reward": "plant/aspearagus"
     },
     "2": {
         "zombies": ['basic', 'conehead'],
-        "reward": "plant/cactus"
+        "reward": "plant/potatomine"
     },
     "3": {
         "zombies": ['basic', 'conehead'],
-        "reward": "plant/sunshroom"
-    },
-    "4": {
-        "world": Worlds.NIGHT,
-        "starting_sun": 150,
-        "reward": "plant/starfruit"
-    },
-    "5": {
-        "reward": "plant/cactus"
-    },
-    "6": {
         "reward": "plant/spikeweed"
     },
-    "7": { 
+    "4": {
+        "reward": "plant/puffshroom"
+    },
+    "5": {
+        "world": Worlds.NIGHT,
+        "zombies": ['basic', 'conehead'],
+        "starting_sun": 150,
+        "reward": "plant/cherrybomb"
+    },
+    "6": {
+        "reward": "plant/starfruit"
+    },
+    "7": {
+        "reward": "plant/sunshroom"
     },
     "8": {
         "world": Worlds.NIGHT,
-        "starting_sun": 100
+        "starting_sun": 150,
+        "reward": "plant/cactus"
     }
 }
 

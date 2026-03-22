@@ -1,15 +1,15 @@
 extends Plant
 
-@export var projectile: PackedScene = preload("res://scenes/projectiles/projectile_pea.tscn")
-@export var always_shoot: bool = false
+var projectile: PackedScene = preload(ScenePaths.PROJECTILE_PEA)
+var always_shoot: bool = false
 
 var idle_previous_frame: int
 
 func perform_action() -> void:
     idle_previous_frame = reanim.stop("anim_full_idle")
     reanim.play("anim_shooting", false, 3.0)
-    # shoot.shoot(projectile, raycast, always_shoot)
-    shoot.new_shoot(projectile, global_position, Vector2.RIGHT)
+    shoot.shoot(projectile, raycast, always_shoot)
+    #shoot.new_shoot(projectile, global_position, Vector2.RIGHT)
     AudioManager.play_sfx(SoundDatabase.PLANTS['peashooter_shoot'])
     
 func enter_cooldown() -> void:

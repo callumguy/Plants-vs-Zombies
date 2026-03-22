@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd063fho8lcuq"]
+
+[ext_resource type="PackedScene" uid="uid://dsesqi0i4cffp" path="res://scenes/Plants/PlantBase/plant_base.tscn" id="1_0gw5r"]
+[ext_resource type="Script" path="res://scenes/Plants/Plants/Jalapeno/plant_jalapeno.gd" id="2_3vkw0"]
+[ext_resource type="Script" path="res://Components/scan_component.gd" id="3_e8akr"]
+
+[node name="Jalapeno" instance=ExtResource("1_0gw5r")]
+script = ExtResource("2_3vkw0")
+cooldown = 1.0
+
+[node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("Cooldown")
+
+[node name="ReanimComponent" parent="." index="5"]
+position = Vector2(-41, -39)
+reanim_path = "res://scenes/Plants/Plants/Jalapeno/jalapeno_reanim.txt"
+
+[node name="ScanComponent" type="Node" parent="." index="6"]
+script = ExtResource("3_e8akr")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8do0st4qjy21"]
+[gd_scene load_steps=11 format=3 uid="uid://c8do0st4qjy21"]
 
 [ext_resource type="PackedScene" uid="uid://dq717t7l0pvow" path="res://scenes/Zombies/Helmets/HelmetBase/helmet.tscn" id="1_3vp6i"]
 [ext_resource type="Texture2D" uid="uid://3d8dyxulleov" path="res://Assets/basic_zombie_assets.png" id="2_hpruy"]
-[ext_resource type="AudioStream" uid="uid://b131abunn6356" path="res://Audio/PvZsoundsMegaPack/shieldhit.ogg" id="3_lyheq"]
-[ext_resource type="AudioStream" uid="uid://fpysydbjg8c0" path="res://Audio/PvZsoundsMegaPack/shieldhit2.ogg" id="4_jedia"]
+[ext_resource type="Texture2D" uid="uid://61cmctyns2br" path="res://reanim/Zombie_bucket1.png" id="2_rx5jf"]
+[ext_resource type="AudioStream" uid="uid://b131abunn6356" path="res://Audio/SFX/shieldhit.ogg" id="3_lyheq"]
+[ext_resource type="AudioStream" uid="uid://fpysydbjg8c0" path="res://Audio/SFX/shieldhit2.ogg" id="4_jedia"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fgn7j"]
 atlas = ExtResource("2_hpruy")
@@ -41,11 +42,17 @@ stream_1/stream = ExtResource("4_jedia")
 
 [node name="HelmetBucket" instance=ExtResource("1_3vp6i")]
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_rx5jf")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_vb7vi")
 
-[node name="HealthComponent" parent="." index="2"]
+[node name="HealthComponent" parent="." index="3"]
 max_health = 600
 
-[node name="HitSound" parent="." index="6"]
+[node name="DamageVisualsComponent" parent="." index="4"]
+stageImages = ["Zombie_bucket2", "Zombie_bucket3"]
+
+[node name="HitSound" parent="." index="8"]
 stream = SubResource("AudioStreamRandomizer_nur23")

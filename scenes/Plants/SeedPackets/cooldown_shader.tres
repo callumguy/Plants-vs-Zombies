@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c15g5pmqtpd1t"]
 
-[ext_resource type="Shader" path="res://scenes/seed_packet.gdshader" id="1_eevcw"]
+[ext_resource type="Shader" path="res://scenes/Plants/SeedPackets/seed_packet.gdshader" id="1_eevcw"]
 
 [resource]
 resource_local_to_scene = true

@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://dq717t7l0pvow"]
+[gd_scene load_steps=18 format=3 uid="uid://dq717t7l0pvow"]
 
 [ext_resource type="Texture2D" uid="uid://3d8dyxulleov" path="res://Assets/basic_zombie_assets.png" id="1_k1dal"]
 [ext_resource type="Script" path="res://scenes/Zombies/Helmets/HelmetBase/helmet.gd" id="1_mxr5m"]
+[ext_resource type="Texture2D" uid="uid://cqs1h07xsibq2" path="res://reanim/Zombie_cone1.png" id="2_4lwnm"]
 [ext_resource type="PackedScene" uid="uid://dt7weuds10ykf" path="res://Components/DetachableComponent/detachable_component.tscn" id="3_u3s25"]
-[ext_resource type="PackedScene" uid="uid://87pxnk628lmt" path="res://scenes/health_component.tscn" id="4_81i84"]
-[ext_resource type="PackedScene" uid="uid://bckw4fgbala7t" path="res://scenes/damage_visuals_component.tscn" id="5_uh4k2"]
-[ext_resource type="PackedScene" uid="uid://d03sgk3p8fup1" path="res://scenes/despawn_component.tscn" id="6_fr5rw"]
-[ext_resource type="AudioStream" uid="uid://da37u8n7p0mdn" path="res://Audio/PvZsoundsMegaPack/plastichit.ogg" id="7_j0k6h"]
+[ext_resource type="PackedScene" uid="uid://87pxnk628lmt" path="res://Components/HealthComponent/health_component.tscn" id="4_81i84"]
+[ext_resource type="PackedScene" uid="uid://bckw4fgbala7t" path="res://Components/DamageVisualsComponent/damage_visuals_component.tscn" id="5_uh4k2"]
+[ext_resource type="PackedScene" uid="uid://d03sgk3p8fup1" path="res://Components/DespawnComponent/despawn_component.tscn" id="6_fr5rw"]
+[ext_resource type="AudioStream" uid="uid://da37u8n7p0mdn" path="res://Audio/SFX/plastichit.ogg" id="7_j0k6h"]
 [ext_resource type="PackedScene" uid="uid://dedkaswgc8k6v" path="res://Components/FlashComponent/flash_component.tscn" id="7_koyir"]
-[ext_resource type="AudioStream" uid="uid://cvwdugaksk6tx" path="res://Audio/PvZsoundsMegaPack/plastichit2.ogg" id="8_l3ewe"]
+[ext_resource type="AudioStream" uid="uid://cvwdugaksk6tx" path="res://Audio/SFX/plastichit2.ogg" id="8_l3ewe"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4sli8"]
 bounce = 0.5
@@ -63,14 +64,19 @@ script = ExtResource("1_mxr5m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_k8scn")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4lwnm")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_ktcdd")
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_81i84")]
 max_health = 180
 
 [node name="DamageVisualsComponent" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("5_uh4k2")]
-sprite = NodePath("../AnimatedSprite2D")
+sprite = NodePath("../Sprite2D")
+stageImages = ["Zombie_cone2", "Zombie_cone3"]
 
 [node name="DetachableComponent" parent="." node_paths=PackedStringArray("body") instance=ExtResource("3_u3s25")]
 body = NodePath("..")

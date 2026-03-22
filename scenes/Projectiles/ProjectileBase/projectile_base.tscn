@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dmmqxdhqx5h77"]
 
 [ext_resource type="Script" path="res://scenes/Projectiles/ProjectileBase/projectile_base.gd" id="1_or2ha"]
-[ext_resource type="AudioStream" uid="uid://pihak421xd0p" path="res://Audio/PvZsoundsMegaPack/splat.ogg" id="2_e3q2m"]
+[ext_resource type="AudioStream" uid="uid://pihak421xd0p" path="res://Audio/SFX/splat.ogg" id="2_e3q2m"]
 [ext_resource type="Texture2D" uid="uid://d24hn11eemxve" path="res://Assets/pvz_projectiles.png" id="2_f4yd1"]
-[ext_resource type="AudioStream" uid="uid://s0ey3qve2bks" path="res://Audio/PvZsoundsMegaPack/splat2.ogg" id="3_2v6b1"]
-[ext_resource type="AudioStream" uid="uid://comd6fpke5ou6" path="res://Audio/PvZsoundsMegaPack/splat3.ogg" id="4_slqta"]
+[ext_resource type="AudioStream" uid="uid://s0ey3qve2bks" path="res://Audio/SFX/splat2.ogg" id="3_2v6b1"]
+[ext_resource type="AudioStream" uid="uid://comd6fpke5ou6" path="res://Audio/SFX/splat3.ogg" id="4_slqta"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1osm"]
 atlas = ExtResource("2_f4yd1")

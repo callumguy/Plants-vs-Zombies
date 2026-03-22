@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://3e11pgvdmfq3"
-path="res://.godot/imported/19 - Laura Shigihara - Choose Your Seeds (in game).ogg-c4497e001ab37b9b21911d6ec9bcffa6.oggvorbisstr"
+path="res://.godot/imported/19 - Laura Shigihara - Choose Your Seeds (in game).ogg-dc55930db68a5b1e858de67c711a70c7.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/music/19 - Laura Shigihara - Choose Your Seeds (in game).ogg"
-dest_files=["res://.godot/imported/19 - Laura Shigihara - Choose Your Seeds (in game).ogg-c4497e001ab37b9b21911d6ec9bcffa6.oggvorbisstr"]
+source_file="res://Audio/Music/19 - Laura Shigihara - Choose Your Seeds (in game).ogg"
+dest_files=["res://.godot/imported/19 - Laura Shigihara - Choose Your Seeds (in game).ogg-dc55930db68a5b1e858de67c711a70c7.oggvorbisstr"]
 
 [params]
 

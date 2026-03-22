@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dvf6q7jx7bt7j"
-path="res://.godot/imported/22 - Laura Shigihara - Moongrains (in game).ogg-4861f683c8c4a9953b4536e304941a45.oggvorbisstr"
+path="res://.godot/imported/22 - Laura Shigihara - Moongrains (in game).ogg-9d8ea65140276831c10c41fa13142c2e.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/music/22 - Laura Shigihara - Moongrains (in game).ogg"
-dest_files=["res://.godot/imported/22 - Laura Shigihara - Moongrains (in game).ogg-4861f683c8c4a9953b4536e304941a45.oggvorbisstr"]
+source_file="res://Audio/Music/22 - Laura Shigihara - Moongrains (in game).ogg"
+dest_files=["res://.godot/imported/22 - Laura Shigihara - Moongrains (in game).ogg-9d8ea65140276831c10c41fa13142c2e.oggvorbisstr"]
 
 [params]
 

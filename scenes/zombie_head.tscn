@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3d8dyxulleov" path="res://Assets/basic_zombie_assets.png" id="2_pxvig"]
 [ext_resource type="PackedScene" uid="uid://dt7weuds10ykf" path="res://Components/DetachableComponent/detachable_component.tscn" id="3_2pwnc"]
 [ext_resource type="Shape2D" uid="uid://dcm0agyxc85vo" path="res://tres/zombie_head_bounce_material.tres" id="3_j51t7"]
-[ext_resource type="PackedScene" uid="uid://d03sgk3p8fup1" path="res://scenes/despawn_component.tscn" id="4_2pguh"]
+[ext_resource type="PackedScene" uid="uid://d03sgk3p8fup1" path="res://Components/DespawnComponent/despawn_component.tscn" id="4_2pguh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l2q3f"]
 bounce = 0.5
